@@ -1,5 +1,12 @@
+// Components
+import { Header } from '@/components/Navigation';
+
+// Utilities
 import { Analytics } from '@vercel/analytics/react';
-import './globals.css'
+import './globals.css';
+
+// Types
+import type { ReactNode } from 'react';
 
 export const metadata = {
   title: 'Ryan Meetup',
@@ -49,19 +56,24 @@ export const metadata = {
     description: 'A monthly meetup for people named Ryan',
     images: ['https://ryanmeetup.com/ryan.jpeg'],
   },
-}
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+type RootLayoutProps = {
+  children: ReactNode;
+};
+
+const RootLayout = (props: RootLayoutProps) => {
+  const { children } = props;
+
   return (
     <html lang="en">
       <body>
+        <Header />
         {children}
         <Analytics />
       </body>
     </html>
-  )
-}
+  );
+};
+
+export default RootLayout;
