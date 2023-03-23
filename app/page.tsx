@@ -1,11 +1,6 @@
 import { Inter } from "next/font/google";
 
 const inter = Inter({ subsets: ["latin"] });
-// <h2 className={`${inter.className} mb-3 text-2xl font-semibold`}>
-<h1 className={`${inter.className} uppercase font-bold tracking-wider text-xs`}>
-  Welcome, Ryan.
-</h1>;
-
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center gap-20 bg-gradient-to-b from-neutral-900 to-black">

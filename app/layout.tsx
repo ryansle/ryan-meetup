@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import './globals.css'
 
 export const metadata = {
@@ -36,15 +35,13 @@ export const metadata = {
   },
 
   icons: {
-    icon: '/favicon-32x32.png',
-    shortcut: '/shortcut-icon.png',
+    icon: 'https://www.ryanmeetup.com/favicon-32x32.png',
     apple: '/apple-touch-icon.png',
     other: {
       rel: 'apple-touch-icon',
       url: '/apple-touch-icon.png',
     },
   },
-  manifest: '/site.manifest',
   twitter: {
     card: 'summary_large_image',
     title: 'Ryan Meetup',
@@ -60,9 +57,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-
-    </Head>
       <body>{children}</body>
     </html>
   )
