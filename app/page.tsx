@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-20 bg-gradient-to-b from-neutral-900 to-black">
+    <main className="flex min-h-screen max-h-screen flex-col items-center justify-center  overflow-hidden gap-20 bg-gradient-to-b from-neutral-900 to-black">
       <a href="https://www.meetup.com/ryanmeetup/" rel="noopener noreferrer" className="pointer relative overflow-hidden rounded-lg bg-black px-20 py-6 ring-red-500/50 ring-offset-black will-change-transform focus:outline-none focus:ring-1 focus:ring-offset-2">
         <h1
           className={`${inter.className} uppercase font-bold tracking-wider text-xs absolute inset-px z-10 grid place-items-center rounded-lg bg-black bg-gradient-to-t from-neutral-800 text-neutral-400`}
