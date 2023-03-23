@@ -1,28 +1,33 @@
 // Components
 import { Layout } from '@/components/navigation';
+import { Heading } from '@/components/global';
 
 // Utilities
 import { Inter } from 'next/font/google';
 
+// Types
+import type { NextPage } from 'next';
+
 const inter = Inter({ subsets: ['latin'] });
 
-const Home = () => {
+const HomePage: NextPage = () => {
   const underlineStyle = 'underline underline-offset-4 decoration-blue-500';
 
   return (
-    <Layout className='space-y-4'>
-      <h1 className='text-4xl font-bold'>
+    <Layout className='items-center justify-center'>
+      <Heading className='mb-2' size='xl'>
         Is your name <span className={underlineStyle}>Ryan</span>?
-      </h1>
+      </Heading>
+      <Heading className='mb-10' size='md'>
+        Wanna meet other <span className={underlineStyle}>Ryans</span>?
+      </Heading>
 
-      <h2 className='text-2xl font-semibold'>
-        Join the <span className={underlineStyle}>Ryan</span> Meetup!
-      </h2>
+      <Heading size='md'>Join the Ryan Meetup!</Heading>
 
       <a
         href="https://www.meetup.com/ryanmeetup/"
         rel="noopener noreferrer"
-        className="pointer relative overflow-hidden rounded-lg bg-black px-20 py-6 ring-red-500/50 ring-offset-black will-change-transform focus:outline-none focus:ring-1 focus:ring-offset-2"
+        className="pointer relative overflow-hidden rounded-lg bg-black px-20 py-6 ring-red-500/50 ring-offset-black will-change-transform focus:outline-none focus:ring-1 focus:ring-offset-2 mt-10"
       >
         <h1
           className={`${inter.className} uppercase font-bold tracking-wider text-xs absolute inset-px z-10 grid place-items-center rounded-lg bg-black bg-gradient-to-t from-neutral-800 text-neutral-400`}
@@ -38,4 +43,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

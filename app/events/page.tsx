@@ -5,12 +5,12 @@ import { Heading } from '@/components/global';
 // Types
 import type { NextPage } from 'next';
 
-const PosterPage: NextPage = () => {
+const EventsPage: NextPage = () => {
   return (
     <Layout>
-      <Heading>Posters</Heading>
+      <Heading>Ryan Events</Heading>
     </Layout>
   );
 };
 
-export default PosterPage;
+export default EventsPage;

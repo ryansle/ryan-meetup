@@ -1,5 +1,3 @@
-import { Fragment } from 'react'
-
 // Components
 import { Menu, Transition } from '@headlessui/react';
 import NextLink from 'next/link';

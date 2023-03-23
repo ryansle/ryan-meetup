@@ -5,12 +5,12 @@ import { Heading } from '@/components/global';
 // Types
 import type { NextPage } from 'next';
 
-const PosterPage: NextPage = () => {
+const MerchPage: NextPage = () => {
   return (
     <Layout>
-      <Heading>Posters</Heading>
+      <Heading>Ryan Merchandise</Heading>
     </Layout>
   );
 };
 
-export default PosterPage;
+export default MerchPage;

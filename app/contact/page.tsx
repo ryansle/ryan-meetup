@@ -1,10 +1,14 @@
 // Components
 import { Layout } from '@/components/navigation';
+import { Heading } from '@/components/global';
 
-const ContactPage = () => {
+// Types
+import type { NextPage } from 'next';
+
+const ContactPage: NextPage = () => {
   return (
     <Layout>
-      <h1>Contact Us</h1>
+      <Heading>Contact the Ryans</Heading>
     </Layout>
   );
 };

@@ -8,7 +8,6 @@ import NextLink from 'next/link';
 
 // Utilities
 import { useRouter } from 'next/navigation';
-import useMediaQuery from '@/hooks/useMediaQuery';
 
 // Types
 import type { ReactNode } from 'react';
@@ -31,9 +30,9 @@ const NavButton = (props: NavButtonProps) => {
 const Header = () => {
   const router = useRouter();
 
-  const isMobileScreen = useMediaQuery(640);
-
   const routes = [
+    { text: 'Events', href: '/events' },
+    { text: 'Merch', href: '/merch' },
     { text: 'Posters', href: '/posters' },
     { text: 'Contact Us', href: '/contact' }
   ];
@@ -55,19 +54,17 @@ const Header = () => {
         </NextLink>
       </div>
       <div className='space-x-4 flex items-center'>
-        {!isMobileScreen && (
-          <>
-            {routes.map((route) => (
-              <NextLink
-                className='font-semibold tracking-wide'
-                key={route.href}
-                href={route.href}
-              >
-                {route.text}
-              </NextLink>
-            ))}
-          </>
-        )}
+        <div className='hidden md:block space-x-4 flex items-center'>
+          {routes.map((route) => (
+            <NextLink
+              className='font-semibold tracking-wide'
+              key={route.href}
+              href={route.href}
+            >
+              {route.text}
+            </NextLink>
+          ))}
+        </div>
 
         {externalLinks.map((button, index) => (
           <NavButton
@@ -77,9 +74,9 @@ const Header = () => {
           />
         ))}
 
-        {isMobileScreen && (
+        <div className='md:hidden'>
           <MobileMenu content={routes} />
-        )}
+        </div>
       </div>
     </header>
   );
