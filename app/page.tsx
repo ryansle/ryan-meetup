@@ -1,10 +1,24 @@
+// Components
+import { Layout } from '@/components/navigation';
+
+// Utilities
 import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
 const Home = () => {
+  const underlineStyle = 'underline underline-offset-4 decoration-blue-500';
+
   return (
-    <main className="flex min-h-screen max-h-screen flex-col items-center justify-center overflow-hidden gap-20 bg-gradient-to-b from-neutral-900 to-black">
+    <Layout className='space-y-4'>
+      <h1 className='text-4xl font-bold'>
+        Is your name <span className={underlineStyle}>Ryan</span>?
+      </h1>
+
+      <h2 className='text-2xl font-semibold'>
+        Join the <span className={underlineStyle}>Ryan</span> Meetup!
+      </h2>
+
       <a
         href="https://www.meetup.com/ryanmeetup/"
         rel="noopener noreferrer"
@@ -20,7 +34,7 @@ const Home = () => {
           className="absolute inset-0 z-0 scale-x-[2.0] blur before:absolute before:inset-0 before:top-1/2 before:aspect-square before:animate-disco before:bg-gradient-conic before:from-purple-700 before:via-red-500 before:to-amber-400"
         />
       </a>
-    </main>
+    </Layout>
   );
 };
 

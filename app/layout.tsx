@@ -1,5 +1,5 @@
 // Components
-import { Header } from '@/components/Navigation';
+import { Header } from '@/components/navigation';
 
 // Utilities
 import { Analytics } from '@vercel/analytics/react';
