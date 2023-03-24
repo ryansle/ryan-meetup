@@ -7,7 +7,7 @@ import type { ReactNode } from 'react';
 type TextProps = {
   className?: string;
   children: ReactNode;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'xs' | 'sm' | 'md' | 'lg';
 }
 
 const getVariantClasses = (size = 'md') => {
@@ -17,6 +17,7 @@ const getVariantClasses = (size = 'md') => {
     size === 'lg' && 'text-xl',
     size === 'md' && 'text-lg',
     size === 'sm' && 'text-base',
+    size === 'xs' && 'text-sm',
   ]);
 
   return clsx([styles, textSize]);

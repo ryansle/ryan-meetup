@@ -1,13 +1,17 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Components
-import { Input, Textarea, Button } from '@/components/global';
+import { Input, Textarea, Button, Text } from '@/components/global';
 import { BiMailSend as Send } from 'react-icons/bi';
 
 // Utilities
 import { useForm } from 'react-hook-form';
+import { validateEmail } from '@/utils/validate';
 import emailjs from '@emailjs/browser';
+
+// Types
+import type { ReactNode } from 'react';
 
 type Form = {
   firstName: string;
@@ -21,7 +25,14 @@ type Form = {
 const ContactForm = () => {
   const [loading, setLoading] = useState<boolean>(false);
 
-  const { register, handleSubmit, reset } = useForm();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+    setError,
+    clearErrors,
+  } = useForm();
 
   const sendEmail = (data: Form) => {
     setLoading(true);
@@ -38,6 +49,21 @@ const ContactForm = () => {
     }, 1000);
   };
 
+  const checkEmail = (email: string) => {
+    const valid = validateEmail(email);
+
+    if (valid) clearErrors('email');
+    else setError('email', { message: 'Error: invalid email address' });
+  };
+
+  useEffect(() => {
+    setError('firstName', { message: 'Error: must provide a first name' });
+    setError('lastName', { message: 'Error: must provide a last name' });
+    setError('subject', { message: 'Error: must provide a subject' });
+    setError('message', { message: 'Error: must provide a message' });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <form>
       <div className='grid grid-cols-2 gap-x-4 gap-y-4 mb-4'>
@@ -46,7 +72,10 @@ const ContactForm = () => {
             label='First Name'
             placeholder='Ryan'
             required
-            {...register('firstName')}
+            {...register('firstName', {
+              onBlur: (event) => event.target.value === '' ?
+                setError('firstName', { message: 'Error: must provide a first name' }) : clearErrors('firstName')
+            })}
           />
         </div>
 
@@ -55,7 +84,10 @@ const ContactForm = () => {
             label='Last Name'
             placeholder='Smith'
             required
-            {...register('lastName')}
+            {...register('lastName', {
+              onBlur: (event) => event.target.value === '' ?
+                setError('lastName', { message: 'Error: must provide a last name' }) : clearErrors('lastName')
+            })}
           />
         </div>
 
@@ -63,10 +95,17 @@ const ContactForm = () => {
           <Input
             label='Email Address'
             placeholder='ryan@ryan.com'
-            type='email'
+            type='text'
             required
-            {...register('email')}
+            {...register('email', {
+              onBlur: (event) => checkEmail(event.target.value)
+            })}
           />
+          {errors.email && (
+            <Text className='mt-2 text-red-500' size='xs'>
+              {errors.email.message as ReactNode}
+            </Text>
+          )}
         </div>
 
         <div className='col-span-2 sm:col-span-1'>
@@ -83,7 +122,10 @@ const ContactForm = () => {
             label='Subject'
             placeholder='Official Ryan Business'
             required
-            {...register('subject')}
+            {...register('subject', {
+              onBlur: (event) => event.target.value === '' ?
+                setError('subject', { message: 'Error: must provide a subject' }) : clearErrors('subject')
+            })}
           />
         </div>
 
@@ -93,7 +135,10 @@ const ContactForm = () => {
             label='Message'
             placeholder='Talk about BIG and IMPORTANT Ryan topics here'
             required
-            {...register('message')}
+            {...register('message', {
+              onBlur: (event) => event.target.value === '' ?
+                setError('message', { message: 'Error: must provide a message' }) : clearErrors('message')
+            })}
           />
         </div>
       </div>
@@ -102,6 +147,7 @@ const ContactForm = () => {
         className='float-right'
         leftIcon={<Send />}
         onClick={handleSubmit((data) => sendEmail(data as Form))}
+        disabled={Object.keys(errors).length !== 0}
       >
         Send
       </Button>
