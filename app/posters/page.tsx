@@ -2,7 +2,7 @@
 
 // Components
 import { Layout } from '@/components/navigation';
-import { Heading, Button } from '@/components/global';
+import { Heading, Button, Text } from '@/components/global';
 import { Poster } from '@/components/posters';
 import { FaDownload as Download } from 'react-icons/fa';
 
@@ -21,12 +21,15 @@ const posters = [
 // TODO: attach to an API so we can upload/delete posters at will
 const PosterPage: NextPage = () => {
   return (
-    <Layout>
-      <Heading className='mb-6'>Posters</Heading>
+    <Layout className='space-y-6'>
+      <Heading>Posters</Heading>
+
+      <Text size='lg'>
+        Interested in hanging up Ryan Meetup posters in your city? Download our posters here!
+      </Text>
 
       {/* TODO: download pdfs */}
       <Button
-        className='mb-6'
         onClick={() => console.log('download')}
         leftIcon={<Download />}
       >
