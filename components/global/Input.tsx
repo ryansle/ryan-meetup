@@ -1,3 +1,5 @@
+import { forwardRef } from 'react';
+
 // Types
 import type { ChangeEvent } from 'react';
 
@@ -10,7 +12,7 @@ type InputProps = {
   required?: boolean;
 }
 
-const Input = (props: InputProps) => {
+const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) => {
   const {
     label,
     name,
@@ -38,9 +40,10 @@ const Input = (props: InputProps) => {
         required={required}
         type={type}
         {...rest}
+        ref={ref}
       />
     </div>
   );
-};
+});
 
 export { Input };
