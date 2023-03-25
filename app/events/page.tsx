@@ -13,15 +13,64 @@ import type { NextPage } from 'next';
 // Utilities
 import client from '@/data/contentful';
 
-// TODO: resolve typescript errors when I'm more awake
+type RyanEvent = {
+  active: boolean;
+  coverImage: {
+    fields: {
+      title: string;
+      description: string;
+      file: {
+        contentType: string;
+        details: {
+          image: {
+            height: number;
+            width: number;
+          }
+          size: number;
+        }
+        fileName: string;
+        url: string;
+      }
+    },
+    metaData: {
+      tags: string[]
+    }
+    sys: {
+      createdAt: string;
+      environment: {
+        sys: {
+          id: string;
+          type: string;
+          linkType: string;
+        }
+      }
+    }
+    id: string;
+    locale: string;
+    revision: number;
+    space: {
+      sys: {
+        type: string;
+        linkType: string;
+        id: string;
+      }
+      type: string;
+      updatedAt: string;
+    }
+  }
+  description: string;
+  href: string;
+  title: string;
+}
+
 const EventsPage: NextPage = () => {
-  const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState<RyanEvent[]>([]);
 
   useEffect(() => {
     client.getEntries(({ content_type: 'event', }))
       .then((data) => {
         const arr = data.items.map((entry) => entry.fields);
-        setEvents(arr);
+        setEvents(arr as RyanEvent[]);
       });
   }, []);
 
