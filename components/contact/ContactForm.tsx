@@ -23,6 +23,7 @@ type Form = {
 };
 
 const ContactForm = () => {
+  // TODO: loader
   const [loading, setLoading] = useState<boolean>(false);
 
   const {
