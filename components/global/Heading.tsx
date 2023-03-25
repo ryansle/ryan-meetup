@@ -2,7 +2,7 @@
 import type { ReactNode } from 'react';
 
 type HeadingProps = {
-  size?: 'sm' | 'md' | 'lg' | 'xl';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   className?: string;
   children: ReactNode;
 };
@@ -14,6 +14,8 @@ const Heading = (props: HeadingProps) => {
 
   const renderHeading = () => {
     switch (size) {
+      case '2xl':
+        return <h1 className={`${styles} text-7xl`}>{children}</h1>;
       case 'xl':
         return <h1 className={`${styles} text-5xl`}>{children}</h1>;
       case 'lg':
