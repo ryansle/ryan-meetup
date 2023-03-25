@@ -38,9 +38,9 @@ const ContactForm = () => {
     setLoading(true);
 
     setTimeout(() => {
-      const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID;
-      const userId = process.env.NEXT_PUBLIC_USER_ID;
-      const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
+      const templateId = process.env.TEMPLATE_ID;
+      const userId = process.env.USER_ID;
+      const serviceId = process.env.SERVICE_ID;
 
       emailjs.send(serviceId as string, templateId as string, data, userId);
       setLoading(false);
