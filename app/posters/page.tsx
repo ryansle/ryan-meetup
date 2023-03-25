@@ -11,11 +11,9 @@ import type { NextPage } from 'next';
 
 const posters = [
   { title: 'OG Ryan Meetup Poster', src: '/posters/ogposter.png' },
-  { title: 'OG Ryan Meetup Poster', src: '/posters/ogposter.png' },
-  { title: 'OG Ryan Meetup Poster', src: '/posters/ogposter.png' },
-  { title: 'OG Ryan Meetup Poster', src: '/posters/ogposter.png' },
-  { title: 'OG Ryan Meetup Poster', src: '/posters/ogposter.png' },
-  { title: 'OG Ryan Meetup Poster', src: '/posters/ogposter.png' },
+  { title: 'Ryan Seacrest Meetup Poster', src: '/posters/ryanSEACREST.png' },
+  { title: 'Ryan Reynolds Meetup Poster', src: '/posters/ryanreynolds.png' },
+  { title: 'Ryan Gosling Meetup Poster', src: '/posters/ryangosling.jpeg' },
 ];
 
 // TODO: attach to an API so we can upload/delete posters at will
@@ -28,12 +26,11 @@ const PosterPage: NextPage = () => {
         Interested in hanging up Ryan Meetup posters in your city? Download our posters here!
       </Text>
 
-      {/* TODO: download pdfs */}
       <Button
-        onClick={() => console.log('download')}
+        onClick={() => window.open('/posters/posters.zip')}
         leftIcon={<Download />}
       >
-        Download PDF Bundle
+        Download Poster Bundle
       </Button>
 
       <div className='grid md:grid-cols-3 gap-x-6 gap-y-6'>
