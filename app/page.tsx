@@ -9,6 +9,7 @@ import { Inter } from 'next/font/google';
 // Types
 import type { NextPage } from 'next';
 
+// TODO: inter
 const inter = Inter({ subsets: ['latin'] });
 
 const HomePage: NextPage = () => {

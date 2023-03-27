@@ -12,6 +12,7 @@ type MobileMenuProps = {
   content: MenuOption[];
 };
 
+// TODO: fix zindexing on index page
 const MobileMenu = (props: MobileMenuProps) => {
   const { content } = props;
 

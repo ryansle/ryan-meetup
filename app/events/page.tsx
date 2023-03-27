@@ -14,6 +14,7 @@ import type { RyanEvent } from '@/lib/types';
 // Utilities
 import client from '@/data/contentful';
 
+// TODO: try to fetch in a client component and if that doesn't work, use react query
 const EventsPage: NextPage = () => {
   const [events, setEvents] = useState<RyanEvent[]>([]);
 
@@ -33,13 +34,7 @@ const EventsPage: NextPage = () => {
         Interested in hosting your own Ryan Meetup in your city? Email us at <a className='underline text-blue-500' href='mailto:theryanmeetup@gmail.com'>theryanmeetup@gmail.com</a> and we&apos;ll add your event to the page!
       </Text>
 
-      <Heading
-        className='mb-5'
-        size='md'
-      >
-        NEW YORK
-      </Heading>
-      <div className='grid grid-cols-2 sm:grid-col-2 gap-x-4'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4'>
         {events.map((event) => (
           <div key={event.title} className='col-span-1'>
             <Event
