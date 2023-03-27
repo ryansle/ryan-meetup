@@ -1,5 +1,6 @@
 // Components
 import { Header } from '@/components/navigation';
+import ReactQueryWrapper from './ReactQueryWrapper';
 
 // Utilities
 import { Analytics } from '@vercel/analytics/react';
@@ -68,9 +69,11 @@ const RootLayout = (props: RootLayoutProps) => {
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
-        <Analytics />
+        <ReactQueryWrapper>
+          <Header />
+          {children}
+          <Analytics />
+        </ReactQueryWrapper>
       </body>
     </html>
   );

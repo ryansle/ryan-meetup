@@ -9,7 +9,11 @@ import { FaMeetup as Meetup } from 'react-icons/fa';
 // Types
 import type { RyanEvent } from '@/lib/types';
 
-const Event = (props: RyanEvent) => {
+type EventProps = {
+  event: RyanEvent;
+}
+
+const Event = (props: EventProps) => {
   const {
     title,
     coverImage,
@@ -18,7 +22,7 @@ const Event = (props: RyanEvent) => {
     city,
     date,
     venue
-  } = props;
+  } = props.event;
 
   const convertDate = (date: Date) => {
     const dateObject = new Date(date);
@@ -38,9 +42,9 @@ const Event = (props: RyanEvent) => {
         <div className='w-full max-h-[450px] aspect-w-2 aspect-h-1 overflow-hidden'>
           <NextImage
             className='rounded-t-3xl border-b border-gray-700'
-            src={`https://${coverImage.fields.file.url.replace('//', '')}`}
+            src={`https://${coverImage?.fields.file.url.replace('//', '')}`}
             fill={true}
-            alt={coverImage.fields.title}
+            alt={coverImage?.fields.title}
           />
         </div>
 
