@@ -18,7 +18,7 @@ const MobileMenu = (props: MobileMenuProps) => {
 
   return (
     <div className='flex items-center justify-center'>
-      <div className='relative inline-block text-left'>
+      <div className='relative inline-block text-left z-10'>
         <Menu>
           {({ open }) => (
             <>

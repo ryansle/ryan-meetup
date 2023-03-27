@@ -27,13 +27,16 @@ const NavButton = (props: NavButtonProps) => {
   );
 };
 
+// TODO: uncomment pages as they are built
 const Header = () => {
   const router = useRouter();
 
   const routes = [
     { text: 'Events', href: '/events' },
-    { text: 'Merch', href: '/merch' },
+    // { text: 'Merch', href: '/merch' },
     { text: 'Posters', href: '/posters' },
+    // { text: 'Gallery', href: '/gallery' },
+    // { text: 'Press', href: '/press' },
     { text: 'Contact Us', href: '/contact' }
   ];
 

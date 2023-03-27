@@ -11,6 +11,7 @@ import type { NextPage } from 'next';
 
 const posters = [
   { title: 'OG Ryan Meetup Poster', src: '/posters/ogposter.png' },
+  { title: 'Variant Poster', src: '/posters/isyournameryan.jpg' },
   { title: 'Ryan Seacrest Meetup Poster', src: '/posters/ryanSEACREST.png' },
   { title: 'Ryan Reynolds Meetup Poster', src: '/posters/ryanreynolds.png' },
   { title: 'Ryan Gosling Meetup Poster', src: '/posters/ryangosling.jpeg' },
