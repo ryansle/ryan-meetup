@@ -12,7 +12,7 @@ const RyanPoster = () => {
       <div className='w-full max-h-[450px] aspect-w-2 aspect-h-1 mb-6'>
         <NextImage
           className='rounded-3xl'
-          src='/ryanroundup.png'
+          src='/ryankickoff.png'
           fill={true}
           alt='Ryan Meetup Founders'
         />
