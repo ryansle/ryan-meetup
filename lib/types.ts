@@ -52,4 +52,9 @@ type RyanEvent = {
   venue: string;
 }
 
-export type { RyanEvent };
+type FrequentlyAskedQuestion = {
+  question: string;
+  answer: string;
+}
+
+export type { RyanEvent, FrequentlyAskedQuestion };
