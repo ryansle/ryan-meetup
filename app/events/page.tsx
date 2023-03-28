@@ -25,6 +25,10 @@ const EventsPage: NextPage = () => {
         Interested in hosting your own Ryan Meetup in your city? Email us at <a className='underline text-blue-500' href='mailto:theryanmeetup@gmail.com'>theryanmeetup@gmail.com</a> and we&apos;ll add your event to the page!
       </Text>
 
+      <Heading size='md' className='mb-4'>
+        Past Events
+      </Heading>
+
       <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2'>
         {/* TODO: better skeleton component */}
         {isLoading && (
