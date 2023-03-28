@@ -60,7 +60,7 @@ const Header = () => {
         <div className='hidden md:block space-x-4 flex items-center'>
           {routes.map((route) => (
             <NextLink
-              className='font-semibold tracking-wide'
+              className='font-semibold tracking-wide text-white'
               key={route.href}
               href={route.href}
             >
