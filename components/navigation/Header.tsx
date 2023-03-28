@@ -41,8 +41,8 @@ const Header = () => {
   ];
 
   const externalLinks = [
-    { icon: <Instagram className='h-8 w-8' />, onClick: () => router.push('https://www.instagram.com/theryansociety/') },
-    { icon: <Meetup className='h-8 w-8' />, onClick: () => router.push('https://www.meetup.com/ryanmeetup/') }
+    { icon: <Instagram className='h-8 w-8' color='white' />, onClick: () => router.push('https://www.instagram.com/ryanmeetup/') },
+    { icon: <Meetup className='h-8 w-8' color='white' />, onClick: () => router.push('https://www.meetup.com/ryanmeetup/') }
   ];
 
   return (
