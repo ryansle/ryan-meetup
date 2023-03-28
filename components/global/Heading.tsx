@@ -1,3 +1,6 @@
+// Utilities
+import clsx from 'clsx';
+
 // Types
 import type { ReactNode } from 'react';
 
@@ -5,12 +8,13 @@ type HeadingProps = {
   size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   className?: string;
   children: ReactNode;
+  bold?: boolean;
 };
 
 const Heading = (props: HeadingProps) => {
-  const { size = 'lg', className, children } = props;
+  const { size = 'lg', className, children, bold = true } = props;
 
-  const styles = 'tracking-wider font-bold';
+  const styles = 'tracking-wider';
 
   const renderHeading = () => {
     switch (size) {
@@ -29,7 +33,7 @@ const Heading = (props: HeadingProps) => {
   };
 
   return (
-    <div className={className}>
+    <div className={clsx([className, bold ? 'font-bold' : 'font-base'])}>
       {renderHeading()}
     </div>
   );

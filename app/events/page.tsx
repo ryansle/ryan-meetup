@@ -13,6 +13,7 @@ import type { RyanEvent } from '@/lib/types';
 import { useQuery } from 'react-query';
 import { fetchEvents } from '@/data/fetch';
 
+// TODO: event organization
 const EventsPage: NextPage = () => {
   const { data: events, isLoading } = useQuery('events', fetchEvents);
 

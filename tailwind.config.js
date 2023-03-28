@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        cooper: ['Cooper', 'sans-serif']
+      },
       scale: {
         '102': '1.02',
       },
