@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 
 // Components
-import { Input, Textarea, Button, Text } from '@/components/global';
+import { Input, Textarea, Button, Text, Toast } from '@/components/global';
 import { SkeletonForm } from './SkeletonForm';
 import { BiMailSend as Send } from 'react-icons/bi';
 
@@ -164,6 +164,12 @@ const ContactForm = () => {
           </Button>
         </div>
       )}
+
+      <div className='flex w-full items-center justify-center'>
+        <Toast title='Email Sent!'>
+          Expect an email back from theryanmeetup@gmail.com soon!
+        </Toast>
+      </div>
     </form>
   );
 };
