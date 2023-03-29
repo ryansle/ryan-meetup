@@ -67,15 +67,15 @@ const RootLayout = (props: RootLayoutProps) => {
   const { children } = props;
 
   return (
-    <html lang="en">
-      <body>
-        <ReactQueryWrapper>
+    <html lang='en'>
+      <body className='h-full'>
+        < ReactQueryWrapper >
           <Header />
           {children}
           <Analytics />
-        </ReactQueryWrapper>
-      </body>
-    </html>
+        </ReactQueryWrapper >
+      </body >
+    </html >
   );
 };
 
