@@ -6,31 +6,8 @@ import { MobileMenu } from '@/components/navigation';
 import NextImage from 'next/image';
 import NextLink from 'next/link';
 
-// Utilities
-import { useRouter } from 'next/navigation';
-
-// Types
-import type { ReactNode } from 'react';
-
-type NavButtonProps = {
-  icon: ReactNode;
-  onClick: () => void;
-}
-
-const NavButton = (props: NavButtonProps) => {
-  const { icon, onClick } = props;
-
-  return (
-    <button onClick={onClick}>
-      {icon}
-    </button>
-  );
-};
-
 // TODO: uncomment pages as they are built
 const Header = () => {
-  const router = useRouter();
-
   const routes = [
     { text: 'Events', href: '/events' },
     // { text: 'Merch', href: '/merch' },
@@ -40,9 +17,15 @@ const Header = () => {
     { text: 'Contact Us', href: '/contact' }
   ];
 
-  const externalLinks = [
-    { icon: <Instagram className='h-8 w-8' color='white' />, onClick: () => router.push('https://www.instagram.com/ryanmeetup/') },
-    { icon: <Meetup className='h-8 w-8' color='white' />, onClick: () => router.push('https://www.meetup.com/ryanmeetup/') }
+  const socials = [
+    {
+      href: 'https://www.instagram.com/ryanmeetup/',
+      icon: <Instagram className='h-8 w-8' color='white' />
+    },
+    {
+      href: 'https://www.meetup.com/ryanmeetup/',
+      icon: <Meetup className='h-8 w-8' color='white' />,
+    }
   ];
 
   return (
@@ -69,12 +52,10 @@ const Header = () => {
           ))}
         </div>
 
-        {externalLinks.map((button, index) => (
-          <NavButton
-            key={index}
-            icon={button.icon}
-            onClick={button.onClick}
-          />
+        {socials.map((channel, index) => (
+          <NextLink key={index} href={channel.href}>
+            {channel.icon}
+          </NextLink>
         ))}
 
         <div className='md:hidden'>

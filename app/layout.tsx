@@ -1,5 +1,5 @@
 // Components
-import { Header } from '@/components/navigation';
+import { Header, Footer } from '@/components/navigation';
 import ReactQueryWrapper from './ReactQueryWrapper';
 
 // Utilities
@@ -73,6 +73,7 @@ const RootLayout = (props: RootLayoutProps) => {
         <ReactQueryWrapper>
           <Header />
           {children}
+          <Footer />
           <Analytics />
         </ReactQueryWrapper>
       </body>
