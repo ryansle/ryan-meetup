@@ -2,7 +2,7 @@
 
 // Components
 import { Layout } from '@/components/navigation';
-import { Heading } from '@/components/global';
+import { Heading, Text } from '@/components/global';
 import { Article } from '@/components/press';
 
 // Types
@@ -17,8 +17,14 @@ const PressPage: NextPage = () => {
   const { data: articles, isLoading } = useQuery('articles', fetchArticles);
 
   return (
-    <Layout className='space-y-4'>
+    <Layout className='space-y-6'>
       <Heading>Ryan in the Media</Heading>
+
+      <Text size='lg'>
+        Keep up to date with the latest Ryan Meetup news in the media!
+      </Text>
+
+      <hr />
 
       {!isLoading && articles && (
         <>
