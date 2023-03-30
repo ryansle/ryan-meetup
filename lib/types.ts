@@ -66,6 +66,7 @@ type Article = {
   href: string;
   publishDate: Date;
   thumbnail: ContentfulImage;
+  new: boolean;
 }
 
 export type {

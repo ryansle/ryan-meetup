@@ -40,7 +40,8 @@ const Article = (props: ArticleProps) => {
     outlet,
     href,
     publishDate,
-    thumbnail
+    thumbnail,
+    new: isNew,
   } = props.article;
 
   const highlight = 'font-semibold text-blue-500';
@@ -59,9 +60,13 @@ const Article = (props: ArticleProps) => {
             />
           </div>
           <div className='col-span-3 mt-2 sm:mt-0 sm:col-span-2 space-y-1'>
-            <Text size='sm'>
-              {new Date(publishDate).toLocaleDateString()}
-            </Text>
+            <div className='flex space-x-3 items-center'>
+              <Text size='sm'>
+                {new Date(publishDate).toLocaleDateString()}
+              </Text>
+
+              {isNew && <span className='text-green-800 text-sm font-medium px-2.5 rounded bg-green-900 text-green-300'>NEW</span>}
+            </div>
             <h3 className='font-bold text-3xl mb-2'>{title}</h3>
             <Text size='sm'>
               by <span className={highlight}>{author}</span> in the <span className={highlight}>{outlet}</span>
