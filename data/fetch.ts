@@ -12,4 +12,14 @@ const fetchFAQs = async () => {
   return data.items.map((entry) => entry.fields).reverse();
 };
 
-export { fetchEvents, fetchFAQs };
+const fetchArticles = async () => {
+  const data = await client.getEntries(({ content_type: 'article', order: 'sys.createdAt' }));
+
+  return data.items.map((entry) => entry.fields);
+};
+
+export {
+  fetchEvents,
+  fetchFAQs,
+  fetchArticles
+};

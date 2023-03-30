@@ -36,7 +36,7 @@ const Header = () => {
     // { text: 'Merch', href: '/merch' },
     { text: 'Posters', href: '/posters' },
     // { text: 'Gallery', href: '/gallery' },
-    // { text: 'Press', href: '/press' },
+    { text: 'Press', href: '/press' },
     { text: 'Contact Us', href: '/contact' }
   ];
 
