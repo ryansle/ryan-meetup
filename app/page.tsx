@@ -18,7 +18,7 @@ const HomePage: NextPage = () => {
   return (
     <Layout>
       <RyanPoster />
-      <hr className='h-0.5 bg-neutral-100 border w-full my-16' />
+      <hr className='my-16' />
       <FAQ
         data={faqs as FrequentlyAskedQuestion[]}
         isLoading={isLoading}

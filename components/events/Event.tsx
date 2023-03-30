@@ -9,6 +9,9 @@ import { FaMeetup as Meetup } from 'react-icons/fa';
 // Types
 import type { RyanEvent } from '@/lib/types';
 
+// Utilities
+import { convertDateToDateTimeString } from '@/utils/convert';
+
 type EventProps = {
   event: RyanEvent;
 }
@@ -23,18 +26,6 @@ const Event = (props: EventProps) => {
     date,
     venue
   } = props.event;
-
-  const convertDate = (date: Date) => {
-    const dateObject = new Date(date);
-
-    const dateString = dateObject.toDateString();
-    const day = dateObject.getDate();
-    const year = dateObject.getFullYear();
-    const hour = dateObject.getHours();
-    const minutes = dateObject.getMinutes();
-
-    return `${dateString.slice(0, 3)}, ${dateString.slice(4, 8)} ${day} ${year} @ ${hour}:${minutes === 0 ? `${minutes}0` : `${minutes}`} PM`;
-  };
 
   return (
     <NextLink href={href}>
@@ -52,7 +43,7 @@ const Event = (props: EventProps) => {
         <div className='px-5 pt-3 pb-6 space-y-1'>
           <div className='flex items-center justify-between mb-3'>
             <div>
-              <Text size='xs'>{convertDate(date)}</Text>
+              <Text size='xs'>{convertDateToDateTimeString(date)}</Text>
               <Heading size='sm'>{title}</Heading>
             </div>
             <div>
