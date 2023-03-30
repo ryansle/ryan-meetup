@@ -65,7 +65,7 @@ const Article = (props: ArticleProps) => {
                 {new Date(publishDate).toLocaleDateString()}
               </Text>
 
-              {isNew && <span className='text-green-800 text-sm font-medium px-2.5 rounded bg-green-900 text-green-300'>NEW</span>}
+              {isNew && <span className='text-green-800 text-sm font-medium px-2.5 rounded bg-green-900 text-white'>NEW</span>}
             </div>
             <h3 className='font-bold text-3xl mb-2'>{title}</h3>
             <Text size='sm'>
