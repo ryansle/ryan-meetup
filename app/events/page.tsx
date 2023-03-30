@@ -30,7 +30,6 @@ const EventsPage: NextPage = () => {
       </Heading>
 
       <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2'>
-        {/* TODO: better skeleton component */}
         {isLoading && (
           Array(4).fill('').map((_, index) => (
             <div

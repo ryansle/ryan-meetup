@@ -3,7 +3,6 @@ const InputSkeleton = () => {
     <div>
       <div className='h-4 bg-gray-700 rounded-full w-28 mb-1 animate-pulse mb-1' />
       <div className='h-10 bg-gray-700 rounded-md w-full animate-pulse' />
-
     </div>
   );
 };
