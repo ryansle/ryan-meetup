@@ -58,12 +58,12 @@ const Article = (props: ArticleProps) => {
               title={title}
             />
           </div>
-          <div className='col-span-3 mt-2 sm:mt-0 sm:col-span-2'>
+          <div className='col-span-3 mt-2 sm:mt-0 sm:col-span-2 space-y-1'>
             <Text size='sm'>
               {new Date(publishDate).toLocaleDateString()}
             </Text>
             <h3 className='font-bold text-3xl mb-2'>{title}</h3>
-            <Text size='sm sm:md'>
+            <Text size='sm'>
               by <span className={highlight}>{author}</span> in the <span className={highlight}>{outlet}</span>
             </Text>
           </div>
