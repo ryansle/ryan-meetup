@@ -3,7 +3,7 @@
 // Components
 import { Layout } from '@/components/navigation';
 import { Heading, Text } from '@/components/global';
-import { Article } from '@/components/press';
+import { Article, SkeletonArticle } from '@/components/press';
 
 // Types
 import type { NextPage } from 'next';
@@ -25,6 +25,14 @@ const PressPage: NextPage = () => {
       </Text>
 
       <hr />
+
+      {isLoading && (
+        <>
+          {Array(3).fill('').map((_, index) => (
+            <SkeletonArticle key={index} />
+          ))}
+        </>
+      )}
 
       {!isLoading && articles && (
         <>

@@ -21,7 +21,7 @@ const ArticleImage = (props: ArticleImageProps) => {
   const { imageSrc, title } = props;
 
   return (
-    <div className='w-full max-h-[200px] aspect-w-2 aspect-h-1 overflow-hidden'>
+    <div className='w-full max-h-[200px] aspect-w-2 aspect-h-1'>
       <NextImage
         className='rounded-lg'
         src={imageSrc}
