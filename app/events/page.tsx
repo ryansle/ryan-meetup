@@ -29,7 +29,7 @@ const EventsPage: NextPage = () => {
         Past Events
       </Heading>
 
-      <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2'>
+      <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-3'>
         {isLoading && (
           Array(4).fill('').map((_, index) => (
             <div

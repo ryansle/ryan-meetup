@@ -3,7 +3,6 @@
 // Components
 import NextLink from 'next/link';
 import NextImage from 'next/image';
-import { Text } from '@/components/global';
 
 // Types
 import type { Article } from '@/lib/types';
@@ -59,18 +58,18 @@ const Article = (props: ArticleProps) => {
               title={title}
             />
           </div>
-          <div className='col-span-3 mt-2 sm:mt-0 sm:col-span-2 space-y-1'>
+          <div className='col-span-3 mt-2 sm:mt-0 sm:col-span-2'>
             <div className='flex space-x-3 items-center'>
-              <Text size='sm'>
+              <p className='tracking-wide font-medium'>
                 {new Date(publishDate).toLocaleDateString()}
-              </Text>
+              </p>
 
               {isNew && <span className='text-green-800 text-sm font-medium px-2.5 rounded bg-green-900 text-white'>NEW</span>}
             </div>
-            <h3 className='font-bold text-3xl mb-2'>{title}</h3>
-            <Text size='sm'>
+            <h3 className='font-bold text-3xl mb-2 xl:text-4xl 2xl:text-3xl md:mb-4'>{title}</h3>
+            <p className='tracking-wide font-medium xl:text-xl'>
               by <span className={highlight}>{author}</span> in the <span className={highlight}>{outlet}</span>
-            </Text>
+            </p>
           </div>
         </div>
       </div>

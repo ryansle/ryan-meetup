@@ -16,8 +16,8 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className='border-t border-gray-700 px-4 h-20 mt-24 lg:px-48 2xl:px-96'>
-      <div className='w-full max-w-screen-xl p-4 py-6 lg:py-8'>
+    <footer className='border-t border-gray-700 px-4 h-20 mt-24 lg:px-48 2xl:px-96 3xl:px-[400px] 4xl:px-[650px]'>
+      <div className='w-full p-4 py-6 lg:py-8'>
         <div className='md:flex md:justify-between'>
           <div className='mb-6 space-y-[26px] md:mb-0'>
             <NextLink href='/'>
