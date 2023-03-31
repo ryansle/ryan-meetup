@@ -63,7 +63,6 @@ type RootLayoutProps = {
   children: ReactNode;
 };
 
-// TODO: fix weird layout height glitch that is only appearing on my crwd laptop
 const RootLayout = (props: RootLayoutProps) => {
   const { children } = props;
 
