@@ -18,8 +18,15 @@ const fetchArticles = async () => {
   return data.items.map((entry) => entry.fields);
 };
 
+const fetchMedia = async () => {
+  const data = await client.getEntries(({ content_type: 'gallery' }));
+
+  return data.items.map((entry) => entry.fields);
+};
+
 export {
   fetchEvents,
   fetchFAQs,
-  fetchArticles
+  fetchArticles,
+  fetchMedia
 };
