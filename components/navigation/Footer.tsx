@@ -28,9 +28,9 @@ const Footer = () => {
           </div>
 
           {/* Resources & Follow Us */}
-          <div className='grid grid-cols-3 space-x-10'>
+          <div className='grid grid-cols-4 space-x-8'>
             <div className='col-span-1'>
-              <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase text-white'>Follow us</h2>
+              <h2 className='mb-6 text-xs font-semibold text-gray-900 uppercase text-white sm:text-sm'>Follow us</h2>
               <ul className='text-gray-600 font-medium'>
                 <li className='mb-2'>
                   <NextLink href='https://www.instagram.com/ryanmeetup/' className='hover:underline'>Instagram</NextLink>
@@ -40,33 +40,36 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className='col-span-1'>
-              <h2 className='mb-6 text-sm font-semibold text-gray-900 uppercase text-white'>Built With</h2>
-              <ul className='text-gray-600 font-medium'>
-                <li className='mb-2'>
-                  <NextLink href='hhttps://nextjs.org/' className='hover:underline'>Next.js</NextLink>
-                </li>
-                <li className='mb-2'>
-                  <NextLink href='https://react.dev/' className='hover:underline'>React.js</NextLink>
-                </li>
-                <li className='mb-2'>
-                  <NextLink href='https://tailwindcss.com/' className='hover:underline'>Tailwind CSS</NextLink>
-                </li>
-              </ul>
-            </div>
-            <div className='col-span-1'>
-              <h2 className='mb-6 text-sm h-[20px] font-semibold text-gray-900 uppercase text-white' />
-              <ul className='text-gray-600 font-medium'>
-                <li className='mb-2'>
-                  <NextLink href='https://flowbite.com/' className='hover:underline'>Flowbite</NextLink>
-                </li>
-                <li className='mb-2'>
-                  <NextLink href='https://headlessui.com/' className='hover:underline'>Headless UI</NextLink>
-                </li>
-                <li className='mb-2'>
-                  <NextLink href='https://www.contentful.com/' className='hover:underline'>Contentful</NextLink>
-                </li>
-              </ul>
+            <div className='col-span-3'>
+              <h2 className='mb-6 text-xs font-semibold text-gray-900 uppercase text-white sm:text-sm'>Built With</h2>
+              <div className='grid grid-cols-2 space-x-4'>
+                <div className='col-span-1'>
+                  <ul className='text-gray-600 font-medium'>
+                    <li className='mb-2'>
+                      <NextLink href='https://nextjs.org/' className='hover:underline'>Next.js</NextLink>
+                    </li>
+                    <li className='mb-2'>
+                      <NextLink href='https://react.dev/' className='hover:underline'>React.js</NextLink>
+                    </li>
+                    <li className='mb-2'>
+                      <NextLink href='https://tailwindcss.com/' className='hover:underline'>Tailwind CSS</NextLink>
+                    </li>
+                  </ul>
+                </div>
+                <div className='col-span-1'>
+                  <ul className='text-gray-600 font-medium'>
+                    <li className='mb-2'>
+                      <NextLink href='https://flowbite.com/' className='hover:underline'>Flowbite</NextLink>
+                    </li>
+                    <li className='mb-2'>
+                      <NextLink href='https://headlessui.com/' className='hover:underline'>Headless UI</NextLink>
+                    </li>
+                    <li className='mb-2'>
+                      <NextLink href='https://www.contentful.com/' className='hover:underline'>Contentful</NextLink>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
