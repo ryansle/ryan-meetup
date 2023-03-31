@@ -69,8 +69,15 @@ type Article = {
   new: boolean;
 }
 
+type MediaEvent = {
+  title: string;
+  bgImage: ContentfulImage;
+  photos: ContentfulImage[];
+}
+
 export type {
   RyanEvent,
   FrequentlyAskedQuestion,
   Article,
+  MediaEvent,
 };

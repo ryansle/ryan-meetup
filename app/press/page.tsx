@@ -13,6 +13,7 @@ import type { Article as RyanArticle } from '@/lib/types';
 import { useQuery } from 'react-query';
 import { fetchArticles } from '@/data/fetch';
 
+// TODO: consolidate descriptor text size on each page
 const PressPage: NextPage = () => {
   const { data: articles, isLoading } = useQuery('articles', fetchArticles);
 

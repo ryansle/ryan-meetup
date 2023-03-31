@@ -2,10 +2,12 @@
 
 // Components
 import { Layout } from '@/components/navigation';
-import { Heading } from '@/components/global';
+import { Heading, Text } from '@/components/global';
+import { MediaTile } from '@/components/media';
 
 // Types
 import type { NextPage } from 'next';
+import type { MediaEvent } from '@/lib/types';
 
 // Utilities
 import { useQuery } from 'react-query';
@@ -18,7 +20,23 @@ const GalleryPage: NextPage = () => {
 
   return (
     <Layout>
-      <Heading>Ryan Media</Heading>
+      <Heading className='mb-4'>Ryan Media</Heading>
+
+      <Text size='lg' className='mb-10'>
+        Our gallery of Ryan media from our events.
+      </Text>
+
+      <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-3'>
+        {!isLoading && media && (
+          <>
+            {media?.map((event, index) => (
+              <div key={index}>
+                <MediaTile data={event as MediaEvent} />
+              </div>
+            ))}
+          </>
+        )}
+      </div>
     </Layout>
   );
 };
