@@ -71,6 +71,7 @@ type Article = {
 
 type MediaEvent = {
   title: string;
+  slug: string;
   bgImage: ContentfulImage;
   photos: ContentfulImage[];
 }

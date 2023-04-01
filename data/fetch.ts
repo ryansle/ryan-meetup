@@ -21,12 +21,19 @@ const fetchArticles = async () => {
 const fetchMedia = async () => {
   const data = await client.getEntries(({ content_type: 'gallery' }));
 
-  return data.items.map((entry) => entry.fields);
+  return data.items;
+};
+
+const fetchSingleMediaEvent = async (id: string) => {
+  const data = await client.getEntry(id);
+
+  return data.fields;
 };
 
 export {
   fetchEvents,
   fetchFAQs,
   fetchArticles,
-  fetchMedia
+  fetchMedia,
+  fetchSingleMediaEvent,
 };

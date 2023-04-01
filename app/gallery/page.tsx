@@ -16,8 +16,6 @@ import { fetchMedia } from '@/data/fetch';
 const GalleryPage: NextPage = () => {
   const { data: media, isLoading } = useQuery('photos', fetchMedia);
 
-  console.log(media);
-
   return (
     <Layout>
       <Heading className='mb-4'>Ryan Media</Heading>
@@ -29,9 +27,12 @@ const GalleryPage: NextPage = () => {
       <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-3'>
         {!isLoading && media && (
           <>
-            {media?.map((event, index) => (
+            {media?.map((content, index) => (
               <div key={index}>
-                <MediaTile data={event as MediaEvent} />
+                <MediaTile
+                  id={content.sys.id}
+                  data={content.fields as MediaEvent}
+                />
               </div>
             ))}
           </>
