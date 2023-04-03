@@ -13,8 +13,6 @@ const Photo = (props: PhotoProps) => {
 
   const imageUrl = file.url.replace('//', '');
 
-  console.log(imageUrl);
-
   return (
     <div className='w-full max-h-[450px] aspect-w-3 aspect-h-2 overflow-hidden rounded-lg'>
       <NextImage
