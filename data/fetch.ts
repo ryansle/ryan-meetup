@@ -18,8 +18,23 @@ const fetchArticles = async () => {
   return data.items.map((entry) => entry.fields);
 };
 
+// TODO: retrieve in reverse order (newest at the top)
+const fetchMedia = async () => {
+  const data = await client.getEntries(({ content_type: 'gallery' }));
+
+  return data.items;
+};
+
+const fetchSingleMediaEvent = async (id: string) => {
+  const data = await client.getEntry(id);
+
+  return data.fields;
+};
+
 export {
   fetchEvents,
   fetchFAQs,
-  fetchArticles
+  fetchArticles,
+  fetchMedia,
+  fetchSingleMediaEvent,
 };

@@ -21,7 +21,7 @@ const EventsPage: NextPage = () => {
     <Layout>
       <Heading className='mb-4'>Ryan Events</Heading>
 
-      <Text className='mb-10'>
+      <Text size='lg' className='mb-10'>
         Interested in hosting your own Ryan Meetup in your city? Email us at <a className='underline text-blue-500' href='mailto:theryanmeetup@gmail.com'>theryanmeetup@gmail.com</a> and we&apos;ll add your event to the page!
       </Text>
 
@@ -31,7 +31,7 @@ const EventsPage: NextPage = () => {
 
       <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-3'>
         {isLoading && (
-          Array(4).fill('').map((_, index) => (
+          Array(6).fill('').map((_, index) => (
             <div
               key={index}
               className='animate-pulse bg-gray-700 rounded-3xl w-full h-full max-h-[450px] aspect-w-2 aspect-h-1'

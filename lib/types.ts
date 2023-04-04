@@ -1,42 +1,42 @@
+type ContentfulSys = {
+  id: string;
+  type: string;
+  linkType: string;
+}
+
+type ContentfulFile = {
+  contentType: string;
+  details: {
+    image: {
+      height: number;
+      width: number;
+    }
+    size: number;
+  }
+  fileName: string;
+  url: string;
+}
+
 type ContentfulImage = {
   fields: {
     title: string;
     description: string;
-    file: {
-      contentType: string;
-      details: {
-        image: {
-          height: number;
-          width: number;
-        }
-        size: number;
-      }
-      fileName: string;
-      url: string;
-    }
-  },
+    file: ContentfulFile;
+  }
   metaData: {
     tags: string[]
   }
   sys: {
     createdAt: string;
     environment: {
-      sys: {
-        id: string;
-        type: string;
-        linkType: string;
-      }
+      sys: ContentfulSys;
     }
   }
   id: string;
   locale: string;
   revision: number;
   space: {
-    sys: {
-      type: string;
-      linkType: string;
-      id: string;
-    }
+    sys: ContentfulSys;
     type: string;
     updatedAt: string;
   }
@@ -69,8 +69,42 @@ type Article = {
   new: boolean;
 }
 
+type MediaEvent = {
+  title: string;
+  description: string;
+  date: Date;
+  bgImage: ContentfulImage;
+  photos: ContentfulImage[];
+}
+
+type RyanPhoto = {
+  fields: {
+    file: ContentfulFile;
+    title: string;
+  };
+  metaData: {
+    tags: string[];
+  };
+  sys: {
+    createdAt: Date;
+    environment: {
+      sys: ContentfulSys;
+    }
+    id: string;
+    locale: string;
+    revision: number;
+    space: {
+      sys: ContentfulSys
+    }
+    type: string;
+    updatedAt: Date;
+  }
+}
+
 export type {
   RyanEvent,
   FrequentlyAskedQuestion,
   Article,
+  MediaEvent,
+  RyanPhoto,
 };
