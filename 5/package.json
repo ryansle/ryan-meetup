@@ -1,5 +1,6 @@
 {
 	"dependencies": {
+		"pnpm": "^8.1.1",
 		"vercel": "^28.18.3"
 	}
 }

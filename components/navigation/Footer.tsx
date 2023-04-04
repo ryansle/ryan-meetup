@@ -14,17 +14,43 @@ const socials = [
   }
 ];
 
+const SubscribeForm = () => {
+  return (
+    <div className='mt-[6px]'>
+      <form>
+        <label htmlFor='search' className='text-gray-600 mb-10'>Subscribe for the latest Ryan Meetup news</label>
+        <div className='relative'>
+          <input
+            type='email'
+            id='subsribe'
+            className='border bg-black border-gray-700 text-white text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 w-96 p-2.5 ring-inset placeholder-gray-700'
+            placeholder='ryan@ryanmeetup.com'
+            required
+          />
+          <button
+            type='submit'
+            className='text-white absolute right-2.5 bottom-2 font-medium rounded-lg text-sm px-2 py-1'
+          >
+            Subscribe
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
 const Footer = () => {
   return (
     <footer className='border-t border-gray-700 px-4 h-20 mt-24 lg:px-48 2xl:px-96 3xl:px-[400px] 4xl:px-[650px]'>
       <div className='w-full py-6 lg:py-8'>
         <div className='md:flex md:justify-between'>
-          <div className='mb-6 space-y-[26px] md:mb-0'>
+          <div className='mb-6 md:mb-0'>
             <NextLink href='/'>
               <Heading>RYAN MEETUP</Heading>
             </NextLink>
 
-            <Text className='text-gray-600'>No Bryans Allowed!</Text>
+            <Text className='text-gray-600 mt-[2px]'>No Bryans Allowed!</Text>
+            <SubscribeForm />
           </div>
 
           {/* Resources & Follow Us */}
@@ -75,7 +101,8 @@ const Footer = () => {
         </div>
         <hr className='my-6 border-gray-200 sm:mx-auto border-gray-700 lg:my-8' />
         <div className='sm:flex sm:items-center sm:justify-between'>
-          <span className='text-sm text-gray-600 sm:text-center'>Website designed and developed by <NextLink href='https://ryanle.dev/' className='font-medium hover:underline'>Ryan Le</NextLink>. All Rights Reserved.
+          <span className='text-sm text-gray-600 sm:text-center'>
+            Website designed and developed by <NextLink href='https://ryanle.dev/' className='font-medium hover:underline'>Ryan Le</NextLink>. All Rights Reserved.
           </span>
 
           {/* Socials */}

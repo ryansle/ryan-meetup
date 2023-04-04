@@ -1,9 +1,11 @@
 lockfileVersion: 5.4
 
 specifiers:
+  pnpm: ^8.1.1
   vercel: ^28.18.3
 
 dependencies:
+  pnpm: 8.1.1
   vercel: 28.18.3
 
 packages:
@@ -3723,7 +3725,7 @@ packages:
       '@types/glob': 7.2.0
       array-union: 2.1.0
       dir-glob: 3.0.1
-      fast-glob: 3.2.11
+      fast-glob: 3.2.12
       glob: 7.2.3
       ignore: 5.2.4
       merge2: 1.4.1
@@ -5129,6 +5131,12 @@ packages:
       jsonc-parser: 3.2.0
       mlly: 1.2.0
       pathe: 1.1.0
+    dev: false
+
+  /pnpm/8.1.1:
+    resolution: {integrity: sha512-XLzcc4O8YrqfQ1+qjPtHGDFcdUeno2Zk+kuuSc9CagIiY8y4uhnqQ2B7jW8tgwQDNmehewGZuqrAoskgCkbTnw==}
+    engines: {node: '>=16.14'}
+    hasBin: true
     dev: false
 
   /postcss-discard-duplicates/5.1.0_postcss@8.4.21:
