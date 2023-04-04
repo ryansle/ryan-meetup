@@ -52,8 +52,6 @@ const GalleryPage = ({ params }: GalleryPageProps) => {
 
   const [zoom, setZoom] = useState<number>(3);
 
-  console.log(zoom);
-
   return (
     <Layout>
       {/* Render 404 contents if user inputs a junk slug */}
@@ -72,10 +70,16 @@ const GalleryPage = ({ params }: GalleryPageProps) => {
           )}
 
           {!isLoading && (
-            <Heading className='mb-10'>
-              {/* @ts-ignore */}
-              {data?.title}
-            </Heading>
+            <div className='flex flex-col mb-4'>
+              <Heading>
+                {/* @ts-ignore */}
+                {data?.title}
+              </Heading>
+              <Heading size='sm'>
+                {/* @ts-ignore */}
+                {new Date(data?.date).toLocaleDateString()}
+              </Heading>
+            </div>
           )}
         </>
 
@@ -107,6 +111,13 @@ const GalleryPage = ({ params }: GalleryPageProps) => {
           )}
         </div>
       </div>
+
+      {!isLoading && (
+        <Text className='mb-10'>
+          {/* @ts-ignore */}
+          {data?.description}
+        </Text>
+      )}
 
       <div className={`grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-${zoom} xl:grid-cols-${zoom}`}>
         <>

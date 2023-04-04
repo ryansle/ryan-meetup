@@ -31,7 +31,7 @@ const EventsPage: NextPage = () => {
 
       <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-3'>
         {isLoading && (
-          Array(4).fill('').map((_, index) => (
+          Array(6).fill('').map((_, index) => (
             <div
               key={index}
               className='animate-pulse bg-gray-700 rounded-3xl w-full h-full max-h-[450px] aspect-w-2 aspect-h-1'
