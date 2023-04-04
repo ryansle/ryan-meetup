@@ -50,8 +50,7 @@ const Heading = (props: HeadingProps) => {
       case 'md':
         return <h3 className={`${styles} text-3xl`}>{children}</h3>;
       default:
-        return <h4 className={`${styles} text-2xl`}>{children}</h4>;
-
+        return <h4 className={`${styles} text-xl`}>{children}</h4>;
     }
   };
 

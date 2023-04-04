@@ -71,7 +71,6 @@ const GalleryPage = ({ params }: GalleryPageProps) => {
             <div className='animate-pulse bg-gray-700 rounded-3xl w-[344px] h-10 mb-10' />
           )}
 
-          {/* TODO: loading header */}
           {!isLoading && (
             <Heading className='mb-10'>
               {/* @ts-ignore */}

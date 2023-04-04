@@ -35,7 +35,6 @@ const Loader = () => {
 };
 
 const ContactForm = () => {
-  // TODO: loader
   const [loading, setLoading] = useState<boolean>(false);
   const [render, setRender] = useState<boolean>(false);
   const [openAlert, setOpenAlert] = useState<boolean>(false);
@@ -57,7 +56,7 @@ const ContactForm = () => {
       const userId = process.env.NEXT_PUBLIC_USER_ID;
       const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID;
 
-      // emailjs.send(serviceId as string, templateId as string, data, userId);
+      emailjs.send(serviceId as string, templateId as string, data, userId);
       showAlert();
       setLoading(false);
 

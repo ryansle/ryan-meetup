@@ -13,7 +13,7 @@ type MediaTileProps = {
 
 const MediaTile = (props: MediaTileProps) => {
   const { id } = props;
-  const { title, slug, bgImage } = props.data;
+  const { title, bgImage } = props.data;
 
   const imgUrl = bgImage?.fields.file.url.replace('//', '');
 
@@ -29,8 +29,9 @@ const MediaTile = (props: MediaTileProps) => {
               style={{ objectFit: 'cover' }}
             />
           </div>
-          <div className='absolute w-full inset-x-0 text-white text-xs text-center leading-4 flex items-center justify-center'>
+          <div className='absolute w-full inset-x-0 text-white text-xs text-center leading-4 flex items-center justify-center flex-col'>
             <Heading>{title}</Heading>
+            <Heading size='sm'>03/26</Heading>
           </div>
         </div>
       </div>
