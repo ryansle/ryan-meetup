@@ -21,8 +21,12 @@ const EventsPage: NextPage = () => {
     <Layout>
       <Heading className='mb-4'>Ryan Events</Heading>
 
-      <Text size='lg' className='mb-10'>
+      {/* <Text size='lg' className='mb-10'>
         Interested in hosting your own Ryan Meetup in your city? Email us at <a className='underline text-blue-500' href='mailto:theryanmeetup@gmail.com'>theryanmeetup@gmail.com</a> and we&apos;ll add your event to the page!
+      </Text> */}
+
+      <Text size='lg' className='mb-10'>
+        If your name is Ryan, check out our Ryan Meetups below. No Bryans allowed.
       </Text>
 
       <Heading size='md' className='mb-4'>
