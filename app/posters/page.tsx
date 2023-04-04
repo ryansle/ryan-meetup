@@ -36,9 +36,11 @@ const PosterPage: NextPage = () => {
 
       <div className='grid md:grid-cols-3 gap-x-6 gap-y-6'>
         {posters.map((poster, index) => (
-          <div className='col-span-1' key={index}>
-            <Poster title={poster.title} src={poster.src} />
-          </div>
+          <Poster
+            key={index}
+            title={poster.title}
+            src={poster.src}
+          />
         ))}
       </div>
     </Layout>

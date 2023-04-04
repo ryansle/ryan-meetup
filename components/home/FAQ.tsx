@@ -1,5 +1,4 @@
 // Components
-// import { Disclosure, Transition } from '@headlessui/react';
 import { Heading } from '@/components/global';
 
 // Types
@@ -17,7 +16,6 @@ const FAQ = (props: FAQProps) => {
     <div>
       <Heading className='mb-4'>Frequently Asked Questions</Heading>
 
-      {/* TODO: use disclosure component */}
       <div>
         {isLoading && (
           <>

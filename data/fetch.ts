@@ -13,12 +13,11 @@ const fetchFAQs = async () => {
 };
 
 const fetchArticles = async () => {
-  const data = await client.getEntries(({ content_type: 'article', order: 'sys.createdAt' }));
+  const data = await client.getEntries(({ content_type: 'article', order: '-sys.createdAt' }));
 
   return data.items.map((entry) => entry.fields);
 };
 
-// TODO: retrieve in reverse order (newest at the top)
 const fetchMedia = async () => {
   const data = await client.getEntries(({ content_type: 'gallery' }));
 

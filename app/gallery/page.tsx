@@ -37,12 +37,11 @@ const GalleryPage: NextPage = () => {
         {!isLoading && media && (
           <>
             {media?.map((content, index) => (
-              <div key={index}>
-                <MediaTile
-                  id={content.sys.id}
-                  data={content.fields as MediaEvent}
-                />
-              </div>
+              <MediaTile
+                key={index}
+                id={content.sys.id}
+                data={content.fields as MediaEvent}
+              />
             ))}
           </>
         )}

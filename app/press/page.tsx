@@ -37,9 +37,10 @@ const PressPage: NextPage = () => {
       {!isLoading && articles && (
         <>
           {articles?.map((article, index) => (
-            <div key={index}>
-              <Article article={article as RyanArticle} />
-            </div>
+            <Article
+              key={index}
+              article={article as RyanArticle}
+            />
           ))}
         </>
       )}

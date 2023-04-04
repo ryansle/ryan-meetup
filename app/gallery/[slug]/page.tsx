@@ -131,14 +131,14 @@ const GalleryPage = ({ params }: GalleryPageProps) => {
             ))
           )}
 
-          {/* TODO: remove extra fragments and containers on all pages */}
           {!isLoading && data && (
             <>
               {/* @ts-ignore */}
               {data.photos.map((content: RyanPhoto, index: number) => (
-                <div key={index}>
-                  <Photo image={content as RyanPhoto} />
-                </div>
+                <Photo
+                  key={index}
+                  image={content as RyanPhoto}
+                />
               ))}
             </>
           )}

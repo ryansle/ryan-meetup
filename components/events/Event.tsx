@@ -40,7 +40,7 @@ const Event = (props: EventProps) => {
         </div>
 
         {/* Event Description */}
-        <div className='px-5 pt-3 pb-6 space-y-1'>
+        <div className='px-5 pt-3 pb-6 space-y-2'>
           <div className='flex items-center justify-between mb-3'>
             <div>
               <Text size='xs'>{convertDateToDateTimeString(date)}</Text>
@@ -52,7 +52,7 @@ const Event = (props: EventProps) => {
           </div>
           <Text size='xs'>{description}</Text>
 
-          <div className='grid grid-cols-2 text-gray-400 mt-2'>
+          <div className='grid grid-cols-2 text-gray-400'>
             <div className='col-span-1 flex items-center space-x-2'>
               <City />
               <Text size='xs'>{city}</Text>

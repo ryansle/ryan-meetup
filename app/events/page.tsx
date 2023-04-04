@@ -29,7 +29,7 @@ const EventsPage: NextPage = () => {
         Past Events
       </Heading>
 
-      <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-3'>
+      <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 3xl:grid-cols-3'>
         {isLoading && (
           Array(6).fill('').map((_, index) => (
             <div
@@ -42,9 +42,10 @@ const EventsPage: NextPage = () => {
         {!isLoading && events && (
           <>
             {events?.map((event, index) => (
-              <div key={index}>
-                <Event event={event as RyanEvent} />
-              </div>
+              <Event
+                key={index}
+                event={event as RyanEvent}
+              />
             ))}
           </>
         )}
