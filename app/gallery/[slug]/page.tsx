@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from 'react';
 
 // Components
@@ -69,7 +70,7 @@ const GalleryPage = ({ params }: GalleryPageProps) => {
             <div className='animate-pulse bg-gray-700 rounded-3xl w-[344px] h-10 mb-10' />
           )}
 
-          {!isLoading && (
+          {!isLoading && !isError && (
             <div className='flex flex-col mb-4'>
               <Heading>
                 {/* @ts-ignore */}
@@ -91,7 +92,7 @@ const GalleryPage = ({ params }: GalleryPageProps) => {
             </div>
           )}
 
-          {!isLoading && (
+          {!isLoading && !isError && (
             <>
               <ZoomButton
                 rightIcon={<ZoomOut />}
