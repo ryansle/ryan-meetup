@@ -62,11 +62,11 @@ const SubscribeForm = () => {
       >
         Subscribe for the latest Ryan Meetup news
       </label>
-      <div className='relative'>
+      <div className='relative mb-4 md:mb-0'>
         <input
           type='email'
           id='subsribe'
-          className='border bg-black border-gray-700 text-white text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 w-96 p-2.5 ring-inset placeholder-gray-700'
+          className='border bg-black border-gray-700 text-white text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 w-full md:w-96 p-2.5 ring-inset placeholder-gray-700'
           placeholder='ryan@ryanmeetup.com'
           required
           value={email}
