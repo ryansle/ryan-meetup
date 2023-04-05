@@ -1,3 +1,4 @@
+// #region Contentful Types
 type ContentfulSys = {
   id: string;
   type: string;
@@ -41,7 +42,9 @@ type ContentfulImage = {
     updatedAt: string;
   }
 }
+// #endregion
 
+// #region Ryan Meetup Types
 type RyanEvent = {
   active: boolean;
   coverImage: ContentfulImage;
@@ -100,6 +103,16 @@ type RyanPhoto = {
     updatedAt: Date;
   }
 }
+// #endregion
+
+// #region Mailerlite Types
+type MailerParams = {
+  email: string;
+  groups: string[];
+  status: 'active' | 'unsubscribed' | 'unconfirmed' | 'bounced' | 'junk';
+  subscribed_at: string;
+}
+// #endregion
 
 export type {
   RyanEvent,
@@ -107,4 +120,5 @@ export type {
   Article,
   MediaEvent,
   RyanPhoto,
+  MailerParams,
 };
