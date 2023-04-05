@@ -11,13 +11,15 @@ type ToastProps = {
   setOpen: (bool: boolean) => void;
   title: string;
   children: ReactNode;
+  className?: string;
 }
 
 const Toast = (props: ToastProps) => {
-  const { open, setOpen, title, children } = props;
+  const { open, setOpen, title, children, className } = props;
 
   return (
     <Transition
+      className={className}
       show={open}
       enter='transition ease-out duration-100'
       enterFrom='transform opacity-0 scale-95'
@@ -35,7 +37,7 @@ const Toast = (props: ToastProps) => {
           <span className='sr-only'>Check Icon</span>
         </div>
 
-        <div className='ml-5'>
+        <div className='mx-5'>
           <h6 className='font-semibold text-sm'>{title}</h6>
           <div className='text-sm font-normal text-gray-400'>
             {children}

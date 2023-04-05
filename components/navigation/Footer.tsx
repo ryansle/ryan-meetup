@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 // Components
-import { Heading, Text } from '@/components/global';
+import { Heading, Text, Toast } from '@/components/global';
 import NextLink from 'next/link';
 import { FaInstagram as Instagram, FaMeetup as Meetup } from 'react-icons/fa';
 
@@ -23,7 +23,13 @@ const socials = [
   }
 ];
 
-const SubscribeForm = () => {
+type SubscribeFormProps = {
+  showAlert: () => void;
+}
+
+const SubscribeForm = (props: SubscribeFormProps) => {
+  const { showAlert } = props;
+
   const [email, setEmail] = useState<string>('');
   const [disabled, setDisabled] = useState<boolean>(true);
 
@@ -48,6 +54,7 @@ const SubscribeForm = () => {
     };
 
     postEmail(params as MailerParams);
+    showAlert();
   };
 
   useEffect(() => {
@@ -85,8 +92,29 @@ const SubscribeForm = () => {
 };
 
 const Footer = () => {
+  const [openAlert, setOpenAlert] = useState<boolean>(false);
+
+  const showAlert = () => {
+    setOpenAlert(true);
+
+    setTimeout(() => {
+      setOpenAlert(false);
+    }, 5000);
+  };
+
   return (
     <footer className='border-t border-gray-700 px-4 h-20 mt-24 lg:px-48 2xl:px-96 3xl:px-[400px] 4xl:px-[650px]'>
+      <div className='flex w-full items-center justify-center'>
+        <Toast
+          className='mt-10'
+          open={openAlert}
+          setOpen={setOpenAlert}
+          title='Successfully subscribed!'
+        >
+          Thanks for subscribing! Expect to hear about BIG and IMPORTANT Ryan topics soon.
+        </Toast>
+      </div>
+
       <div className='w-full py-6 lg:py-8'>
         <div className='md:flex md:justify-between'>
           <div className='mb-6 md:mb-0'>
@@ -95,7 +123,7 @@ const Footer = () => {
             </NextLink>
 
             <Text className='text-gray-600 mt-[2px]'>No Bryans Allowed!</Text>
-            <SubscribeForm />
+            <SubscribeForm showAlert={showAlert} />
           </div>
 
           {/* Resources & Follow Us */}
