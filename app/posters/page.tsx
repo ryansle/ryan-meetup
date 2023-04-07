@@ -12,9 +12,6 @@ import type { NextPage } from 'next';
 const posters = [
   { title: 'OG Ryan Meetup Poster', src: '/posters/ogposter.png' },
   { title: 'Variant Poster', src: '/posters/isyournameryan.jpg' },
-  { title: 'Ryan Seacrest Meetup Poster', src: '/posters/ryanSEACREST.png' },
-  { title: 'Ryan Reynolds Meetup Poster', src: '/posters/ryanreynolds.png' },
-  { title: 'Ryan Gosling Meetup Poster', src: '/posters/ryangosling.jpeg' },
 ];
 
 // TODO: attach to an API so we can upload/delete posters at will
@@ -35,7 +32,7 @@ const PosterPage: NextPage = () => {
         Download Poster Bundle
       </Button>
 
-      <div className='grid md:grid-cols-3 gap-x-6 gap-y-6'>
+      <div className='grid md:grid-cols-2 gap-x-6 gap-y-6'>
         {posters.map((poster, index) => (
           <Poster
             key={index}
