@@ -15,13 +15,13 @@ import type { RyanEvent } from '@/lib/types';
 import { useQuery } from 'react-query';
 import { fetchEvents } from '@/data/fetch';
 
-// TODO: event organization
 const EventsPage: NextPage = () => {
   const { data: events, isLoading } = useQuery('events', fetchEvents);
 
   const [activeEvents, setActiveEvents] = useState<RyanEvent[]>();
   const [inactiveEvents, setInactiveEvents] = useState<RyanEvent[]>();
 
+  // TODO: fix ts-ignore
   useEffect(() => {
     // @ts-ignore
     const active = events?.filter((event) => event.active);
@@ -44,52 +44,59 @@ const EventsPage: NextPage = () => {
         If your name is Ryan, check out our Ryan Meetups below. No Bryans allowed.
       </Text>
 
-      {activeEvents?.length !== 0 && (
-        <div className='mb-10'>
-          <Heading size='md' className='mb-4'>
-            Current Events
-          </Heading>
-
+      {isLoading && (
+        <div>
+          <div className='animate-pulse bg-gray-700 rounded-3xl w-96 h-10 mb-4' />
           <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 3xl:grid-cols-3'>
-            {!isLoading && activeEvents && (
-              <>
-                {activeEvents?.map((event, index) => (
-                  <Event
-                    key={index}
-                    event={event as RyanEvent}
-                  />
-                ))}
-              </>
-            )}
+            {Array(6).fill('').map((_, index) => (
+              <div
+                key={index}
+                className='animate-pulse bg-gray-700 rounded-3xl w-full h-full max-h-[450px] aspect-w-2 aspect-h-1'
+              />
+            ))}
           </div>
         </div>
       )}
 
-      <Heading size='md' className='mb-4'>
-        Past Events
-      </Heading>
+      {!isLoading && (
+        <>
+          {activeEvents?.length !== 0 && (
+            <div className='mb-10'>
+              <Heading size='md' className='mb-4'>
+                Upcoming Events
+              </Heading>
 
-      <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 3xl:grid-cols-3'>
-        {isLoading && (
-          Array(6).fill('').map((_, index) => (
-            <div
-              key={index}
-              className='animate-pulse bg-gray-700 rounded-3xl w-full h-full max-h-[450px] aspect-w-2 aspect-h-1'
-            />
-          ))
-        )}
+              <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 3xl:grid-cols-3'>
+                {activeEvents && (
+                  <>
+                    {activeEvents?.map((event, index) => (
+                      <Event
+                        key={index}
+                        event={event as RyanEvent}
+                      />
+                    ))}
+                  </>
+                )}
+              </div>
+            </div>
+          )}
 
-        {!isLoading && inactiveEvents && (
-          <>
-            {inactiveEvents?.map((event, index) => (
-              <Event
-                key={index}
-                event={event as RyanEvent}
-              />
-            ))}
-          </>
-        )}
-      </div>
+          <div>
+            <Heading size='md' className='mb-4'>
+              Past Events
+            </Heading>
+
+            <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 3xl:grid-cols-3'>
+              {inactiveEvents?.map((event, index) => (
+                <Event
+                  key={index}
+                  event={event as RyanEvent}
+                />
+              ))}
+            </div>
+          </div>
+        </>
+      )}
     </Layout>
   );
 };
