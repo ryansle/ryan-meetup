@@ -4,8 +4,6 @@ import NextImage from 'next/image';
 import QRCode from 'react-qr-code';
 
 const RyanPoster = () => {
-  const underlineStyle = 'underline underline-offset-4 decoration-blue-500';
-
   return (
     <div className='flex flex-col justify-center items-center text-center capitalize'>
       {/* TODO: image fade up */}
@@ -22,21 +20,21 @@ const RyanPoster = () => {
         {/* regular size header */}
         <div className='hidden sm:block'>
           <Heading size='2xl'>
-            IS YOUR NAME <span className={underlineStyle}>RYAN</span>?
+            IS YOUR NAME RYAN?
           </Heading>
         </div>
 
         {/* mobile header */}
         <div className='sm:hidden'>
           <Heading size='xl'>
-            IS YOUR NAME <span className={`${underlineStyle} text-8xl`}>RYAN</span>
+            IS YOUR NAME <span className='text-8xl'>RYAN</span>
             <span className='text-8xl'>?</span>
           </Heading>
         </div>
       </div>
 
       <Heading className='mb-4' size='lg'>
-        WANNA MEET OTHER <span className={underlineStyle}>RYANS</span>?
+        WANNA MEET OTHER RYANS?
       </Heading>
 
       <Heading className='mb-10' size='lg'>

@@ -18,6 +18,7 @@ const posters = [
 ];
 
 // TODO: attach to an API so we can upload/delete posters at will
+// TODO: update poster formats
 const PosterPage: NextPage = () => {
   return (
     <Layout className='space-y-6'>
