@@ -36,6 +36,7 @@ const Event = (props: EventProps) => {
             src={`https://${coverImage?.fields.file.url.replace('//', '')}`}
             fill={true}
             alt={coverImage?.fields.title}
+            style={{ objectFit: 'cover' }}
           />
         </div>
 

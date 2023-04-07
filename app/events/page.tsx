@@ -1,5 +1,7 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+
 // Components
 import { Layout } from '@/components/navigation';
 import { Heading, Text } from '@/components/global';
@@ -17,6 +19,19 @@ import { fetchEvents } from '@/data/fetch';
 const EventsPage: NextPage = () => {
   const { data: events, isLoading } = useQuery('events', fetchEvents);
 
+  const [activeEvents, setActiveEvents] = useState<RyanEvent[]>();
+  const [inactiveEvents, setInactiveEvents] = useState<RyanEvent[]>();
+
+  useEffect(() => {
+    // @ts-ignore
+    const active = events?.filter((event) => event.active);
+    // @ts-ignore
+    const inactive = events?.filter((event) => !event.active);
+
+    setActiveEvents(active as RyanEvent[]);
+    setInactiveEvents(inactive as RyanEvent[]);
+  }, [events]);
+
   return (
     <Layout>
       <Heading className='mb-4'>Ryan Events</Heading>
@@ -28,6 +43,27 @@ const EventsPage: NextPage = () => {
       <Text size='lg' className='mb-10'>
         If your name is Ryan, check out our Ryan Meetups below. No Bryans allowed.
       </Text>
+
+      {activeEvents?.length !== 0 && (
+        <div className='mb-10'>
+          <Heading size='md' className='mb-4'>
+            Current Events
+          </Heading>
+
+          <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 3xl:grid-cols-3'>
+            {!isLoading && activeEvents && (
+              <>
+                {activeEvents?.map((event, index) => (
+                  <Event
+                    key={index}
+                    event={event as RyanEvent}
+                  />
+                ))}
+              </>
+            )}
+          </div>
+        </div>
+      )}
 
       <Heading size='md' className='mb-4'>
         Past Events
@@ -43,9 +79,9 @@ const EventsPage: NextPage = () => {
           ))
         )}
 
-        {!isLoading && events && (
+        {!isLoading && inactiveEvents && (
           <>
-            {events?.map((event, index) => (
+            {inactiveEvents?.map((event, index) => (
               <Event
                 key={index}
                 event={event as RyanEvent}
