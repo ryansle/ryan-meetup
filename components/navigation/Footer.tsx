@@ -63,12 +63,11 @@ const SubscribeForm = (props: SubscribeFormProps) => {
 
   return (
     <div className='mt-[6px]'>
-      <label
-        htmlFor='search'
-        className='text-gray-600 mb-10 tracking-wide font-medium'
+      <div
+        className='text-gray-600 mb-1 tracking-wide font-medium'
       >
         Subscribe for the latest Ryan Meetup news
-      </label>
+      </div>
       <div className='relative mb-4 md:mb-0'>
         <input
           type='email'
@@ -175,7 +174,7 @@ const Footer = () => {
         <hr className='my-6 border-gray-200 sm:mx-auto border-gray-700 lg:my-8' />
         <div className='sm:flex sm:items-center sm:justify-between'>
           <span className='text-sm text-gray-600 sm:text-center'>
-            Website designed and developed by <NextLink href='https://ryanle.dev/' className='font-medium hover:underline'>Ryan Le</NextLink>. All Rights Reservedate.
+            Website designed and developed by <NextLink href='https://ryanle.dev/' className='font-bold underline hover:text-white'>Ryan</NextLink>. All Rights Reserved.
           </span>
 
           {/* Socials */}
