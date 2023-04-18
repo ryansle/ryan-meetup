@@ -12,10 +12,11 @@ import type { NextPage } from 'next';
 const posters = [
   { title: 'OG Ryan Meetup Poster', src: '/posters/ogposter.png' },
   { title: 'Variant Poster', src: '/posters/isyournameryan.jpg' },
+  { title: 'Calling all Ryans Poster', src: '/posters/CallingAllRyans.png' },
+  { title: 'Uncle Sam Poster', src: '/posters/unclesam.png' },
+  { title: 'Bryan Poster', src: '/posters/bryan.png' }
 ];
 
-// TODO: attach to an API so we can upload/delete posters at will
-// TODO: update poster formats
 const PosterPage: NextPage = () => {
   return (
     <Layout className='space-y-6'>
