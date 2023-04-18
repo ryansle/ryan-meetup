@@ -14,7 +14,8 @@ const posters = [
   { title: 'Variant Poster', src: '/posters/isyournameryan.jpg' },
   { title: 'Calling all Ryans Poster', src: '/posters/CallingAllRyans.png' },
   { title: 'Uncle Sam Poster', src: '/posters/unclesam.png' },
-  { title: 'Bryan Poster', src: '/posters/bryan.png' }
+  { title: 'Know a Ryan Poster', src: '/posters/knowaryan.png' },
+  { title: 'Bryan Poster', src: '/posters/bryan2.png' },
 ];
 
 const PosterPage: NextPage = () => {
@@ -33,7 +34,7 @@ const PosterPage: NextPage = () => {
         Download Poster Bundle
       </Button>
 
-      <div className='grid md:grid-cols-2 gap-x-6 gap-y-6'>
+      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6'>
         {posters.map((poster, index) => (
           <Poster
             key={index}
