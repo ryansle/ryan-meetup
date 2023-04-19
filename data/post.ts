@@ -1,7 +1,6 @@
 import mailerlite from '@/data/mailerlite';
 import type { MailerParams } from '@/lib/types';
 
-// TODO: params typecasting
 const postEmail = async (params: MailerParams) => {
   mailerlite.subscribers.createOrUpdate(params)
     .then((response) => {
