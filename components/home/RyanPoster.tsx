@@ -3,6 +3,7 @@ import { Heading } from '@/components/global';
 import NextImage from 'next/image';
 import QRCode from 'react-qr-code';
 
+// TODO: Heather feedback
 const RyanPoster = () => {
   return (
     <div className='flex flex-col justify-center items-center text-center capitalize'>

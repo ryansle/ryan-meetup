@@ -73,8 +73,7 @@ const GalleryPage = ({ params }: GalleryPageProps) => {
           {!isLoading && !isError && (
             <div className='flex flex-col mb-4'>
               <Heading>
-                {/* @ts-ignore */}
-                {data?.title}
+                {data?.title as ReactNode}
               </Heading>
               <Heading size='sm'>
                 {/* @ts-ignore */}

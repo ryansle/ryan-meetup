@@ -19,17 +19,12 @@ const EventsPage: NextPage = () => {
   const [activeEvents, setActiveEvents] = useState<RyanEvent[]>();
   const [inactiveEvents, setInactiveEvents] = useState<RyanEvent[]>();
 
-  // TODO: fix ts-ignore
   useEffect(() => {
-    // @ts-ignore
     const active = events?.filter((event) => event.active);
-    // @ts-ignore
     const inactive = events?.filter((event) => !event.active);
 
-    // @ts-ignore
-    setActiveEvents(active as RyanEvent[]);
-    // @ts-ignore
-    setInactiveEvents(inactive as RyanEvent[]);
+    setActiveEvents(active as unknown as RyanEvent[]);
+    setInactiveEvents(inactive as unknown as RyanEvent[]);
   }, [events]);
 
   return (

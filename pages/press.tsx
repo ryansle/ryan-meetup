@@ -37,8 +37,7 @@ const PressPage: NextPage = () => {
           {articles?.map((article, index) => (
             <Article
               key={index}
-              // @ts-ignore
-              article={article as RyanArticle}
+              article={article as unknown as RyanArticle}
             />
           ))}
         </>
