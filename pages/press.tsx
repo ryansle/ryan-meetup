@@ -11,8 +11,13 @@ import type { Article as RyanArticle } from '@/lib/types';
 import { useQuery } from 'react-query';
 import { fetchArticles } from '@/data/fetch';
 
-const PressPage: NextPage = () => {
-  const { data: articles, isLoading } = useQuery('articles', fetchArticles);
+type PressPageProps = {
+  articles: RyanArticle[];
+};
+
+const PressPage: NextPage<PressPageProps> = (props: PressPageProps) => {
+  // @ts-ignore
+  const { data: articles, isLoading } = useQuery('articles', fetchArticles, { initialData: props.articles });
 
   return (
     <Layout className='space-y-6'>
@@ -45,5 +50,15 @@ const PressPage: NextPage = () => {
     </Layout>
   );
 };
+
+export async function getServerSideProps() {
+  const articles = await fetchArticles();
+
+  return {
+    props: {
+      articles,
+    }
+  };
+}
 
 export default PressPage;

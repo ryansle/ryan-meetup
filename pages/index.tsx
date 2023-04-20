@@ -13,8 +13,12 @@ import { useQuery } from 'react-query';
 import { fetchFAQs } from '@/data/fetch';
 import { useRouter } from 'next/navigation';
 
-const HomePage: NextPage = () => {
-  const { data: faqs, isLoading } = useQuery('faqs', fetchFAQs);
+type HomePageProps = {
+  faqs: FrequentlyAskedQuestion[];
+};
+
+const HomePage: NextPage<HomePageProps> = (props: HomePageProps) => {
+  const { data: faqs, isLoading } = useQuery('faqs', fetchFAQs, { initialData: props.faqs });
 
   const router = useRouter();
 
@@ -36,5 +40,15 @@ const HomePage: NextPage = () => {
     </Layout>
   );
 };
+
+export async function getServerSideProps() {
+  const faqs = await fetchFAQs();
+
+  return {
+    props: {
+      faqs,
+    }
+  };
+}
 
 export default HomePage;

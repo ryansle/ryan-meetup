@@ -13,19 +13,24 @@ import type { RyanEvent } from '@/lib/types';
 import { useQuery } from 'react-query';
 import { fetchEvents } from '@/data/fetch';
 
-const EventsPage: NextPage = () => {
-  const { data: events, isLoading } = useQuery('events', fetchEvents);
+type EventsPageProps = {
+  events: RyanEvent[];
+};
+
+const EventsPage: NextPage<EventsPageProps> = (props: EventsPageProps) => {
+  // @ts-ignore
+  const { data, isLoading } = useQuery('events', fetchEvents, { initialData: props.events });
 
   const [activeEvents, setActiveEvents] = useState<RyanEvent[]>();
   const [inactiveEvents, setInactiveEvents] = useState<RyanEvent[]>();
 
   useEffect(() => {
-    const active = events?.filter((event) => event.active);
-    const inactive = events?.filter((event) => !event.active);
+    const active = data?.filter((event) => event.active);
+    const inactive = data?.filter((event) => !event.active);
 
     setActiveEvents(active as unknown as RyanEvent[]);
     setInactiveEvents(inactive as unknown as RyanEvent[]);
-  }, [events]);
+  }, [data]);
 
   return (
     <Layout>
@@ -95,5 +100,15 @@ const EventsPage: NextPage = () => {
     </Layout>
   );
 };
+
+export async function getServerSideProps() {
+  const events = await fetchEvents();
+
+  return {
+    props: {
+      events,
+    }
+  };
+}
 
 export default EventsPage;

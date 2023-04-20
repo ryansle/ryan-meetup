@@ -11,8 +11,13 @@ import type { MediaEvent } from '@/lib/types';
 import { useQuery } from 'react-query';
 import { fetchMedia } from '@/data/fetch';
 
-const GalleryPage: NextPage = () => {
-  const { data: media, isLoading } = useQuery('photos', fetchMedia);
+type GalleryPageProps = {
+  media: MediaEvent[];
+};
+
+const GalleryPage: NextPage<GalleryPageProps> = (props: GalleryPageProps) => {
+  // @ts-ignore
+  const { data: media, isLoading } = useQuery('photos', fetchMedia, { initialData: props.media });
 
   return (
     <Layout>
@@ -38,8 +43,7 @@ const GalleryPage: NextPage = () => {
               <MediaTile
                 key={index}
                 id={content.sys.id}
-                // @ts-ignore
-                data={content.fields as MediaEvent}
+                data={content.fields as unknown as MediaEvent}
               />
             ))}
           </>
@@ -48,5 +52,15 @@ const GalleryPage: NextPage = () => {
     </Layout>
   );
 };
+
+export async function getServerSideProps() {
+  const media = await fetchMedia();
+
+  return {
+    props: {
+      media,
+    }
+  };
+}
 
 export default GalleryPage;
