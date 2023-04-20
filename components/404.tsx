@@ -1,5 +1,3 @@
-'use client';
-
 // Components
 import { Heading, Text, Button } from '@/components/global';
 

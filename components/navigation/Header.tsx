@@ -1,5 +1,3 @@
-'use client';
-
 // Components
 import { FaInstagram as Instagram, FaMeetup as Meetup } from 'react-icons/fa';
 import { Heading } from '@/components/global';

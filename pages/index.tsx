@@ -1,5 +1,3 @@
-'use client';
-
 // Components
 import { Layout } from '@/components/navigation';
 import { RyanPoster, FAQ } from '@/components/home';
