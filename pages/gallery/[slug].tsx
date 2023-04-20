@@ -9,19 +9,17 @@ import NextLink from 'next/link';
 import { BiZoomIn as ZoomIn, BiZoomOut as ZoomOut } from 'react-icons/bi';
 
 // Types
-import type { RyanPhoto } from '@/lib/types';
+import type { RyanPhoto, MediaEvent } from '@/lib/types';
 import type { ReactNode } from 'react';
 
 // Utilities
 import { useQuery } from 'react-query';
 import { fetchSingleMediaEvent } from '@/data/fetch';
-import { useRouter } from 'next/router';
 
 type GalleryPageProps = {
-  params: {
-    slug: string;
-  }
-}
+  gallery: MediaEvent;
+  slug: string;
+};
 
 type ZoomButtonProps = {
   children: ReactNode;
@@ -46,10 +44,9 @@ const ZoomButton = (props: ZoomButtonProps) => {
   );
 };
 
-// TODO: look into ssr approaches for fetching this data
-// TODO: fix slug image fetching
-const GalleryPage = ({ params }: GalleryPageProps) => {
-  const { data, isLoading, isError } = useQuery('gallery', () => fetchSingleMediaEvent(params.slug));
+const GalleryPage = (props: GalleryPageProps) => {
+  // @ts-ignore
+  const { data, isLoading, isError } = useQuery('gallery', () => fetchSingleMediaEvent(props.slug), { initialData: props.gallery });
 
   const [zoom, setZoom] = useState<number>(3);
 
@@ -114,8 +111,7 @@ const GalleryPage = ({ params }: GalleryPageProps) => {
 
       {!isLoading && (
         <Text className='mb-10'>
-          {/* @ts-ignore */}
-          {data?.description}
+          {data?.description as ReactNode}
         </Text>
       )}
 
@@ -146,5 +142,24 @@ const GalleryPage = ({ params }: GalleryPageProps) => {
     </Layout>
   );
 };
+
+type QueryProps = {
+  query: {
+    slug: string;
+  }
+}
+
+export async function getServerSideProps({ query }: QueryProps) {
+  const { slug } = query;
+
+  const gallery = await fetchSingleMediaEvent(slug);
+
+  return {
+    props: {
+      gallery,
+      slug,
+    }
+  };
+}
 
 export default GalleryPage;
