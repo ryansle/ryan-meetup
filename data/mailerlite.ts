@@ -1,5 +1,3 @@
-'use client';
-
 import MailerLite from '@mailerlite/mailerlite-nodejs';
 
 const mailerlite = new MailerLite({

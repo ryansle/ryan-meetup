@@ -1,6 +1,7 @@
 import client from '@/data/contentful';
 
 const fetchEvents = async () => {
+  // @ts-ignore
   const data = await client.getEntries(({ content_type: 'event', order: 'sys.createdAt' }));
 
   return data.items.map((entry) => entry.fields);
@@ -13,6 +14,7 @@ const fetchFAQs = async () => {
 };
 
 const fetchArticles = async () => {
+  // @ts-ignore
   const data = await client.getEntries(({ content_type: 'article', order: '-sys.createdAt' }));
 
   return data.items.map((entry) => entry.fields);

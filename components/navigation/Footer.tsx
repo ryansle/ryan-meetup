@@ -27,83 +27,83 @@ type SubscribeFormProps = {
   showAlert: () => void;
 }
 
-const SubscribeForm = (props: SubscribeFormProps) => {
-  const { showAlert } = props;
+// const SubscribeForm = (props: SubscribeFormProps) => {
+//   const { showAlert } = props;
 
-  const [email, setEmail] = useState<string>('');
-  const [disabled, setDisabled] = useState<boolean>(true);
+//   const [email, setEmail] = useState<string>('');
+//   const [disabled, setDisabled] = useState<boolean>(true);
 
-  const checkEmail = (email: string) => {
-    const valid = validateEmail(email);
+//   const checkEmail = (email: string) => {
+//     const valid = validateEmail(email);
 
-    if (valid) setDisabled(false);
-    else setDisabled(true);
-  };
+//     if (valid) setDisabled(false);
+//     else setDisabled(true);
+//   };
 
-  const submit = () => {
-    let date = new Date();
-    date = new Date(date.getTime() - 3000000);
-    // @ts-ignore
-    const dateString = date.getFullYear().toString() + '-' + ((date.getMonth() + 1).toString().length == 2 ? (date.getMonth() + 1).toString() : '0' + (date.getMonth() + 1).toString()) + '-' + (date.getDate().toString().length == 2 ? date.getDate().toString() : '0' + date.getDate().toString()) + ' ' + (date.getHours().toString().length == 2 ? date.getHours().toString() : '0' + date.getHours().toString()) + ':' + ((parseInt(date.getMinutes() / 5) * 5).toString().length == 2 ? (parseInt(date.getMinutes() / 5) * 5).toString() : '0' + (parseInt(date.getMinutes() / 5) * 5).toString()) + ':00';
+//   const submit = () => {
+//     let date = new Date();
+//     date = new Date(date.getTime() - 3000000);
+//     // @ts-ignore
+//     const dateString = date.getFullYear().toString() + '-' + ((date.getMonth() + 1).toString().length == 2 ? (date.getMonth() + 1).toString() : '0' + (date.getMonth() + 1).toString()) + '-' + (date.getDate().toString().length == 2 ? date.getDate().toString() : '0' + date.getDate().toString()) + ' ' + (date.getHours().toString().length == 2 ? date.getHours().toString() : '0' + date.getHours().toString()) + ':' + ((parseInt(date.getMinutes() / 5) * 5).toString().length == 2 ? (parseInt(date.getMinutes() / 5) * 5).toString() : '0' + (parseInt(date.getMinutes() / 5) * 5).toString()) + ':00';
 
-    const params = {
-      email,
-      groups: [process.env.NEXT_PUBLIC_MAILER_GROUP_ID],
-      status: 'active',
-      subscribed_at: dateString,
-    };
+//     const params = {
+//       email,
+//       groups: [process.env.NEXT_PUBLIC_MAILER_GROUP_ID],
+//       status: 'active',
+//       subscribed_at: dateString,
+//     };
 
-    postEmail(params as MailerParams);
-    showAlert();
-  };
+//     postEmail(params as MailerParams);
+//     showAlert();
+//   };
 
-  useEffect(() => {
-    checkEmail(email);
-  }, [email]);
+//   useEffect(() => {
+//     checkEmail(email);
+//   }, [email]);
 
-  return (
-    <div className='mt-[6px]'>
-      <div
-        className='text-gray-600 mb-1 tracking-wide font-medium'
-      >
-        Subscribe for the latest Ryan Meetup news
-      </div>
-      <div className='relative mb-4 md:mb-0'>
-        <input
-          type='email'
-          id='subsribe'
-          className='border bg-black border-gray-700 text-white text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 w-full md:w-96 p-2.5 ring-inset placeholder-gray-700'
-          placeholder='ryan@ryanmeetup.com'
-          required
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <button
-          className='text-white absolute right-2.5 bottom-2 font-medium rounded-lg text-sm px-2 py-1 disabled:text-gray-600'
-          disabled={disabled}
-          onClick={submit}
-        >
-          Subscribe
-        </button>
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div className='mt-[6px]'>
+//       <div
+//         className='text-gray-600 mb-1 tracking-wide font-medium'
+//       >
+//         Subscribe for the latest Ryan Meetup news
+//       </div>
+//       <div className='relative mb-4 md:mb-0'>
+//         <input
+//           type='email'
+//           id='subsribe'
+//           className='border bg-black border-gray-700 text-white text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 w-full md:w-96 p-2.5 ring-inset placeholder-gray-700'
+//           placeholder='ryan@ryanmeetup.com'
+//           required
+//           value={email}
+//           onChange={(event) => setEmail(event.target.value)}
+//         />
+//         <button
+//           className='text-white absolute right-2.5 bottom-2 font-medium rounded-lg text-sm px-2 py-1 disabled:text-gray-600'
+//           disabled={disabled}
+//           onClick={submit}
+//         >
+//           Subscribe
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
 
 const Footer = () => {
-  const [openAlert, setOpenAlert] = useState<boolean>(false);
+  // const [openAlert, setOpenAlert] = useState<boolean>(false);
 
-  const showAlert = () => {
-    setOpenAlert(true);
+  // const showAlert = () => {
+  //   setOpenAlert(true);
 
-    setTimeout(() => {
-      setOpenAlert(false);
-    }, 5000);
-  };
+  //   setTimeout(() => {
+  //     setOpenAlert(false);
+  //   }, 5000);
+  // };
 
   return (
     <footer className='border-t border-gray-700 px-4 h-20 mt-24 lg:px-48 2xl:px-96 3xl:px-[400px] 4xl:px-[650px]'>
-      <div className='flex w-full items-center justify-center'>
+      {/* <div className='flex w-full items-center justify-center'>
         <Toast
           className='mt-10'
           open={openAlert}
@@ -112,7 +112,7 @@ const Footer = () => {
         >
           Thanks for subscribing! Expect to hear about BIG and IMPORTANT Ryan topics soon.
         </Toast>
-      </div>
+      </div> */}
 
       <div className='w-full py-6 lg:py-8'>
         <div className='md:flex md:justify-between'>
@@ -122,7 +122,7 @@ const Footer = () => {
             </NextLink>
 
             <Text className='text-gray-600 mt-[2px]'>No Bryans Allowed!</Text>
-            <SubscribeForm showAlert={showAlert} />
+            {/* <SubscribeForm showAlert={showAlert} /> */}
           </div>
 
           {/* Resources & Follow Us */}
