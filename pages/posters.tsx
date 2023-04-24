@@ -11,10 +11,10 @@ import type { NextPage } from 'next';
 const posters = [
   { title: 'OG Ryan Meetup Poster', src: '/posters/ogposter.png' },
   { title: 'Variant Poster', src: '/posters/isyournameryan.jpg' },
-  // { title: 'Calling all Ryans Poster', src: '/posters/CallingAllRyans.png' },
-  // { title: 'Uncle Sam Poster', src: '/posters/unclesam.png' },
+  { title: 'Calling all Ryans Poster', src: '/posters/CallingAllRyans.png' },
+  { title: 'Uncle Sam Poster', src: '/posters/unclesam.png' },
   { title: 'Know a Ryan Poster', src: '/posters/knowaryan.png' },
-  // { title: 'Bryan Poster', src: '/posters/bryan2.png' },
+  { title: 'Bryan Poster', src: '/posters/bryan2.png' },
 ];
 
 const PosterPage: NextPage = () => {
