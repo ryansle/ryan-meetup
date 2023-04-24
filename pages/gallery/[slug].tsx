@@ -7,6 +7,7 @@ import { Photo } from '@/components/media/Photo';
 import PageNotFound from '@/components/404';
 import NextLink from 'next/link';
 import { BiZoomIn as ZoomIn, BiZoomOut as ZoomOut } from 'react-icons/bi';
+import Head from 'next/head';
 
 // Types
 import type { RyanPhoto, MediaEvent } from '@/lib/types';
@@ -52,6 +53,19 @@ const GalleryPage = (props: GalleryPageProps) => {
 
   return (
     <Layout>
+      <Head>
+        {/* @ts-ignore */}
+        <title>{`${data?.title.toString()} - Gallery` ?? 'Ryan Meetup - Gallery'}</title>
+        <meta
+          name='description'
+          content='Download our official Ryan Meetup posters here and help bring the Ryan Meetup to your city!'
+        />
+        <meta
+          name='keywords'
+          content={`ryan meetup, ${data?.title}, ryan photos`}
+        />
+      </Head>
+
       {/* Render 404 contents if user inputs a junk slug */}
       {isError && (
         <PageNotFound>

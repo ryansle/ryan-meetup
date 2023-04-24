@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Layout } from '@/components/navigation';
 import { Heading, Text } from '@/components/global';
 import { Event } from '@/components/events/';
+import Head from 'next/head';
 
 // Types
 import type { NextPage } from 'next';
@@ -34,6 +35,18 @@ const EventsPage: NextPage<EventsPageProps> = (props: EventsPageProps) => {
 
   return (
     <Layout>
+      <Head>
+        <title>Ryan Meetup - Events</title>
+        <meta
+          name='description'
+          content='Check out upcoming Ryan Meetups!'
+        />
+        <meta
+          name='keywords'
+          content='when is the next ryan meetup?, ryan meetup, ryan meetup nyc, ryan meetup new york, ryan meetup new york city, ryan meetup near me, ryan meetup los angeles, ryan rendezvous, ryan roundup, ryan kickoff, ryan rodeo, ryan roundtable, ryan roadtrip, ryan rally, ryan rave, ryan run, ryan new york city, ryan meet up, ryan meetup new york city, ryan reunion, ryan syndicate, ryan retreat, ryan relay'
+        />
+      </Head>
+
       <Heading className='mb-4'>Ryan Events</Heading>
 
       {/* <Text size='lg' className='mb-10'>

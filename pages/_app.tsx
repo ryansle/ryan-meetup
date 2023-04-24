@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
           content='ryan, ryan meetup, meetup, ryan society, no bryans allowed, is your name ryan, join the ryan meetup, wanna meet other ryans, ryan meetup posters, first name must be ryan, ryanmeetup, ryan meet up'
         />
         <meta name='author' content='Ryan Meetup' />
-        <link rel='shortcut icon' href="/favicon.ico" />
+        <link rel='shortcut icon' href='/favicon.ico' />
       </Head>
       <Component {...pageProps} />
     </QueryClientProvider>

@@ -144,7 +144,7 @@ const Footer = () => {
                 <div className='col-span-1'>
                   <ul className='text-gray-600 font-medium'>
                     <li className='mb-2'>
-                      <NextLink href='https://nextjs.org/' className='hover:underline'>Next.js 13</NextLink>
+                      <NextLink href='https://nextjs.org/' className='hover:underline'>Next.js</NextLink>
                     </li>
                     <li className='mb-2'>
                       <NextLink href='https://react.dev/' className='hover:underline'>React.js</NextLink>

@@ -2,6 +2,7 @@
 import { Layout } from '@/components/navigation';
 import { Heading, Text } from '@/components/global';
 import { MediaTile } from '@/components/media';
+import Head from 'next/head';
 
 // Types
 import type { NextPage } from 'next';
@@ -21,6 +22,18 @@ const GalleryPage: NextPage<GalleryPageProps> = (props: GalleryPageProps) => {
 
   return (
     <Layout>
+      <Head>
+        <title>Ryan Meetup - Gallery</title>
+        <meta
+          name='description'
+          content='Download our official Ryan Meetup posters here and help bring the Ryan Meetup to your city!'
+        />
+        <meta
+          name='keywords'
+          content='ryan meetup, ryan meetup gallery, ryan meetup photos, ryan meetup media, pictures of ryan meetup, ryan photos, ryans'
+        />
+      </Head>
+
       <Heading className='mb-4'>Ryan Media</Heading>
 
       <Text size='lg' className='mb-10'>

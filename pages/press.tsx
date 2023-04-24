@@ -2,6 +2,7 @@
 import { Layout } from '@/components/navigation';
 import { Heading, Text } from '@/components/global';
 import { Article, SkeletonArticle } from '@/components/press';
+import Head from 'next/head';
 
 // Types
 import type { NextPage } from 'next';
@@ -21,6 +22,18 @@ const PressPage: NextPage<PressPageProps> = (props: PressPageProps) => {
 
   return (
     <Layout className='space-y-6'>
+      <Head>
+        <title>Ryan Meetup - In the News</title>
+        <meta
+          name='description'
+          content='Read all about the Ryan Meetup in the media'
+        />
+        <meta
+          name='keywords'
+          content='ryans only, ryans only at the ryan meetup, and definitely no bryans, nyc irish bar plays host to viral ryan meetup, ryan meetup in the news, ryan meetup news, ryan meetup articles, ryan meetup press, first rule of ryan club, no bryans, no bryans allowed, ryan maguire, hosts bash for people named ryan, to get into this party, need the right name, its ryan, alyson krueger, brian abrams, will pavia, kerry oshea, ryan wilde, ryan andrew wilde, the takeaway, the times, irish central, the times, downtown new york allianve, new york times'
+        />
+      </Head>
+
       <Heading>Ryan in the Media</Heading>
 
       <Text size='lg'>
