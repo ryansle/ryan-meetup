@@ -15,6 +15,7 @@ specifiers:
   eslint: 8.38.0
   eslint-config-next: 13.3.0
   next: 13.3.0
+  next-seo: ^6.0.0
   postcss: 8.4.23
   react: 18.2.0
   react-dom: 18.2.0
@@ -40,6 +41,7 @@ dependencies:
   eslint: 8.38.0
   eslint-config-next: 13.3.0_voubu7prgxjfsfbgx5d4sqnwiy
   next: 13.3.0_biqbaboplfbrettd7655fr4n2y
+  next-seo: 6.0.0_yucv4tfv7v7nrkw2uguegj6e7e
   postcss: 8.4.23
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -1957,6 +1959,18 @@ packages:
 
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
+    dev: false
+
+  /next-seo/6.0.0_yucv4tfv7v7nrkw2uguegj6e7e:
+    resolution: {integrity: sha512-jKKt1p1z4otMA28AyeoAONixVjdYmgFCWwpEFtu+DwRHQDllVX3RjtyXbuCQiUZEfQ9rFPBpAI90vDeLZlMBdg==}
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 13.3.0_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /next/13.3.0_biqbaboplfbrettd7655fr4n2y:
