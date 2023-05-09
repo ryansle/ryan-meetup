@@ -27,7 +27,8 @@ const EventsPage: NextPage<EventsPageProps> = (props: EventsPageProps) => {
 
   useEffect(() => {
     const active = data?.filter((event) => event.active);
-    const inactive = data?.filter((event) => !event.active);
+    // @ts-ignore
+    const inactive = data?.filter((event) => !event.active).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     setActiveEvents(active as unknown as RyanEvent[]);
     setInactiveEvents(inactive as unknown as RyanEvent[]);
@@ -79,7 +80,7 @@ const EventsPage: NextPage<EventsPageProps> = (props: EventsPageProps) => {
                 Upcoming Events
               </Heading>
 
-              <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 3xl:grid-cols-3'>
+              <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 4xl:grid-cols-3'>
                 {activeEvents && (
                   <>
                     {activeEvents?.map((event, index) => (
@@ -99,7 +100,7 @@ const EventsPage: NextPage<EventsPageProps> = (props: EventsPageProps) => {
               Past Events
             </Heading>
 
-            <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 3xl:grid-cols-3'>
+            <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 4xl:grid-cols-3'>
               {inactiveEvents?.map((event, index) => (
                 <Event
                   key={index}
