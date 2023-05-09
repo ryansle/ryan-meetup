@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 // Components
 import { Layout } from '@/components/navigation';
-import { Heading, Text } from '@/components/global';
+import { Button, Heading, Text } from '@/components/global';
 import { Photo } from '@/components/media/Photo';
 import PageNotFound from '@/components/404';
 import NextLink from 'next/link';
@@ -16,6 +16,7 @@ import type { ReactNode } from 'react';
 // Utilities
 import { useQuery } from 'react-query';
 import { fetchSingleMediaEvent } from '@/data/fetch';
+import { useRouter } from 'next/navigation';
 
 type GalleryPageProps = {
   gallery: MediaEvent;
@@ -50,6 +51,7 @@ const GalleryPage = (props: GalleryPageProps) => {
   const { data, isLoading, isError } = useQuery('gallery', () => fetchSingleMediaEvent(props.slug), { initialData: props.gallery });
 
   const [zoom, setZoom] = useState<number>(3);
+  const router = useRouter();
 
   return (
     <Layout>
@@ -124,9 +126,18 @@ const GalleryPage = (props: GalleryPageProps) => {
       </div>
 
       {!isLoading && (
-        <Text className='mb-10'>
-          {data?.description as ReactNode}
-        </Text>
+        <div>
+          <Text className='mb-4'>
+            {data?.description as ReactNode}
+          </Text>
+          <Button
+            className='w-full mb-10'
+            // @ts-ignore
+            onClick={() => router.push(data?.googleDriveLink)}
+          >
+            Access Full Size Photos Here
+          </Button>
+        </div>
       )}
 
       <div className={`grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-${zoom} xl:grid-cols-${zoom}`}>

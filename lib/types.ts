@@ -78,6 +78,7 @@ type MediaEvent = {
   date: Date;
   bgImage: ContentfulImage;
   photos: ContentfulImage[];
+  googleDriveLink: string;
 }
 
 type RyanPhoto = {
