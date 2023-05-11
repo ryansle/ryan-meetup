@@ -2,6 +2,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
 import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
+import { Analytics } from '@vercel/analytics/react';
 
 // Types
 import type { AppProps } from 'next/app';
@@ -31,6 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <DefaultSeo {...seo} />
       <Component {...pageProps} />
+      <Analytics />
     </QueryClientProvider>
   );
 };
