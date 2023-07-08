@@ -15,7 +15,7 @@ const Button = (props: ButtonProps) => {
 
   return (
     <button
-      className={`${className} rounded-lg p-3 bg-black uppercase relative overflow-hidden rounded-lg bg-black px-20 py-6 ring-red-500/50 ring-offset-black will-change-transform focus:outline-none focus:ring-1 focus:ring-offset-2 disabled:border disabled:cursor-not-allowed`}
+      className={`${className} rounded-lg p-3 bg-black uppercase overflow-hidden rounded-lg bg-black py-6 ring-red-500/50 ring-offset-black will-change-transform focus:outline-none focus:ring-1 focus:ring-offset-2 disabled:border disabled:cursor-not-allowed`}
       onClick={onClick}
       disabled={disabled}
     >
