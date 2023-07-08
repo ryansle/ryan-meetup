@@ -40,8 +40,8 @@ const Landing = () => {
           </div>
         </div>
       </div>
-      <div className='col-span-12 order-first mb-10 xl:col-span-5 xl:order-last xl:mb-0'>
-        <div className='relative w-full h-96'>
+      <div className='col-span-12 order-first mb-4 xl:col-span-5 xl:order-last xl:mb-0'>
+        <div className='relative w-full h-56 xl:h-96'>
           <NextImage
             className='rounded-xl shadow'
             src='/nametags.jpeg'
