@@ -1,13 +1,14 @@
 // Components
 import NextImage from 'next/image';
 import NextLink from 'next/link';
-import { Heading, Button } from '@/components/global';
+import { Heading } from '@/components/global';
 import { FaMeetup as Meetup } from 'react-icons/fa';
+import { Transition } from '@headlessui/react';
 
 const Landing = () => {
   return (
     <div className='grid grid-cols-12 h-full flex items-center'>
-      <div className='col-span-12 order-last  xl:order-first xl:col-span-7'>
+      <div className='col-span-12 order-last xl:order-first xl:col-span-7'>
         <div className='space-y-4'>
           <Heading size='xl'>
             If your name is Ryan,
@@ -30,26 +31,35 @@ const Landing = () => {
             </p>
           </div>
 
-          <div className='mt-10 transition ease-in-out duration-300 hover:scale-102'>
+          <div className='mt-4 transition ease-in-out duration-300 hover:scale-102'>
             <NextLink
-              className='p-4 border rounded-xl font-cooper italic text-white '
+              className='px-2 py-3 border rounded-xl font-cooper italic text-white flex items-center justify-center'
               href='https://www.meetup.com/ryanmeetup/'
             >
-              Join the Ryan Meetup
+              <Meetup className='mr-4' />
+              Join the Ryan Meetup!
             </NextLink>
           </div>
         </div>
       </div>
       <div className='col-span-12 order-first mb-4 xl:col-span-5 xl:order-last xl:mb-0'>
-        <div className='relative w-full h-56 xl:h-96'>
-          <NextImage
-            className='rounded-xl shadow'
-            src='/nametags.jpeg'
-            fill
-            alt='Ryan Roundup, March 2023'
-            style={{ objectFit: 'cover' }}
-          />
-        </div>
+        <Transition
+          appear={true}
+          show={true}
+          enter='transition-opacity ease-linear duration-1000'
+          enterFrom='opacity-0'
+          enterTo='opacity-100'
+        >
+          <div className='relative w-full h-56 xl:h-96'>
+            <NextImage
+              className='rounded-xl shadow'
+              src='/nametags.jpeg'
+              fill
+              alt='Ryan Roundup, March 2023'
+              style={{ objectFit: 'cover' }}
+            />
+          </div>
+        </Transition>
       </div>
     </div>
   );
