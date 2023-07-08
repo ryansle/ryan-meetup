@@ -1,8 +1,6 @@
 // Components
 import { Layout } from '@/components/navigation';
-import { RyanPoster, FAQ } from '@/components/home';
-import { Button } from '@/components/global';
-import { FaMeetup as Meetup } from 'react-icons/fa';
+import { FAQ, Landing } from '@/components/home';
 
 // Types
 import type { NextPage } from 'next';
@@ -23,15 +21,8 @@ const HomePage: NextPage<HomePageProps> = (props: HomePageProps) => {
   const router = useRouter();
 
   return (
-    <Layout>
-      <RyanPoster />
-      <Button
-        className='mt-4'
-        onClick={() => router.push('https://www.meetup.com/ryanmeetup/')}
-        leftIcon={<Meetup />}
-      >
-        Join us on Meetup
-      </Button>
+    <Layout homePage>
+      <Landing />
       <hr className='my-16' />
       <FAQ
         data={faqs as FrequentlyAskedQuestion[]}
