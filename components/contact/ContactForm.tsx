@@ -105,7 +105,7 @@ const ContactForm = () => {
 
       {render && (
         <div>
-          <div className='grid grid-cols-2 gap-x-4 gap-y-4 mb-4'>
+          <div className='grid grid-cols-2 gap-x-4 gap-y-4 mb-4 flex'>
             <div className='col-span-1'>
               <Input
                 label='First Name'
@@ -168,7 +168,7 @@ const ContactForm = () => {
               />
             </div>
 
-            <div className='col-span-2'>
+            <div className='col-span-2 justify-end'>
               <Textarea
                 id='message'
                 label='Message'
@@ -180,16 +180,15 @@ const ContactForm = () => {
                 })}
               />
             </div>
-          </div>
 
-          <Button
-            className='float-right'
-            leftIcon={loading ? <Loader /> : <Send />}
-            onClick={handleSubmit((data) => sendEmail(data as Form))}
-            disabled={Object.keys(errors).length !== 0}
-          >
-            {loading ? 'Loading...' : 'Send'}
-          </Button>
+            <Button
+              leftIcon={loading ? <Loader /> : <Send />}
+              onClick={handleSubmit((data) => sendEmail(data as Form))}
+              disabled={Object.keys(errors).length !== 0}
+            >
+              {loading ? 'Loading...' : 'Send'}
+            </Button>
+          </div>
         </div>
       )}
 
