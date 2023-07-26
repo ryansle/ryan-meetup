@@ -1,5 +1,6 @@
 // Components
 import { Heading, Text, Button } from '@/components/global';
+import NextLink from 'next/link';
 
 // Types
 import type { ReactNode } from 'react';
@@ -39,10 +40,12 @@ const PageNotFound = (props: PageNotFoundProps) => {
         </div>
       )}
 
-      <Button onClick={() => router.push('/')}>
-        Go Home
-      </Button>
-    </div>
+      <NextLink href='/'>
+        <Button onClick={() => console.log('navigate home')}>
+          Go Home
+        </Button>
+      </NextLink>
+    </div >
   );
 };
 

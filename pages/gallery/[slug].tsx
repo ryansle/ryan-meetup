@@ -16,7 +16,6 @@ import type { ReactNode } from 'react';
 // Utilities
 import { useQuery } from 'react-query';
 import { fetchSingleMediaEvent } from '@/data/fetch';
-import { useRouter } from 'next/navigation';
 
 type GalleryPageProps = {
   gallery: MediaEvent;
@@ -51,7 +50,8 @@ const GalleryPage = (props: GalleryPageProps) => {
   const { data, isLoading, isError } = useQuery('gallery', () => fetchSingleMediaEvent(props.slug), { initialData: props.gallery });
 
   const [zoom, setZoom] = useState<number>(3);
-  const router = useRouter();
+
+  console.log(data?.googleDriveLink);
 
   return (
     <Layout>
@@ -130,13 +130,15 @@ const GalleryPage = (props: GalleryPageProps) => {
           <Text className='mb-4'>
             {data?.description as ReactNode}
           </Text>
-          <Button
-            className='w-full mb-10'
-            // @ts-ignore
-            onClick={() => router.push(data?.googleDriveLink)}
-          >
-            Access Full Size Photos Here
-          </Button>
+          <NextLink href={data?.googleDriveLink as string}>
+            <Button
+              className='w-full mb-10'
+              onClick={() => console.log('download clicked')}
+            >
+              Access Full Size Photos Here
+            </Button>
+          </NextLink>
+
         </div>
       )}
 
