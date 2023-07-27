@@ -34,7 +34,7 @@ const FAQ = (props: FAQProps) => {
               <div className='text-xl font-semibold tracking-wider mb-2'>
                 {pair.question}
               </div>
-              <div className='text-lg mb-10'>
+              <div className='text-lg mb-10 text-gray-400'>
                 {pair.answer}
               </div>
             </>

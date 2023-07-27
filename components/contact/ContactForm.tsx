@@ -104,7 +104,7 @@ const ContactForm = () => {
       )}
 
       {render && (
-        <div>
+        <div className='w-full'>
           <div className='grid grid-cols-2 gap-x-4 gap-y-4 mb-4'>
             <div className='col-span-1'>
               <Input
@@ -183,7 +183,7 @@ const ContactForm = () => {
           </div>
 
           <Button
-            className='float-right'
+            className='float-right w-full'
             leftIcon={loading ? <Loader /> : <Send />}
             onClick={handleSubmit((data) => sendEmail(data as Form))}
             disabled={Object.keys(errors).length !== 0}

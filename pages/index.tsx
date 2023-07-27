@@ -9,16 +9,12 @@ import type { FrequentlyAskedQuestion } from '@/lib/types';
 // Utilities
 import { useQuery } from 'react-query';
 import { fetchFAQs } from '@/data/fetch';
-import { useRouter } from 'next/navigation';
-
 type HomePageProps = {
   faqs: FrequentlyAskedQuestion[];
 };
 
 const HomePage: NextPage<HomePageProps> = (props: HomePageProps) => {
   const { data: faqs, isLoading } = useQuery('faqs', fetchFAQs, { initialData: props.faqs });
-
-  const router = useRouter();
 
   return (
     <Layout homePage>

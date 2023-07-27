@@ -66,7 +66,8 @@ const Article = (props: ArticleProps) => {
             </div>
             <h3 className='font-bold text-3xl mb-2 xl:text-4xl 2xl:text-3xl md:mb-4'>{title}</h3>
             <p className='tracking-wide font-medium xl:text-xl'>
-              by <span className={highlight}>{author}</span> in the <span className={highlight}>{outlet}</span>
+              by <span className={highlight}>{author}</span> in {outlet.split(' ')[0].toLowerCase() ===
+                'the' ? '' : 'the'} <span className={highlight}>{outlet}</span>
             </p>
           </div>
         </div>
