@@ -130,15 +130,9 @@ const GalleryPage = (props: GalleryPageProps) => {
           <Text className='mb-4'>
             {data?.description as ReactNode}
           </Text>
-          <NextLink href={data?.googleDriveLink as string}>
-            <Button
-              className='w-full mb-10'
-              onClick={() => console.log('download clicked')}
-            >
-              Access Full Size Photos Here
-            </Button>
-          </NextLink>
-
+          <Button.Link href={data?.googleDriveLink as string}>
+            Access Full Sized Photos Here
+          </Button.Link>
         </div>
       )}
 
@@ -166,7 +160,7 @@ const GalleryPage = (props: GalleryPageProps) => {
           )}
         </>
       </div>
-    </Layout>
+    </Layout >
   );
 };
 

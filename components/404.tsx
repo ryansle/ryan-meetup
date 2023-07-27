@@ -40,11 +40,9 @@ const PageNotFound = (props: PageNotFoundProps) => {
         </div>
       )}
 
-      <NextLink href='/'>
-        <Button onClick={() => console.log('navigate home')}>
-          Go Home
-        </Button>
-      </NextLink>
+      <Button.Link href='/'>
+        Go Home
+      </Button.Link>
     </div >
   );
 };

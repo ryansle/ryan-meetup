@@ -1,7 +1,6 @@
 // Components
 import NextImage from 'next/image';
-import NextLink from 'next/link';
-import { Heading } from '@/components/global';
+import { Button, Heading } from '@/components/global';
 import { FaMeetup as Meetup } from 'react-icons/fa';
 import { Transition } from '@headlessui/react';
 
@@ -31,14 +30,14 @@ const Landing = () => {
             </p>
           </div>
 
-          <div className='mt-4 transition ease-in-out duration-300 hover:scale-102'>
-            <NextLink
-              className='px-2 py-3 border rounded-xl font-cooper italic text-white flex items-center justify-center'
+          <div className='w-full mt-4 transition ease-in-out duration-300 hover:scale-102'>
+            <Button.Link
+              leftIcon={<Meetup />}
+              className='w-full font-cooper text-white'
               href='https://www.meetup.com/ryanmeetup/'
             >
-              <Meetup className='mr-4' />
-              Join the Ryan Meetup!
-            </NextLink>
+              Join the Ryan Meetup
+            </Button.Link>
           </div>
         </div>
       </div>

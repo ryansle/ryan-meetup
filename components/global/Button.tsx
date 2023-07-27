@@ -1,5 +1,18 @@
+// Components
+import NextLink from 'next/link';
+
 // Types
 import type { ReactNode } from 'react';
+
+type ButtonLinkProps = {
+  children: ReactNode;
+  className?: string;
+  onClick?: () => void;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
+  disabled?: boolean;
+  href: string;
+}
 
 type ButtonProps = {
   children: ReactNode;
@@ -10,12 +23,30 @@ type ButtonProps = {
   disabled?: boolean;
 };
 
+const ButtonLink = (props: ButtonLinkProps) => {
+  const { children, className, leftIcon, rightIcon, disabled = false, href } = props;
+
+  return (
+    <NextLink className={`${className} w-full`} href={href} >
+      <Button
+        className={className}
+        leftIcon={leftIcon}
+        rightIcon={rightIcon}
+        disabled={disabled}
+        onClick={() => console.log('')}
+      >
+        {children}
+      </Button>
+    </NextLink >
+  );
+};
+
 const Button = (props: ButtonProps) => {
   const { children, className, onClick, leftIcon, rightIcon, disabled = false } = props;
 
   return (
     <button
-      className={`${className} rounded-lg p-3 bg-black uppercase overflow-hidden rounded-lg bg-black py-6 ring-red-500/50 ring-offset-black will-change-transform focus:outline-none focus:ring-1 focus:ring-offset-2 disabled:border disabled:cursor-not-allowed`}
+      className={`${className} w-full rounded-lg p-3 bg-black uppercase overflow-hidden rounded-lg bg-black py-6 ring-red-500/50 ring-offset-black will-change-transform focus:outline-none focus:ring-1 focus:ring-offset-2 disabled:border disabled:cursor-not-allowed`}
       onClick={onClick}
       disabled={disabled}
     >
@@ -33,5 +64,7 @@ const Button = (props: ButtonProps) => {
     </button>
   );
 };
+
+Button.Link = ButtonLink;
 
 export { Button };
