@@ -16,9 +16,14 @@ const posters = [
   { title: 'Know a Ryan Poster', src: '/posters/knowaryan.png' },
 ];
 
+const eventPosters = [
+  { title: 'Ryan Rave', src: '/posters/ryanrave.png' },
+  { title: 'Ryan Retreat', src: '/posters/ryanretreat.png' },
+];
+
 const PosterPage: NextPage = () => {
   return (
-    <Layout className='space-y-6'>
+    <Layout>
       <Head>
         <title>Ryan Meetup - Posters</title>
         <meta
@@ -31,27 +36,49 @@ const PosterPage: NextPage = () => {
         />
       </Head>
 
-      <Heading>Posters</Heading>
+      <div className='space-y-6'>
+        <Heading>Posters</Heading>
 
-      <Text size='lg'>
-        Interested in hanging up Ryan Meetup posters in your city? Download our posters here!
-      </Text>
+        <Text size='lg'>
+          Interested in hanging up Ryan Meetup posters in your city? Download our posters here!
+        </Text>
 
-      <Button
-        onClick={() => window.open('/posters/posters.zip')}
-        leftIcon={<Download />}
-      >
-        Download Poster Bundle
-      </Button>
+        <Button
+          onClick={() => window.open('/posters/posters.zip')}
+          leftIcon={<Download />}
+        >
+          Download Poster Bundle
+        </Button>
 
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6'>
-        {posters.map((poster, index) => (
-          <Poster
-            key={index}
-            title={poster.title}
-            src={poster.src}
-          />
-        ))}
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6'>
+          {posters.map((poster, index) => (
+            <Poster
+              key={index}
+              title={poster.title}
+              src={poster.src}
+            />
+          ))}
+        </div>
+      </div>
+
+      <div className='space-y-6 mt-10'>
+        <Heading>
+          Event Posters
+        </Heading>
+
+        <Text size='lg'>
+          Flyers from previous events.
+        </Text>
+
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6'>
+          {eventPosters.map((poster, index) => (
+            <Poster
+              key={index}
+              title={poster.title}
+              src={poster.src}
+            />
+          ))}
+        </div>
       </div>
     </Layout>
   );
