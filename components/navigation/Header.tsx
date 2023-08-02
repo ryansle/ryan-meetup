@@ -11,6 +11,7 @@ const Header = () => {
     { text: 'Posters', href: '/posters' },
     { text: 'Gallery', href: '/gallery' },
     { text: 'Press', href: '/press' },
+    { text: 'Support Us', href: '/support' },
     { text: 'Contact Us', href: '/contact' }
   ];
 
