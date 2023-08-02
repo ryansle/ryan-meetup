@@ -7,7 +7,7 @@ const Venmo = () => {
   return (
     <div className='mt-10'>
       <div className='grid grid-cols-12'>
-        <div className='col-span-8 space-y-4'>
+        <div className='col-span-12 space-y-4 xl:col-span-8'>
           <Heading>
             We also take Venmo...
           </Heading>
@@ -19,8 +19,8 @@ const Venmo = () => {
           </Text>
 
         </div>
-        <div className='col-span-2' />
-        <div className='col-span-2 flex flex-col items-center'>
+        <div className='col-span-0 xl:col-span-2' />
+        <div className='col-span-12 flex flex-col items-center mt-10 xl:mt-0 xl:col-span-2'>
           <QRCode
             value='https://venmo.com/code?user_id=3841296049374520231&created=1690776081.636693&printed=1'
             size={150}
