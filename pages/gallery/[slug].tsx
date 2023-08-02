@@ -126,7 +126,7 @@ const GalleryPage = (props: GalleryPageProps) => {
       </div>
 
       {!isLoading && (
-        <div>
+        <div className='mb-10'>
           <Text className='mb-4'>
             {data?.description as ReactNode}
           </Text>

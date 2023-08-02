@@ -27,7 +27,7 @@ const Header = () => {
   ];
 
   return (
-    <header className='flex justify-between items-center py-5 px-4 border-b border-gray-700 bg-black sticky relative top-0 right-0 left-0 z-10 lg:px-48 2xl:px-96 3xl:px-[400px] 4xl:px-[650px]'>
+    <header className='flex justify-between items-center py-5 px-4 border-b border-gray-700 bg-black sticky relative top-0 right-0 left-0 z-10 lg:px-32 xl:px-72 3xl:px-[400px] 4xl:px-[650px]'>
       <div className='relative w-[128px] h-[33px]'>
         <NextLink href='/'>
           <Heading>RYAN</Heading>

@@ -26,6 +26,9 @@ const ContactPage: NextPage = () => {
       <Text size='lg'>
         One of our Ryans will get back to you as soon as we can.
       </Text>
+      <Text size='lg'>
+        Our messages are open to all inquiries, whether you just wanna say hi, or are looking to collaborate with us. Get in contact, and let&apos;s talk about what&apos;s on your mind!
+      </Text>
       <ContactForm />
     </Layout>
   );
