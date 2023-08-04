@@ -12,28 +12,26 @@ import type { NextPage } from 'next';
 const DonatePage: NextPage = () => {
   const waysToSupport = [
     {
-      main: 'Buy our merchandise.',
-      sub: 'We design every piece of merchandise in-house, and you can rest assured that it was drawn up by a fellow Ryan.'
+      main: 'Invite more Ryans.',
+      sub: 'The goal is gathering as many Ryans as possible, and this is the easiest way to expand our network.',
     },
     {
-      main: 'Invite the Ryans in your life to join the Ryan Meetup.',
-      sub: 'Help us move one step closer to hosting RyanCon, the largest gathering of the Ryans in the world.',
-    },
-    {
-      main: 'Hang up flyers in your city,',
-      sub: 'and help us grow the Ryan Meetup there.'
+      main: 'Hang up flyers.',
+      sub: 'This is how it all started for us, and it’s an effective way to reach Ryans in the wild.',
     },
     {
       main: 'Share your skills.',
-      sub: 'Are you a Ryan with a unique skillset? Let\'s talk about it - email us at theryanmeetup@gmail.com.'
+      sub: 'Combining all of our capabilities will make us a well-rounded, well-oiled machine.',
+    },
+    {
+      main: 'Buy our merchandise.',
+      sub: 'Become a walking advertisement for the Ryan movement. And rest assured, all of our designs were created by fellow Ryans.',
     },
     {
       main: 'Consider Venmoing us.',
-      sub: 'All donations go towards setting up future Ryan Meetup events (ie: renting out spaces, buying nametags, trophies, decorations and more, as well as tightening up security against the Bryan threat, and expanding to new cities).'
+      sub: 'All donations go towards setting up future Ryan Meetup events (ie: renting out spaces, buying name tags, trophies, decorations etc, as well as tightening up security against potential Bryan intruders at our events).'
     }
   ];
-
-
 
   return (
     <Layout>
