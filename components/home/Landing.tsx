@@ -1,5 +1,6 @@
 // Components
 import NextImage from 'next/image';
+import NextLink from 'next/link';
 import { Button, Heading } from '@/components/global';
 import { FaMeetup as Meetup } from 'react-icons/fa';
 import { Transition } from '@headlessui/react';
@@ -8,25 +9,32 @@ const Landing = () => {
   return (
     <div className='grid grid-cols-12 h-full flex items-center'>
       <div className='col-span-12 order-last xl:order-first xl:col-span-7'>
-        <div className='space-y-4'>
+        <div className='space-y-2'>
           <Heading size='xl'>
             If your name is Ryan,
           </Heading>
           <Heading size='md'>
-            You&apos;re in the right place.
+            you&apos;re in the right place.
           </Heading>
         </div>
 
         <div className='my-4 text-xl text-gray-400 xl:mr-32'>
           <div className='space-y-4'>
             <p>
-              Welcome to the Ryan Meetup, an organization run by Ryans - for Ryans, with the ultimate goal of gathering as many Ryans as possible.
+              Welcome to the Ryan Meetup, an organization run by Ryans, for Ryans, with the ultimate goal of assembling as many Ryans as possible.
             </p>
             <p>
-              We&apos;re slowly expanding across the United States, and hope to one day hold RyanCon, the largest first name gathering in the world.
+              One day, we aim to host RyanCon, and break the world record for the{' '}
+              <NextLink
+                href='https://www.guinnessworldrecords.com/world-records/largest-same-name-gathering-first-name'
+                className='font-medium text-blue-500 hover:underline'
+              >
+                largest same name gathering
+              </NextLink>
+              {' '}in history.
             </p>
             <p>
-              We hope to see you soon, Ryan.
+              See you soon, Ryan.
             </p>
           </div>
 

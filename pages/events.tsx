@@ -42,6 +42,7 @@ const EventsPage: NextPage<EventsPageProps> = (props: EventsPageProps) => {
           name='description'
           content='Check out upcoming Ryan Meetups!'
         />
+        <meta property='og:image' content='../kidryan.webp' />
         <meta
           name='keywords'
           content='when is the next ryan meetup?, ryan meetup, ryan meetup nyc, ryan meetup new york, ryan meetup new york city, ryan meetup near me, ryan meetup los angeles, ryan rendezvous, ryan roundup, ryan kickoff, ryan rodeo, ryan roundtable, ryan roadtrip, ryan rally, ryan rave, ryan run, ryan new york city, ryan meet up, ryan meetup new york city, ryan reunion, ryan syndicate, ryan retreat, ryan relay'

@@ -1,7 +1,7 @@
 // Components
 import { Layout } from '@/components/navigation';
 import { Heading, Text } from '@/components/global';
-import { List, Venmo } from '@/components/support';
+import { List } from '@/components/support';
 import Head from 'next/head';
 import NextImage from 'next/image';
 import QRCode from 'react-qr-code';
@@ -16,7 +16,7 @@ const DonatePage: NextPage = () => {
       sub: 'The goal is gathering as many Ryans as possible, and this is the easiest way to expand our network.',
     },
     {
-      main: 'Hang up flyers.',
+      main: 'Hang up posters.',
       sub: 'This is how it all started for us, and it’s an effective way to reach Ryans in the wild.',
     },
     {
@@ -29,7 +29,7 @@ const DonatePage: NextPage = () => {
     },
     {
       main: 'Consider Venmoing us.',
-      sub: 'All donations go towards setting up future Ryan Meetup events (ie: renting out spaces, buying name tags, trophies, decorations etc, as well as tightening up security against potential Bryan intruders at our events).'
+      sub: 'All donations go towards setting up future Ryan Meetup events (ie: renting out spaces, buying name tags, trophies, decorations, etc, as well as tightening up security against potential Bryan intruders at our events).'
     }
   ];
 
@@ -39,8 +39,9 @@ const DonatePage: NextPage = () => {
         <title>Ryan Meetup - Support Us</title>
         <meta
           name='description'
-          content='Help support the Ryan Meetup'
+          content='Help support the Ryan Meetup.'
         />
+        <meta property='og:image' content='../trophy.webp' />
         <meta
           name='keywords'
           content='ryan meetup, donate to the ryan meetup, support the ryan meetup, ryan meetup on venmo, ryan'
