@@ -28,6 +28,7 @@ const GalleryPage: NextPage<GalleryPageProps> = (props: GalleryPageProps) => {
           name='description'
           content='Download our official Ryan Meetup posters here and help bring the Ryan Meetup to your city!'
         />
+        <meta property='og:image' content='/retreat.png' />
         <meta
           name='keywords'
           content='ryan meetup, ryan meetup gallery, ryan meetup photos, ryan meetup media, pictures of ryan meetup, ryan photos, ryans'
@@ -37,7 +38,7 @@ const GalleryPage: NextPage<GalleryPageProps> = (props: GalleryPageProps) => {
       <Heading className='mb-4'>Ryan Media</Heading>
 
       <Text size='lg' className='mb-10'>
-        Our gallery of Ryan media from our events.
+        Our gallery of Ryan media from previous events.
       </Text>
 
       <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 xl:grid-cols-3'>

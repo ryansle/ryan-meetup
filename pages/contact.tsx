@@ -14,8 +14,9 @@ const ContactPage: NextPage = () => {
         <title>Ryan Meetup - Contact Us</title>
         <meta
           name='description'
-          content='Get in contact with Ryan Meetup'
+          content='Get in contact with Ryan Meetup team.'
         />
+        <meta property='og:image' content='/ryanroundup.png' />
         <meta
           name='keywords'
           content='contact ryan, contact ryan meetup, ryan meetup email address, official ryan business, big and important ryan topics, ryan'
