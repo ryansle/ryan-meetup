@@ -28,7 +28,7 @@ const PressPage: NextPage<PressPageProps> = (props: PressPageProps) => {
           name='description'
           content='Read all about the Ryan Meetup in the news.'
         />
-        <meta property='og:image' content='/nametags.jpeg' />
+        <meta property='og:image' content='../nametags.jpeg' />
         <meta
           name='keywords'
           content='ryans only, ryans only at the ryan meetup, and definitely no bryans, nyc irish bar plays host to viral ryan meetup, ryan meetup in the news, ryan meetup news, ryan meetup articles, ryan meetup press, first rule of ryan club, no bryans, no bryans allowed, ryan maguire, hosts bash for people named ryan, to get into this party, need the right name, its ryan, alyson krueger, brian abrams, will pavia, kerry oshea, ryan wilde, ryan andrew wilde, the takeaway, the times, irish central, the times, downtown new york allianve, new york times'

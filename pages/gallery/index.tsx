@@ -28,7 +28,7 @@ const GalleryPage: NextPage<GalleryPageProps> = (props: GalleryPageProps) => {
           name='description'
           content='Download our official Ryan Meetup posters here and help bring the Ryan Meetup to your city!'
         />
-        <meta property='og:image' content='/retreat.png' />
+        <meta property='og:image' content='../retreat.png' />
         <meta
           name='keywords'
           content='ryan meetup, ryan meetup gallery, ryan meetup photos, ryan meetup media, pictures of ryan meetup, ryan photos, ryans'

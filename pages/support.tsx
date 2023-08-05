@@ -41,7 +41,7 @@ const DonatePage: NextPage = () => {
           name='description'
           content='Help support the Ryan Meetup.'
         />
-        <meta property='og:image' content='/trophy.webp' />
+        <meta property='og:image' content='../trophy.webp' />
         <meta
           name='keywords'
           content='ryan meetup, donate to the ryan meetup, support the ryan meetup, ryan meetup on venmo, ryan'
