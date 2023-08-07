@@ -1,5 +1,5 @@
 // Components
-import { FaInstagram as Instagram, FaMeetup as Meetup } from 'react-icons/fa';
+import { FaInstagram as Instagram, FaMeetup as Meetup, FaDiscord as Discord } from 'react-icons/fa';
 import { Heading } from '@/components/global';
 import { MobileMenu } from '@/components/navigation';
 import NextLink from 'next/link';
@@ -23,6 +23,10 @@ const Header = () => {
     {
       href: 'https://www.meetup.com/ryanmeetup/',
       icon: <Meetup className='h-8 w-8' color='white' />,
+    },
+    {
+      href: 'https://discord.gg/HDugzYSHKC',
+      icon: <Discord className='h-8 w-8' color='white' />,
     }
   ];
 
