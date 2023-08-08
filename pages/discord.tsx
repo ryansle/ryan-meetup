@@ -32,7 +32,7 @@ const MerchPage: NextPage = () => {
 export async function getServerSideProps() {
   return {
     redirect: {
-      destination: 'hhttps://discord.gg/HDugzYSHKC',
+      destination: 'https://discord.gg/HDugzYSHKC',
       permanent: true,
     }
   };
