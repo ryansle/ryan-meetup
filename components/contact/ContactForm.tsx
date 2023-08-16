@@ -17,7 +17,6 @@ type Form = {
   firstName: string;
   lastName: string;
   email: string;
-  phoneNumber: number | string;
   subject: string;
   message: string;
 };
@@ -148,15 +147,6 @@ const ContactForm = () => {
             </div>
 
             <div className='col-span-2 sm:col-span-1'>
-              <Input
-                label='Phone Number (optional)'
-                placeholder='(123) 456-7890'
-                type='number'
-                {...register('phoneNumber')}
-              />
-            </div>
-
-            <div className='col-span-2'>
               <Input
                 label='Subject'
                 placeholder='Official Ryan Business'
