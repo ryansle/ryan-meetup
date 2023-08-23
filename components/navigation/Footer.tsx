@@ -1,7 +1,7 @@
 // Components
 import { Heading, Text } from '@/components/global';
 import NextLink from 'next/link';
-import { FaInstagram as Instagram, FaMeetup as Meetup } from 'react-icons/fa';
+import { FaInstagram as Instagram, FaMeetup as Meetup, FaDiscord as Discord } from 'react-icons/fa';
 
 const socials = [
   {
@@ -11,6 +11,10 @@ const socials = [
   {
     href: 'https://www.meetup.com/ryanmeetup/',
     icon: <Meetup className='h-5 w-5' color='gray' />,
+  },
+  {
+    href: 'https://discord.gg/HDugzYSHKC',
+    icon: <Discord className='h-8 w-8' color='white' />,
   }
 ];
 

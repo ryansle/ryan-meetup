@@ -1,6 +1,6 @@
 // Components
 import { Text } from '@/components/global';
-import { FaDollarSign as Dollar } from 'react-icons/fa';
+import { FaHandshake as Handshake } from 'react-icons/fa';
 
 type Content = {
   main: string;
@@ -24,7 +24,7 @@ const ListItem = (props: ListItemProps) => {
 
   return (
     <li className='flex'>
-      <Dollar className='fill-green-500 mt-1 mr-4 w-5 h-5 flex-shrink-0' />
+      <Handshake className='fill-[#e0ac69] mt-1 mr-4 w-5 h-5 flex-shrink-0' />
       <Text>
         {main} <span className='font-light'>{sub}</span>
       </Text>
