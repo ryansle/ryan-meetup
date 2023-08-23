@@ -5,6 +5,7 @@ import { List } from '@/components/support';
 import Head from 'next/head';
 import NextImage from 'next/image';
 import QRCode from 'react-qr-code';
+import NextLink from 'next/link';
 
 // Types
 import type { NextPage } from 'next';
@@ -79,6 +80,12 @@ const DonatePage: NextPage = () => {
                   style={{ objectFit: 'contain' }}
                 />
               </div>
+              <NextLink
+                href='https://venmo.com/code?user_id=3841296049374520231&created=1690776081.636693&printed=1'
+                className='font-bold text-blue-500 hover:underline -mt-2'
+              >
+                @RyanMeetup
+              </NextLink>
             </div>
           </div>
         </div>
