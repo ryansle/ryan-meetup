@@ -14,7 +14,7 @@ const socials = [
   },
   {
     href: 'https://discord.gg/HDugzYSHKC',
-    icon: <Discord className='h-8 w-8' color='white' />,
+    icon: <Discord className='h-5 w-5' color='gray' />,
   }
 ];
 

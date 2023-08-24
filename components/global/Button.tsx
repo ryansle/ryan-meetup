@@ -46,11 +46,11 @@ const Button = (props: ButtonProps) => {
 
   return (
     <button
-      className={`${className} w-full rounded-lg p-3 bg-black uppercase overflow-hidden rounded-lg bg-black py-6 ring-red-500/50 ring-offset-black will-change-transform focus:outline-none focus:ring-1 focus:ring-offset-2 disabled:border disabled:cursor-not-allowed`}
+      className={`${className} w-full rounded-lg p-3 bg-black uppercase overflow-hidden rounded-lg bg-black py-6 ring-red-500/50 ring-offset-black will-change-transform focus:outline-none focus:ring-1 focus:ring-offset-2 disabled:border-gray-400 disabled:cursor-not-allowed`}
       onClick={onClick}
       disabled={disabled}
     >
-      <span className='absolute inset-px z-10 grid place-items-center rounded-lg bg-black bg-gradient-to-t from-neutral-800 text-neutral-400 font-semibold'>
+      <span className='absolute inset-px z-10 grid place-items-center rounded-lg bg-black bg-gradient-to-t from-neutral-800 text-white font-semibold'>
         <div className='flex items-center justify-center'>
           {leftIcon && <span className='mr-2'>{leftIcon}</span>}
           {children}
