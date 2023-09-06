@@ -7,7 +7,7 @@ import NextLink from 'next/link';
 const Header = () => {
   const routes = [
     { text: 'Events', href: '/events' },
-    { text: 'Merch', href: 'https://www.etsy.com/shop/RyanMeetup' },
+    { text: 'Merch', href: 'https://ryanmeetup.etsy.com' },
     { text: 'Posters', href: '/posters' },
     { text: 'Gallery', href: '/gallery' },
     // { text: 'Press', href: '/press' },

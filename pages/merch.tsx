@@ -32,7 +32,7 @@ const MerchPage: NextPage = () => {
 export async function getServerSideProps() {
   return {
     redirect: {
-      destination: 'https://www.etsy.com/shop/RyanMeetup',
+      destination: 'https://ryanmeetup.etsy.com',
       permanent: true,
     }
   };
