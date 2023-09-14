@@ -29,7 +29,7 @@ const Event = (props: EventProps) => {
 
   return (
     <NextLink href={href}>
-      <div className='border border-gray-700 rounded-3xl h-full break-inside-avoid-column transition ease-in duration-300 hover:border-white'>
+      <div className='border border-gray-700 rounded-3xl h-full break-inside-avoid-column transition ease-in duration-300 hover:border-white hover:scale-102'>
         <div className='w-full max-h-[450px] aspect-w-2 aspect-h-1 overflow-hidden'>
           <NextImage
             className='rounded-t-3xl border-b border-gray-700'

@@ -48,7 +48,7 @@ const Article = (props: ArticleProps) => {
       href={href}
       target='_blank'
     >
-      <div className='mb-2 transition ease-in duration-300 hover:border-white'>
+      <div className='mb-2 transition ease-in duration-300 hover:scale-102'>
         <div className='grid grid-cols-3 flex space-x-3'>
           <div className='col-span-3 sm:col-span-1'>
             <ArticleImage
