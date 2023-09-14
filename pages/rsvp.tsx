@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { Layout } from '@/components/navigation';
 import type { NextPage } from 'next';
 
-const MerchPage: NextPage = () => {
+const RsvpPage: NextPage = () => {
   return (
     <Layout>
       <Head>
@@ -38,4 +38,4 @@ export async function getServerSideProps() {
   };
 }
 
-export default MerchPage;
+export default RsvpPage;

@@ -5,18 +5,18 @@ import Head from 'next/head';
 import { Layout } from '@/components/navigation';
 import type { NextPage } from 'next';
 
-const TravelPage: NextPage = () => {
+const JoinPage: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>Ryan Meetup - Travel</title>
+        <title>Ryan Meetup - Join</title>
         <meta
           name='description'
-          content='Where did you travel from, Ryan?'
+          content='Join the Ryan Meetup!'
         />
         <meta
           name='keywords'
-          content='ryan meetup, the ryan that traveled the farthest to attend the ryan meetup award, ryan meetup award, ryan award, trophy, ryan trophy, ryan meetup trophy'
+          content='ryan meetup, when is the next ryan meetup, ryan'
         />
       </Head>
 
@@ -32,10 +32,10 @@ const TravelPage: NextPage = () => {
 export async function getServerSideProps() {
   return {
     redirect: {
-      destination: 'https://forms.gle/tHvNkrTJZcS8x48d6',
+      destination: 'https://www.meetup.com/ryanmeetup/',
       permanent: true,
     }
   };
 }
 
-export default TravelPage;
+export default JoinPage;
