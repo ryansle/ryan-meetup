@@ -1,38 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RyanMeetup.com
+
+Wanna meet other Ryans? Join the Ryan Meetup!
+
+RyanMeetup.com is the official home of the Ryan Meetup. Keep up to date with current Ryan affairs by checking out our website, following our [Instagram](https://www.instagram.com/ryanmeetup/), and joining us on [Meetup!](https://www.ryanmeetup.com/join)
+
+The ultimate goal of the Ryan Meetup is gathering as many Ryans as possible in order to break the world record for [largest same name gathering (first name only)](https://www.guinnessworldrecords.com/world-records/largest-same-name-gathering-first-name).
+
+## Description
+
+As the Ryan Meetup has grown exponentially since its inception in early February, it became necessary for it to have its own website to capitalize on the internet traffic we were bringing in by (initially) hanging up posters on the street in various cities around the world. Some of these cities have included, but are not limited to:
+
+* New York, NY
+* Los Angeles, CA
+* Austin, TX
+* New Orleans, LA
+* Omaha, NE
+* Houston, TX
+* Washington, DC
+* Rome, Italy
+* Amsterdam, Netherlands
+* Athens, Greece
+* Berlin, Germany
+* Mexico City, Mexico
 
 ## Getting Started
 
-First, run the development server:
+### Built With
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+* React.js
+* Tailwind CSS
+* Next.js
+* Headless UI
+* TypeScript
+* Vercel
+* Email.js
+* Contentful
+* React-Query
+* React-Hook-Form
+* React Icons
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Credits
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* [Matt Sichterman](https://www.msich.dev/) - buying the original domain, scaffolding a basic application
+* [Ryan Le](https://ryanle.dev/) - design & development of the website 
+* Lorena Pereira - home page redesign
