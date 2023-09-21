@@ -23,8 +23,6 @@ As the Ryan Meetup has grown exponentially since its inception in early February
 * Berlin, Germany
 * Mexico City, Mexico
 
-## Getting Started
-
 ### Built With
 
 * React.js
@@ -43,4 +41,4 @@ As the Ryan Meetup has grown exponentially since its inception in early February
 
 * [Matt Sichterman](https://www.msich.dev/) - buying the original domain, scaffolding a basic application
 * [Ryan Le](https://ryanle.dev/) - design & development of the website 
-* Lorena Pereira - home page redesign
+* [Lorena Pereira](https://lorenapereira.com/) - home page redesign
