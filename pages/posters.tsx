@@ -17,6 +17,8 @@ const posters = [
 ];
 
 const eventPosters = [
+  { title: 'Rytoberfest', src: '/posters/rytoberfest.png' },
+  { title: 'Ryan Rave', src: '/posters/raveposter-sponsored.png' },
   { title: 'Ryan Rave', src: '/posters/ryanrave.png' },
   { title: 'Ryan Retreat', src: '/posters/ryanretreat.png' },
 ];

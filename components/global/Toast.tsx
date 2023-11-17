@@ -19,7 +19,7 @@ const Toast = (props: ToastProps) => {
 
   return (
     <Transition
-      className={className}
+      className={`${className} mt-10`}
       show={open}
       enter='transition ease-out duration-100'
       enterFrom='transform opacity-0 scale-95'

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 // Components
 import { Layout } from '@/components/navigation';
 import { Heading, Text } from '@/components/global';
-import { Event } from '@/components/events/';
+import { Event } from '@/components/events';
 import Head from 'next/head';
 
 // Types

@@ -27,7 +27,7 @@ const Text = (props: TextProps) => {
   const { className, children, size = 'md' } = props;
 
   return (
-    <p className={`${className} ${getVariantClasses(size)}`}>
+    <p className={`${className} ${getVariantClasses(size)} text-gray-400`}>
       {children}
     </p>
   );
