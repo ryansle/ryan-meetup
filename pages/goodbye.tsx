@@ -16,9 +16,16 @@ const GoodbyePage: NextPage = () => {
         />
       </Head>
 
-      <Heading size='3xl'>
-        Goodbye, Bryan.
-      </Heading>
+      <div className='block md:hidden'>
+        <Heading size='xl'>
+          Goodbye, Bryan.
+        </Heading>
+      </div>
+      <div className='hidden md:block'>
+        <Heading size='3xl'>
+          Goodbye, Bryan.
+        </Heading>
+      </div>
     </div>
   );
 };

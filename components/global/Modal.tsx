@@ -42,7 +42,7 @@ const Modal = (props: ModalProps) => {
       <div className='fixed inset-0 flex items-center justify-center p-4 w-screen'>
         <Dialog.Panel className='mx-auto w-[500px] rounded-lg bg-white flex flex-col p-4 border border-gray-700 '>
           <div className='flex justify-between w-full mb-4'>
-            <Dialog.Title className='font-semibold text-2xl font-cooper'>
+            <Dialog.Title className='font-semibold text-xl font-cooper md:text-2xl'>
               {title}
             </Dialog.Title>
 

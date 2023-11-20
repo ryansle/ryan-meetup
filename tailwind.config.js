@@ -1,3 +1,10 @@
+const fluidType = (minFont, maxFont) => {
+  let XX = 768 / 100;
+  let YY = (100 * (maxFont - minFont)) / (1920 - 768);
+  let ZZ = minFont / 16;
+  return `calc(${ZZ}rem + ((1vw - ${XX}px) * ${YY}))`;
+};
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -14,6 +21,12 @@ module.exports = {
       screens: {
         '3xl': '1800px',
         '4xl': '2100px',
+      },
+      fontSize: {
+        display: fluidType(80, 100),
+        display2: fluidType(36, 48),
+        display3: fluidType(24, 36),
+        display4: fluidType(16, 24),
       },
       fontFamily: {
         cooper: ['Cooper', 'sans-serif']

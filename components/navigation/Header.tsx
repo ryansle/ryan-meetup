@@ -38,7 +38,7 @@ const Header = () => {
         </NextLink>
       </div>
       <div className='space-x-4 flex items-center'>
-        <div className='hidden md:block space-x-4 flex items-center'>
+        <div className='hidden lg:block space-x-4 flex items-center'>
           {routes.map((route) => (
             <NextLink
               className='font-semibold tracking-wide text-white'
@@ -56,7 +56,7 @@ const Header = () => {
           </NextLink>
         ))}
 
-        <div className='md:hidden'>
+        <div className='lg:hidden'>
           <MobileMenu content={routes} />
         </div>
       </div>
