@@ -11,7 +11,7 @@ const BryanChecker = () => {
   const localStorageKey = 'bryanCheck';
 
   const [isChecked, handleChange] = useLocalStorage(localStorageKey, false);
-  const [showModal, setShowModal] = useState<boolean>(!isChecked);
+  const [showModal, setShowModal] = useState<boolean>(isChecked ?? true);
 
   const router = useRouter();
 
