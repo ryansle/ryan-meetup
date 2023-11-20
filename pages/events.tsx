@@ -81,7 +81,7 @@ const EventsPage: NextPage<EventsPageProps> = (props: EventsPageProps) => {
                 Upcoming Events
               </Heading>
 
-              <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 4xl:grid-cols-3'>
+              <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-3 4xl:grid-cols-3'>
                 {activeEvents && (
                   <>
                     {activeEvents?.map((event, index) => (
@@ -101,7 +101,7 @@ const EventsPage: NextPage<EventsPageProps> = (props: EventsPageProps) => {
               Past Events
             </Heading>
 
-            <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-2 4xl:grid-cols-3'>
+            <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-3 4xl:grid-cols-3'>
               {inactiveEvents?.map((event, index) => (
                 <Event
                   key={index}

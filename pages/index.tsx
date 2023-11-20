@@ -34,7 +34,7 @@ const HomePage: NextPage<HomePageProps> = (props: HomePageProps) => {
         <link rel='shortcut icon' href='/favicon.ico' />
       </Head>
       <Landing />
-      <hr className='my-16' />
+      <div className='my-16 border border-gray-700' />
       <FAQ
         data={faqs as FrequentlyAskedQuestion[]}
         isLoading={isLoading}

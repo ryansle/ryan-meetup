@@ -1,6 +1,5 @@
 // Components
 import { QueryClient, QueryClientProvider } from 'react-query';
-import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 import { Analytics } from '@vercel/analytics/react';
 
