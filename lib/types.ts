@@ -104,6 +104,19 @@ type RyanPhoto = {
     updatedAt: Date;
   }
 }
+
+type Location = {
+  locationName: string;
+  coordinates: {
+    lat: number;
+    lon: number;
+  };
+  eventName: string;
+  eventDate: Date;
+  image: ContentfulImage;
+  city: string;
+  locationType: 'Previous Event' | 'Future Event' | 'Ryan Hub';
+}
 // #endregion
 
 // #region Mailerlite Types
@@ -121,5 +134,7 @@ export type {
   Article,
   MediaEvent,
   RyanPhoto,
+  Location,
   MailerParams,
+  ContentfulImage,
 };

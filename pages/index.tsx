@@ -20,7 +20,7 @@ const HomePage: NextPage<HomePageProps> = (props: HomePageProps) => {
   const { data: faqs, isLoading } = useQuery('faqs', fetchFAQs, { initialData: props.faqs });
 
   return (
-    <Layout homePage>
+    <Layout>
       <Head>
         <title>Ryan Meetup</title>
         <meta

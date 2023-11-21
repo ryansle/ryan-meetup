@@ -8,9 +8,10 @@ type TextProps = {
   className?: string;
   children: ReactNode;
   size?: 'xs' | 'sm' | 'md' | 'lg';
+  color?: 'black' | 'white' | 'primary' | 'secondary';
 }
 
-const getVariantClasses = (size = 'md') => {
+const getVariantClasses = (size = 'md', color: string) => {
   const styles = 'tracking-wide font-medium';
 
   const textSize = clsx([
@@ -20,14 +21,26 @@ const getVariantClasses = (size = 'md') => {
     size === 'xs' && 'text-sm',
   ]);
 
-  return clsx([styles, textSize]);
+  const fontColor = clsx([
+    color === 'black' && 'text-black',
+    color === 'white' && 'text-white',
+    color === 'primary' && 'text-gray-700',
+    color === 'secondary' && 'text-gray-400',
+  ]);
+
+  return clsx([styles, textSize, fontColor]);
 };
 
 const Text = (props: TextProps) => {
-  const { className, children, size = 'md' } = props;
+  const {
+    className,
+    children,
+    size = 'md',
+    color = 'secondary'
+  } = props;
 
   return (
-    <p className={`${className} ${getVariantClasses(size)} text-gray-400`}>
+    <p className={`${className} ${getVariantClasses(size, color)}`}>
       {children}
     </p>
   );
