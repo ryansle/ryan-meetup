@@ -10,7 +10,7 @@ import { FaMeetup as Meetup } from 'react-icons/fa';
 import type { RyanEvent } from '@/lib/types';
 
 // Utilities
-import { convertDateToDateTimeString } from '@/utils/convert';
+import { convertDateToDateTimeString, convertImageUrl } from '@/utils/convert';
 
 type EventProps = {
   event: RyanEvent;
@@ -33,7 +33,7 @@ const Event = (props: EventProps) => {
         <div className='w-full max-h-[450px] aspect-w-2 aspect-h-1 overflow-hidden'>
           <NextImage
             className='rounded-t-3xl border-b border-gray-700'
-            src={`https://${coverImage?.fields.file.url.replace('//', '')}`}
+            src={convertImageUrl(coverImage)}
             fill={true}
             alt={coverImage?.fields.title}
             style={{ objectFit: 'cover' }}

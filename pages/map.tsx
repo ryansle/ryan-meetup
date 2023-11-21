@@ -1,7 +1,4 @@
-import { useState } from 'react';
-
 // Components
-import { Heading } from '@/components/global';
 import { Layout } from '@/components/navigation';
 import { Mapbox } from '@/components/map';
 
@@ -23,6 +20,8 @@ const MapPage: NextPage<MapPageProps> = (props: MapPageProps) => {
 
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
+  console.log(locations);
+
   return (
     <Layout fullscreen>
       {/* <Heading className='mb-4'>
@@ -31,7 +30,7 @@ const MapPage: NextPage<MapPageProps> = (props: MapPageProps) => {
       {!isLoading && (
         <Mapbox
           token={token as string}
-          locations={locations as Location[]}
+          locations={locations as unknown as Location[]}
         />
       )}
     </Layout>

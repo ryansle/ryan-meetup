@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import type { ReactNode } from 'react';
 
 type HeadingProps = {
-  size?: 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'display';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | 'display';
   variant?: 'ryan' | 'normal';
   className?: string;
   children: ReactNode;
@@ -49,6 +49,10 @@ const Heading = (props: HeadingProps) => {
         return <h2 className={`${styles} text-4xl`}>{children}</h2>;
       case 'md':
         return <h3 className={`${styles} text-3xl`}>{children}</h3>;
+      case 'sm':
+        return <h4 className={`${styles} text-xl`}>{children}</h4>;
+      case 'xs':
+        return <h5 className={`${styles} text-lg`}>{children}</h5>;
       case 'display':
         return <h1 className={`${styles} text-display`}>{children}</h1>;
       default:

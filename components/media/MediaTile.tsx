@@ -6,6 +6,9 @@ import NextLink from 'next/link';
 // Types
 import type { MediaEvent } from '@/lib/types';
 
+// Utilities
+import { convertImageUrl } from '@/utils/convert';
+
 type MediaTileProps = {
   id: string;
   data: MediaEvent;
@@ -15,15 +18,13 @@ const MediaTile = (props: MediaTileProps) => {
   const { id } = props;
   const { title, date, bgImage } = props.data;
 
-  const imgUrl = bgImage?.fields.file.url.replace('//', '');
-
   return (
     <NextLink href={`/gallery/${id}`}>
       <div className='border flex flex-col items-center justify-center border-gray-700 rounded-xl h-full transition ease-in duration-300 hover:border-white hover:scale-102'>
         <div className='relative w-full flex items-center justify-center rounded-xl h-80 overflow-hidden bg-center'>
           <div className='w-full h-full brightness-30'>
             <NextImage
-              src={`https://${imgUrl}`}
+              src={convertImageUrl(bgImage)}
               alt={title}
               fill
               style={{ objectFit: 'cover' }}

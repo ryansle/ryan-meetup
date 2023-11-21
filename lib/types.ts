@@ -106,11 +106,16 @@ type RyanPhoto = {
 }
 
 type Location = {
-  name: string;
-  location: {
-    lon: number;
+  locationName: string;
+  coordinates: {
     lat: number;
-  }
+    lon: number;
+  };
+  eventName: string;
+  eventDate: Date;
+  image: ContentfulImage;
+  city: string;
+  locationType: 'Previous Event' | 'Future Event' | 'Ryan Hub';
 }
 // #endregion
 
@@ -131,4 +136,5 @@ export type {
   RyanPhoto,
   Location,
   MailerParams,
+  ContentfulImage,
 };

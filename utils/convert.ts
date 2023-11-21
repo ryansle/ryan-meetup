@@ -1,3 +1,6 @@
+// Types
+import type { ContentfulImage } from '@/lib/types';
+
 const convertDateToDateTimeString = (date: Date) => {
   const dateObject = new Date(date);
 
@@ -10,4 +13,11 @@ const convertDateToDateTimeString = (date: Date) => {
   return `${dateString.slice(0, 3)}, ${dateString.slice(4, 8)} ${day} ${year} @ ${hour}:${minutes === 0 ? `${minutes}0` : `${minutes}`} PM`;
 };
 
-export { convertDateToDateTimeString };
+
+const convertImageUrl = (object: ContentfulImage) => {
+  const url = object?.fields.file.url;
+
+  return `https://${url.replace('//', '')}`;
+};
+
+export { convertDateToDateTimeString, convertImageUrl };
