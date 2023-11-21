@@ -75,6 +75,7 @@ const Mapbox = (props: MapboxProps) => {
             <div className='text-black'>
               {selectedLocation.image && (
                 <NextImage
+                  className='mb-2'
                   src={convertImageUrl(selectedLocation.image)}
                   alt={selectedLocation.eventName}
                   width={200}
@@ -82,8 +83,8 @@ const Mapbox = (props: MapboxProps) => {
                 />
               )}
 
-              <Heading className='mt-2' size='xs'>
-                {selectedLocation.eventName}
+              <Heading size='xs'>
+                {selectedLocation.eventName ?? selectedLocation.city}
               </Heading>
               <Text size='xs' color='primary' className='-mt-1'>
                 {selectedLocation.eventDate && (
@@ -91,7 +92,7 @@ const Mapbox = (props: MapboxProps) => {
                     {new Date(selectedLocation.eventDate).toLocaleDateString()} •
                   </span>
                 )}{' '}
-                {selectedLocation.city}
+                {selectedLocation.eventName ? selectedLocation.city : ''}
               </Text>
             </div>
           </Popup>

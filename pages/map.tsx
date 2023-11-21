@@ -1,6 +1,7 @@
 // Components
 import { Layout } from '@/components/navigation';
 import { Mapbox } from '@/components/map';
+// import { Heading } from '@/components/global';
 
 // Types
 import type { NextPage } from 'next';
@@ -19,8 +20,6 @@ const MapPage: NextPage<MapPageProps> = (props: MapPageProps) => {
   const { data: locations, isLoading } = useQuery('events', fetchLocations, { initialData: props.locations });
 
   const token = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
-
-  console.log(locations);
 
   return (
     <Layout fullscreen>

@@ -33,7 +33,7 @@ const fetchSingleMediaEvent = async (id: string) => {
 };
 
 const fetchLocations = async () => {
-  const data = await client.getEntries(({ content_type: 'locations' }));
+  const data = await client.getEntries(({ content_type: 'locations', limit: 1000 }));
 
   return data.items.map((entry) => entry.fields);
 };
