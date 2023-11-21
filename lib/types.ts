@@ -104,6 +104,14 @@ type RyanPhoto = {
     updatedAt: Date;
   }
 }
+
+type Location = {
+  name: string;
+  location: {
+    lon: number;
+    lat: number;
+  }
+}
 // #endregion
 
 // #region Mailerlite Types
@@ -121,5 +129,6 @@ export type {
   Article,
   MediaEvent,
   RyanPhoto,
+  Location,
   MailerParams,
 };
