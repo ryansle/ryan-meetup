@@ -22,7 +22,16 @@ const Mapbox = (props: MapboxProps) => {
 
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
 
-  console.log(selectedLocation);
+  const renderIcon = (type: string) => {
+    switch (type) {
+      case 'Previous Event':
+        return '/icons/meetup-icon.webp';
+      case 'Future Event':
+        return '/icons/ryanicon.png';
+      case 'Ryan Hub':
+        return '/icons/ryanicon.png';
+    }
+  };
 
   return (
     <div className='w-full h-[700px]'>
@@ -48,10 +57,11 @@ const Mapbox = (props: MapboxProps) => {
             }}
           >
             <NextImage
-              src='/icons/meetup-icon.webp'
-              alt='Meetup'
-              width={30}
-              height={30}
+              src={renderIcon(location.locationType) as string}
+              alt={location.locationType}
+              width={25}
+              height={25}
+              className={location.locationType !== 'Previous Event' ? 'rounded-full border border-black' : ''}
             />
           </Marker>
         ))}
@@ -63,18 +73,25 @@ const Mapbox = (props: MapboxProps) => {
             onClose={() => setSelectedLocation(null)}
           >
             <div className='text-black'>
-              <NextImage
-                src={convertImageUrl(selectedLocation.image)}
-                alt={selectedLocation.eventName}
-                width={200}
-                height={200}
-              />
+              {selectedLocation.image && (
+                <NextImage
+                  src={convertImageUrl(selectedLocation.image)}
+                  alt={selectedLocation.eventName}
+                  width={200}
+                  height={200}
+                />
+              )}
 
               <Heading className='mt-2' size='xs'>
                 {selectedLocation.eventName}
               </Heading>
               <Text size='xs' color='primary' className='-mt-1'>
-                {new Date(selectedLocation.eventDate).toLocaleDateString()} • {selectedLocation.city}
+                {selectedLocation.eventDate && (
+                  <span>
+                    {new Date(selectedLocation.eventDate).toLocaleDateString()} •
+                  </span>
+                )}{' '}
+                {selectedLocation.city}
               </Text>
             </div>
           </Popup>
