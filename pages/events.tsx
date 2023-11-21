@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 // Components
 import { Layout } from '@/components/navigation';
-import { Heading, Text } from '@/components/global';
+import { Heading, Text, Divider } from '@/components/global';
 import { Event } from '@/components/events';
 import Head from 'next/head';
 
@@ -76,24 +76,27 @@ const EventsPage: NextPage<EventsPageProps> = (props: EventsPageProps) => {
       {!isLoading && (
         <>
           {activeEvents?.length !== 0 && (
-            <div className='mb-10'>
-              <Heading size='md' className='mb-4'>
-                Upcoming Events
-              </Heading>
+            <>
+              <div className='mb-10'>
+                <Heading size='md' className='mb-4'>
+                  Upcoming Events
+                </Heading>
 
-              <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-3 4xl:grid-cols-3'>
-                {activeEvents && (
-                  <>
-                    {activeEvents?.map((event, index) => (
-                      <Event
-                        key={index}
-                        event={event as RyanEvent}
-                      />
-                    ))}
-                  </>
-                )}
+                <div className='grid grid-cols-1 gap-x-4 gap-y-4 md:grid-cols-3 4xl:grid-cols-3'>
+                  {activeEvents && (
+                    <>
+                      {activeEvents?.map((event, index) => (
+                        <Event
+                          key={index}
+                          event={event as RyanEvent}
+                        />
+                      ))}
+                    </>
+                  )}
+                </div>
               </div>
-            </div>
+              <Divider />
+            </>
           )}
 
           <div>

@@ -1,7 +1,13 @@
 // Components
 import { Heading, Text } from '@/components/global';
 import NextLink from 'next/link';
-import { FaInstagram as Instagram, FaMeetup as Meetup, FaDiscord as Discord } from 'react-icons/fa';
+import NextImage from 'next/image';
+import {
+  FaInstagram as Instagram,
+  FaMeetup as Meetup,
+  FaDiscord as Discord,
+  FaYoutube as YouTube,
+} from 'react-icons/fa';
 
 const socials = [
   {
@@ -15,6 +21,10 @@ const socials = [
   {
     href: 'https://discord.gg/HDugzYSHKC',
     icon: <Discord className='h-5 w-5' color='gray' />,
+  },
+  {
+    href: 'https://www.youtube.com/@ryanmeetup',
+    icon: <YouTube className='h-5 w-5' color='gray' />,
   }
 ];
 
@@ -28,19 +38,34 @@ const Footer = () => {
               <Heading>RYAN MEETUP</Heading>
             </NextLink>
 
-            <Text className='text-gray-600 mt-[2px]'>No Bryans Allowed!</Text>
+            <Text className='mt-[2px]'>No Bryans Allowed!</Text>
+            <div className='flex items-center mt-6'>
+              <NextImage
+                src='/ryanrecords.png'
+                width={25}
+                height={25}
+                alt='Ryan Records Music'
+              />
+              <Text className='ml-4'>
+                Also check out <NextLink className='font-semibold text-blue-500 hover:underline' href='https://ryan-records.vercel.app'>Ryan Records Music</NextLink>!
+              </Text>
+            </div>
+
           </div>
 
           {/* Resources & Follow Us */}
           <div className='grid grid-cols-4 space-x-8'>
             <div className='col-span-1'>
               <h2 className='mb-6 text-xs font-semibold text-gray-900 uppercase text-white sm:text-sm'>Follow us</h2>
-              <ul className='text-gray-600 font-medium'>
-                <li className='mb-2'>
+              <ul className='text-gray-600 font-medium space-y-2'>
+                <li>
                   <NextLink href='https://www.instagram.com/ryanmeetup/' className='hover:underline'>Instagram</NextLink>
                 </li>
                 <li>
                   <NextLink href='https://www.meetup.com/ryanmeetup/' className='hover:underline'>Meetup</NextLink>
+                </li>
+                <li>
+                  <NextLink href='https://www.youtube.com/@ryanmeetup' className='hover:underline'>YouTube</NextLink>
                 </li>
               </ul>
             </div>

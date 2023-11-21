@@ -1,6 +1,7 @@
 // Components
 import { Layout } from '@/components/navigation';
 import { FAQ, Landing } from '@/components/home';
+import { Divider } from '@/components/global';
 import Head from 'next/head';
 
 // Types
@@ -35,7 +36,7 @@ const HomePage: NextPage<HomePageProps> = (props: HomePageProps) => {
         <link rel='shortcut icon' href='/favicon.ico' />
       </Head>
       <Landing />
-      <div className='my-16 border border-gray-700' />
+      <Divider margins='xl' />
       <FAQ
         data={faqs as FrequentlyAskedQuestion[]}
         isLoading={isLoading}

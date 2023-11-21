@@ -1,6 +1,6 @@
 // Components
 import { Layout } from '@/components/navigation';
-import { Heading, Button, Text } from '@/components/global';
+import { Heading, Button, Text, Divider } from '@/components/global';
 import { Poster } from '@/components/posters';
 import { FaDownload as Download } from 'react-icons/fa';
 import Head from 'next/head';
@@ -64,7 +64,9 @@ const PosterPage: NextPage = () => {
         </div>
       </div>
 
-      <div className='space-y-6 mt-10'>
+      <Divider margins='xl' />
+
+      <div className='space-y-6'>
         <Heading>
           Event Posters
         </Heading>

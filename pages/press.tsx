@@ -1,6 +1,6 @@
 // Components
 import { Layout } from '@/components/navigation';
-import { Heading, Text } from '@/components/global';
+import { Divider, Heading, Text } from '@/components/global';
 import { Article, SkeletonArticle } from '@/components/press';
 import Head from 'next/head';
 
@@ -41,7 +41,7 @@ const PressPage: NextPage<PressPageProps> = (props: PressPageProps) => {
         Keep up to date with the latest Ryan Meetup news in the media!
       </Text>
 
-      <hr />
+      <Divider />
 
       {isLoading && (
         <>

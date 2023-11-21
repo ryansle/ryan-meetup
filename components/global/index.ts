@@ -6,3 +6,4 @@ export * from './Textarea';
 export * from './Toast';
 export * from './Modal';
 export * from './BryanChecker';
+export * from './Divider';
