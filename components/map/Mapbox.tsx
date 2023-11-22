@@ -71,7 +71,7 @@ const Mapbox = (props: MapboxProps) => {
             latitude={selectedLocation.coordinates.lat}
             longitude={selectedLocation.coordinates.lon}
             onClose={() => setSelectedLocation(null)}
-            closeOnClick={false} // Disable closing on clicking the map
+            closeButton={false}
           >
             <div className='text-black'>
               {selectedLocation.image && (
