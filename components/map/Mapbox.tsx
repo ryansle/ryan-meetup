@@ -22,6 +22,8 @@ const Mapbox = (props: MapboxProps) => {
 
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
 
+  console.log('How many cities were submitted for the official Ryan Meetup map?', `${locations.length} (so far...)`);
+
   const renderIcon = (type: string) => {
     switch (type) {
       case 'Previous Event':
@@ -98,8 +100,34 @@ const Mapbox = (props: MapboxProps) => {
             </div>
           </Popup>
         )}
-      </Map>
-    </div>
+
+        <div className='absolute bottom-8 right-8 bg-white p-3 rounded-md shadow-md text-black font-semibold'>
+          <Heading size='xs' className='font-semibold mb-2'>Legend</Heading>
+          <div className='flex items-start justify-between'>
+            <NextImage
+              src='/icons/meetup-icon.webp'
+              width={20}
+              height={20}
+              alt='Ryans have met up in this city before'
+            />
+            <p>
+              Ryan Meetup
+            </p>
+          </div>
+          <div className='flex items-center w-32 justify-between mb-1'>
+            <NextImage
+              src='/icons/ryanicon.png'
+              width={20}
+              height={20}
+              alt='Ryan lives here'
+            />
+            <p>
+              Ryan lives here
+            </p>
+          </div>
+        </div>
+      </Map >
+    </div >
   );
 };
 
