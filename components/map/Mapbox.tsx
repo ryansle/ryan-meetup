@@ -27,7 +27,7 @@ const Mapbox = (props: MapboxProps) => {
       case 'Previous Event':
         return '/icons/meetup-icon.webp';
       case 'Future Event':
-        return '/icons/ryanicon.png';
+        return '/icons/meetup-icon.webp';
       case 'Ryan Hub':
         return '/icons/ryanicon.png';
     }
@@ -61,7 +61,7 @@ const Mapbox = (props: MapboxProps) => {
               alt={location.locationType}
               width={25}
               height={25}
-              className={location.locationType !== 'Previous Event' ? 'rounded-full border border-black' : ''}
+              className={location.locationType === 'Ryan Hub' ? 'rounded-full border border-black' : ''}
             />
           </Marker>
         ))}
@@ -71,6 +71,7 @@ const Mapbox = (props: MapboxProps) => {
             latitude={selectedLocation.coordinates.lat}
             longitude={selectedLocation.coordinates.lon}
             onClose={() => setSelectedLocation(null)}
+            closeOnClick={false} // Disable closing on clicking the map
           >
             <div className='text-black'>
               {selectedLocation.image && (
