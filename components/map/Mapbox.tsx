@@ -48,7 +48,7 @@ const Mapbox = (props: MapboxProps) => {
         }}
         mapStyle='mapbox://styles/mapbox/streets-v9'
       >
-        {locations.map((location) => (
+        {locations?.map((location) => (
           <Marker
             key={location.locationName}
             latitude={location.coordinates.lat}
