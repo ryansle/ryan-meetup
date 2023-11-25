@@ -10,10 +10,10 @@ const Header = () => {
     { text: 'Merch', href: 'https://ryanmeetup.etsy.com' },
     { text: 'Posters', href: '/posters' },
     { text: 'Gallery', href: '/gallery' },
+    { text: 'Map', href: '/map' },
     { text: 'Press', href: '/press' },
     { text: 'Support', href: '/support' },
     { text: 'Contact', href: '/contact' },
-    { text: 'Map', href: '/map' },
   ];
 
   const socials = [
