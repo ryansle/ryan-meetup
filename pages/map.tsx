@@ -48,12 +48,13 @@ const MapPage: NextPage<MapPageProps> = (props: MapPageProps) => {
         </Heading>
         <Text>
           Our growing network of Ryans currently spans across <span className='font-semibold text-blue-500'>{uniqueCountries?.size - 8} countries</span> and <span className='font-semibold text-blue-500'>{locations?.length} cities</span> worldwide.
+          <span className='inline lg:hidden'>{' '}Help us expand as we gear up for RyanCon, the soon-to-be largest same name gathering in history.</span>
         </Text>
-        <Text>
+        <Text className='hidden lg:block'>
           Help us expand as we gear up for RyanCon, the soon-to-be largest same name gathering in history.
         </Text>
 
-        <Heading className='mt-8 mb-4'>
+        <Heading className='mt-8 mb-4' size='md'>
           Don&apos;t see your city?
         </Heading>
         <Text>
