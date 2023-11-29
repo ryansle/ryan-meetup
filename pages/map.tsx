@@ -2,6 +2,7 @@
 import { Layout } from '@/components/navigation';
 import { Mapbox } from '@/components/map';
 import { Heading, Text } from '@/components/global';
+import NextLink from 'next/link';
 
 // Types
 import type { NextPage } from 'next';
@@ -41,15 +42,22 @@ const MapPage: NextPage<MapPageProps> = (props: MapPageProps) => {
           locations={locations as unknown as Location[]}
         />
       )}
-      <section className='text-center py-8 border-t-2 border-gray-700 px-4 lg:px-32 xl:px-72 3xl:px-[400px] 4xl:px-[650px]'>
+      <section className='text-center py-4 border-t-2 border-gray-700 px-4 md:py-8 lg:px-32 xl:px-72 3xl:px-[400px] 4xl:px-[650px]'>
         <Heading className='mb-4'>
           Ryan Meetup Worldwide
         </Heading>
         <Text>
-          There are currently <span className='font-semibold text-blue-500'>{locations?.length} cities</span> represented on the Ryan Meetup Map, in <span className='font-semibold text-blue-500'>{uniqueCountries?.size - 8} different countries</span> around the world.
+          Our growing network of Ryans currently spans across <span className='font-semibold text-blue-500'>{uniqueCountries?.size - 8} countries</span> and <span className='font-semibold text-blue-500'>{locations?.length} cities</span> worldwide.
         </Text>
         <Text>
-          That brings us one step closer to hosting RyanCon, soon-to-be the largest same name gathering in the world.
+          Help us expand as we gear up for RyanCon, the soon-to-be largest same name gathering in history.
+        </Text>
+
+        <Heading className='mt-8 mb-4'>
+          Don&apos;t see your city?
+        </Heading>
+        <Text>
+          <NextLink href='/contact' className='font-semibold underline underline-offset-2 text-blue-500 hover:cursor-pointer'>Contact Ryan</NextLink> to have your city added to the map.
         </Text>
       </section>
     </Layout >

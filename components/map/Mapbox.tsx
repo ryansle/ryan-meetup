@@ -34,7 +34,7 @@ const Mapbox = (props: MapboxProps) => {
   };
 
   return (
-    <div className='w-full h-[700px]'>
+    <div className='w-full h-[600px] md:h-[700px]'>
       <Map
         mapboxAccessToken={token}
         initialViewState={{
