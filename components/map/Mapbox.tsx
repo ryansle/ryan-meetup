@@ -22,8 +22,6 @@ const Mapbox = (props: MapboxProps) => {
 
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
 
-  console.log('How many cities were submitted for the official Ryan Meetup map?', `${locations.length} (so far...)`);
-
   const renderIcon = (type: string) => {
     switch (type) {
       case 'Previous Event':
