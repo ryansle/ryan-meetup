@@ -4,19 +4,19 @@ import { FaHandshake as Handshake } from 'react-icons/fa';
 
 type Content = {
   main: string;
-  sub: string;
+  sub?: string;
 }
 
 type ListProps = {
   content: {
     main: string;
-    sub: string;
+    sub?: string;
   }[];
 }
 
 type ListItemProps = {
   main: string;
-  sub: string;
+  sub?: string;
 }
 
 const ListItem = (props: ListItemProps) => {

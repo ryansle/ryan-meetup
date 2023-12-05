@@ -54,7 +54,7 @@ const Heading = (props: HeadingProps) => {
       case 'xs':
         return <h5 className={`${styles} text-lg`}>{children}</h5>;
       case 'display':
-        return <h1 className={`${styles} text-display`}>{children}</h1>;
+        return <h1 className={`${styles} text-display3`}>{children}</h1>;
       default:
         return <h4 className={`${styles} text-xl`}>{children}</h4>;
     }

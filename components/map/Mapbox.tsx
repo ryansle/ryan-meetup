@@ -59,8 +59,8 @@ const Mapbox = (props: MapboxProps) => {
             <NextImage
               src={renderIcon(location.locationType) as string}
               alt={location.locationType}
-              width={25}
-              height={25}
+              width={20}
+              height={20}
               className={location.locationType === 'Ryan Hub' ? 'rounded-full border border-black' : ''}
             />
           </Marker>
@@ -124,8 +124,8 @@ const Mapbox = (props: MapboxProps) => {
             </p>
           </div>
         </div>
-      </Map >
-    </div >
+      </Map>
+    </div>
   );
 };
 
