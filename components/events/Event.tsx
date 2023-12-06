@@ -49,9 +49,11 @@ const Event = (props: EventProps) => {
               <Text size='xs'>{convertDateToDateTimeString(date)}</Text>
               <Heading size='sm'>{title}</Heading>
             </div>
-            <div>
-              <Meetup className='w-10 h-10' />
-            </div>
+            {href.includes('meetup') && (
+              <div>
+                <Meetup className='w-10 h-10' />
+              </div>
+            )}
           </div>
           <Text className='min-h-[85px]' size='xs'>{description}</Text>
 
