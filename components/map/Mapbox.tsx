@@ -99,7 +99,7 @@ const Mapbox = (props: MapboxProps) => {
           </Popup>
         )}
 
-        <div className='absolute bottom-8 right-8 bg-white p-3 rounded-md shadow-md text-black font-semibold'>
+        <div className='absolute bottom-12 right-2 bg-white p-3 rounded-md shadow-md text-black font-semibold lg:bottom-8 lg:right-8'>
           <Heading size='xs' className='font-semibold mb-2'>Legend</Heading>
           <div className='flex items-start justify-between'>
             <NextImage
