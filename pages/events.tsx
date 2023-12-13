@@ -26,9 +26,15 @@ const EventsPage: NextPage<EventsPageProps> = (props: EventsPageProps) => {
   const [inactiveEvents, setInactiveEvents] = useState<RyanEvent[]>();
 
   useEffect(() => {
-    const active = data?.filter((event) => event.active);
-    // @ts-ignore
-    const inactive = data?.filter((event) => !event.active).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    const active = data?.filter((event) => (
+      new Date(event.date as string).getTime() >= new Date().getTime()
+    ));
+
+    const inactive = data?.filter((event) => (
+      new Date(event.date as string).getTime() < new Date().getTime()
+    ));
+
+    inactive?.sort((a, b) => new Date(b.date as string).getTime() - new Date(a.date as string).getTime());
 
     setActiveEvents(active as unknown as RyanEvent[]);
     setInactiveEvents(inactive as unknown as RyanEvent[]);

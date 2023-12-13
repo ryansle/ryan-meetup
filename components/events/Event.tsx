@@ -27,8 +27,6 @@ const Event = (props: EventProps) => {
     venue
   } = props.event;
 
-  console.log(coverImage);
-
   return (
     <NextLink href={href}>
       <div className='border border-gray-700 rounded-3xl h-full break-inside-avoid-column transition ease-in duration-300 hover:border-white hover:scale-102'>

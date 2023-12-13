@@ -51,8 +51,6 @@ const GalleryPage = (props: GalleryPageProps) => {
 
   const [zoom, setZoom] = useState<number>(3);
 
-  console.log(data?.googleDriveLink);
-
   return (
     <Layout>
       <Head>
