@@ -5,17 +5,13 @@ import { Modal } from '@/components/global';
 
 // Utilities
 import { useRouter } from 'next/router';
-// import useLocalStorage from '@/hooks/useLocalStorage';
+import useLocalStorage from '@/hooks/useLocalStorage';
 
 const BryanChecker = () => {
-  // const localStorageKey = 'bryanCheck';
+  const localStorageKey = 'bryanCheck';
 
-  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const [isChecked, handleChange] = useLocalStorage(localStorageKey, false);
   const [showModal, setShowModal] = useState<boolean>(true);
-
-  const handleChange = () => {
-    setIsChecked(!isChecked);
-  };
 
   const router = useRouter();
 

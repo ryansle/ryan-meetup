@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 // Components
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { DefaultSeo } from 'next-seo';
@@ -17,9 +19,16 @@ const queryClient = new QueryClient();
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
+  const [bryanChecked, setBryanChecked] = useState<boolean>(false);
+
+  useEffect(() => {
+    const value = JSON.parse(localStorage.getItem('bryanCheck') as string);
+    setBryanChecked(value);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
-      {router.pathname !== '/goodbye' && <BryanChecker />}
+      {router.pathname !== '/goodbye' && !bryanChecked && <BryanChecker />}
       <DefaultSeo {...seo} />
       <Component {...pageProps} />
       <Analytics />

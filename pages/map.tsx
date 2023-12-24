@@ -3,7 +3,6 @@ import { Layout } from '@/components/navigation';
 import { Mapbox } from '@/components/map';
 import { Heading, Text } from '@/components/global';
 import NextLink from 'next/link';
-import { List } from '@/components/support';
 
 // Types
 import type { NextPage } from 'next';
@@ -54,33 +53,6 @@ const MapPage: NextPage<MapPageProps> = (props: MapPageProps) => {
         <Text className='hidden lg:block'>
           Help us expand as we gear up for RyanCon, the soon-to-be largest same name gathering in history.
         </Text>
-
-        {/* <Heading size='md' className='mt-8 mb-4'>Major Ryan Hubs</Heading>
-        <div className='grid grid-cols-1 mx-16 space-y-2 md:grid-cols-3 xl:grid-cols-5'>
-          <div className='hidden md:block' />
-          <List
-            content={[
-              { main: 'Los Angeles, CA' },
-              { main: 'Seattle, WA' },
-              { main: 'Denver, CO' },
-            ]}
-          />
-          <List
-            content={[
-              { main: 'New York, NY' },
-              { main: 'Dallas, TX' },
-              { main: 'Washington, DC' },
-            ]}
-          />
-          <List
-            content={[
-              { main: 'Phoenix, AZ' },
-              { main: 'Chicago, IL' },
-              { main: 'San Francisco, CA' },
-            ]}
-          />
-          <div className='hidden md:block' />
-        </div> */}
 
         <Heading className='mt-8 mb-4' size='md'>
           Don&apos;t see your city?

@@ -12,6 +12,7 @@ type ListProps = {
     main: string;
     sub?: string;
   }[];
+  className?: string;
 }
 
 type ListItemProps = {
@@ -33,10 +34,10 @@ const ListItem = (props: ListItemProps) => {
 };
 
 const List = (props: ListProps) => {
-  const { content } = props;
+  const { content, className } = props;
 
   return (
-    <ul className='space-y-2'>
+    <ul className={`${className} space-y-2`}>
       {content.map((item: Content) => (
         <ListItem
           key={item.main}
