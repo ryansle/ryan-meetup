@@ -55,9 +55,9 @@ const MapPage: NextPage<MapPageProps> = (props: MapPageProps) => {
           Help us expand as we gear up for RyanCon, the soon-to-be largest same name gathering in history.
         </Text>
 
-        <Heading size='md' className='mt-8 mb-4'>Major Ryan Hubs</Heading>
-        <div className='grid grid-cols-5'>
-          <div />
+        {/* <Heading size='md' className='mt-8 mb-4'>Major Ryan Hubs</Heading>
+        <div className='grid grid-cols-1 mx-16 space-y-2 md:grid-cols-3 xl:grid-cols-5'>
+          <div className='hidden md:block' />
           <List
             content={[
               { main: 'Los Angeles, CA' },
@@ -79,8 +79,8 @@ const MapPage: NextPage<MapPageProps> = (props: MapPageProps) => {
               { main: 'San Francisco, CA' },
             ]}
           />
-          <div />
-        </div>
+          <div className='hidden md:block' />
+        </div> */}
 
         <Heading className='mt-8 mb-4' size='md'>
           Don&apos;t see your city?
