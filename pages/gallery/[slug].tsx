@@ -34,7 +34,7 @@ const ZoomButton = (props: ZoomButtonProps) => {
 
   return (
     <button
-      className='rounded-lg p-3 bg-black uppercase text-neutral-400 font-semibold border border-gray-700 transition duration-300 ease-in hover:text-white disabled:text-gray-700'
+      className='rounded-lg p-3 bg-white dark:bg-black uppercase text-neutral-400 font-semibold border border-gray-700 transition duration-300 ease-in hover:text-white disabled:text-gray-700'
       onClick={onClick}
       disabled={disabled}
     >

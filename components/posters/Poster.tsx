@@ -12,6 +12,7 @@ const Poster = (props: PosterProps) => {
   return (
     <div className='overflow-hidden aspect-w-3 aspect-h-4'>
       <NextImage
+        className='border border-gray-600'
         src={src}
         fill={true}
         alt={title}

@@ -35,7 +35,7 @@ const Footer = () => {
         <div className='md:flex md:justify-between'>
           <div className='mb-6 md:mb-0'>
             <NextLink href='/'>
-              <h2 className='font-cooper tracking-wider text-white text-4xl'>RYAN MEETUP</h2>
+              <Heading ignoreColorMode>RYAN MEETUP</Heading>
             </NextLink>
 
             <Text className='mt-[2px]'>No Bryans Allowed!</Text>

@@ -25,7 +25,7 @@ const getVariantClasses = (size = 'md', color: string) => {
     color === 'black' && 'text-black',
     color === 'white' && 'text-white',
     color === 'primary' && 'text-gray-700',
-    color === 'secondary' && 'text-gray-400',
+    color === 'secondary' && 'text-gray-600 dark:text-gray-400',
   ]);
 
   return clsx([styles, textSize, fontColor]);

@@ -10,6 +10,7 @@ type HeadingProps = {
   className?: string;
   children: ReactNode;
   bold?: boolean;
+  ignoreColorMode?: boolean;
 };
 
 const getVariantClasses = (variant: string, bold: boolean) => {
@@ -32,10 +33,11 @@ const Heading = (props: HeadingProps) => {
     className,
     children,
     variant = 'ryan',
-    bold = false
+    bold = false,
+    ignoreColorMode = false,
   } = props;
 
-  const styles = 'tracking-wider text-black dark:text-white';
+  const styles = `tracking-wider ${!ignoreColorMode && 'text-black dark:text-white'}`;
 
   const renderHeading = () => {
     switch (size) {

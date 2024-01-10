@@ -31,8 +31,8 @@ const MediaTile = (props: MediaTileProps) => {
             />
           </div>
           <div className='absolute w-full inset-x-0 text-white text-xs text-center leading-4 flex items-center justify-center flex-col px-8'>
-            <Heading>{title}</Heading>
-            <Heading size='sm'>{new Date(date).toLocaleDateString()}</Heading>
+            <Heading ignoreColorMode>{title}</Heading>
+            <Heading size='sm' ignoreColorMode>{new Date(date).toLocaleDateString()}</Heading>
           </div>
         </div>
       </div>
