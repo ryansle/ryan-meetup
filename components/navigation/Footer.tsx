@@ -30,15 +30,15 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className='border-t border-gray-700 bg-black px-4 h-20 lg:px-32 2xl:px-72 3xl:px-[400px] 4xl:px-[650px]'>
+    <footer className='border-t border-gray-700 px-4 h-20 lg:px-32 2xl:px-72 3xl:px-[400px] 4xl:px-[650px]'>
       <div className='w-full py-6 lg:py-8'>
         <div className='md:flex md:justify-between'>
           <div className='mb-6 md:mb-0'>
             <NextLink href='/'>
-              <Heading>RYAN MEETUP</Heading>
+              <Heading ignoreColorMode>RYAN MEETUP</Heading>
             </NextLink>
 
-            <Text className='mt-[2px]'>No Bryans Allowed!</Text>
+            <Text className='mt-[2px]' ignoreColorMode>No Bryans Allowed!</Text>
             <div className='flex items-center mt-6'>
               <NextImage
                 src='/ryanrecords.png'
@@ -46,7 +46,7 @@ const Footer = () => {
                 height={25}
                 alt='Ryan Records Music'
               />
-              <Text className='ml-4'>
+              <Text className='ml-4' ignoreColorMode>
                 Also check out <NextLink className='font-semibold text-blue-500 hover:underline' href='https://ryan-records.vercel.app'>Ryan Records Music</NextLink>!
               </Text>
             </div>
@@ -118,7 +118,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
     </footer>
   );
 };

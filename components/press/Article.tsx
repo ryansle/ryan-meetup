@@ -58,14 +58,14 @@ const Article = (props: ArticleProps) => {
           </div>
           <div className='col-span-3 mt-2 sm:mt-0 sm:col-span-2'>
             <div className='flex space-x-3 items-center'>
-              <p className='tracking-wide font-medium'>
+              <p className='tracking-wide font-medium text-black dark:text-white'>
                 {new Date(publishDate).toLocaleDateString()}
               </p>
 
               {isNew && <span className='text-green-800 text-sm font-medium px-2.5 rounded bg-green-900 text-white'>NEW</span>}
             </div>
-            <h3 className='font-bold text-3xl mb-2 xl:text-4xl 2xl:text-3xl md:mb-4'>{title}</h3>
-            <p className='tracking-wide font-medium xl:text-xl'>
+            <h3 className='font-bold text-3xl mb-2 text-black dark:text-white xl:text-4xl 2xl:text-3xl md:mb-4'>{title}</h3>
+            <p className='tracking-wide font-medium text-black dark:text-white xl:text-xl'>
               by <span className={highlight}>{author}</span> in {outlet.split(' ')[0].toLowerCase() ===
                 'the' ? '' : 'the'} <span className={highlight}>{outlet}</span>
             </p>

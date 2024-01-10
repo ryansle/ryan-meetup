@@ -17,7 +17,7 @@ const Layout = (props: LayoutProps) => {
     <main>
       <Banner />
       <Header />
-      <section className={`${className} text-white h-full flex flex-col overflow-hidden bg-gradient-to-b from-neutral-900 to-black ${fullscreen ? '' : 'py-8 px-4 lg:px-32 2xl:px-72 3xl:px-[400px] 4xl:px-[650px]'}`}>
+      <section className={`${className} text-white h-full flex flex-col overflow-hidden bg-white from-white bg-gradient-to-b dark:from-neutral-900 to-neutral-00 dark:to-black ${fullscreen ? '' : 'py-8 px-4 lg:px-32 2xl:px-72 3xl:px-[400px] 4xl:px-[650px]'}`}>
         {children}
       </section>
       <Footer />

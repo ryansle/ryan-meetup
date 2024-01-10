@@ -31,10 +31,10 @@ const FAQ = (props: FAQProps) => {
         {!isLoading && data && data?.map((pair, index) => (
           <div key={index}>
             <>
-              <div className='text-xl font-semibold tracking-wider mb-2'>
+              <div className='text-xl font-semibold tracking-wider mb-2 text-black dark:text-white'>
                 {pair.question}
               </div>
-              <div className='text-lg mb-10 text-gray-400'>
+              <div className='text-lg mb-10 text-gray-600 dark:text-gray-400'>
                 {pair.answer}
               </div>
             </>
