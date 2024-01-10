@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 
 // Components
 import { FiSun as SunIcon } from 'react-icons/fi';
-import { HiOutlineMoon as MoonIcon } from 'react-icons/hi';
+import { FaMoon as MoonIcon } from 'react-icons/fa';
+
 
 const ThemeSwitcher = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -21,7 +22,7 @@ const ThemeSwitcher = () => {
     setDarkMode((prevMode) => !prevMode);
   };
 
-  const classes = 'fill-black dark:fill-white w-8 h-8';
+  const classes = 'fill-black dark:fill-white w-6 h-6';
 
   return (
     <button onClick={toggleDarkMode}>

@@ -25,7 +25,7 @@ const ListItem = (props: ListItemProps) => {
 
   return (
     <li className='flex'>
-      <Handshake className='fill-white mt-1 mr-4 w-5 h-5 flex-shrink-0' />
+      <Handshake className='fill-gray-600 dark:fill-white mt-1 mr-4 w-5 h-5 flex-shrink-0' />
       <Text>
         {main} <span className='font-light'>{sub}</span>
       </Text>

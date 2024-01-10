@@ -26,13 +26,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props: InputProps, ref) 
   return (
     <div className='flex flex-col'>
       <label
-        className='font-medium mb-1'
+        className='font-medium mb-1 text-black dark:text-white'
         htmlFor={name}
       >
         {label} {required && <span className='text-red-500'>*</span>}
       </label>
       <input
-        className='border bg-black border-gray-700 text-white text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 ring-inset placeholder-gray-700'
+        className='border bg-white dark:bg-black border-gray-700 text-white text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 w-full p-2.5 ring-inset placeholder-gray-700'
         id={name}
         name={name}
         placeholder={placeholder}

@@ -49,7 +49,7 @@ const Event = (props: EventProps) => {
             </div>
             {href.includes('meetup') && (
               <div>
-                <Meetup className='w-10 h-10' />
+                <Meetup className='w-10 h-10 fill-black dark:fill-white' />
               </div>
             )}
           </div>
