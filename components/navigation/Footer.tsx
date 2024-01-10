@@ -30,12 +30,12 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className='border-t border-gray-700 bg-black px-4 h-20 lg:px-32 2xl:px-72 3xl:px-[400px] 4xl:px-[650px]'>
+    <footer className='border-t border-gray-700 px-4 h-20 lg:px-32 2xl:px-72 3xl:px-[400px] 4xl:px-[650px]'>
       <div className='w-full py-6 lg:py-8'>
         <div className='md:flex md:justify-between'>
           <div className='mb-6 md:mb-0'>
             <NextLink href='/'>
-              <Heading>RYAN MEETUP</Heading>
+              <h2 className='font-cooper tracking-wider text-white text-4xl'>RYAN MEETUP</h2>
             </NextLink>
 
             <Text className='mt-[2px]'>No Bryans Allowed!</Text>
@@ -118,7 +118,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-
     </footer>
   );
 };

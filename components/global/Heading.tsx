@@ -35,7 +35,7 @@ const Heading = (props: HeadingProps) => {
     bold = false
   } = props;
 
-  const styles = 'tracking-wider';
+  const styles = 'tracking-wider text-black dark:text-white';
 
   const renderHeading = () => {
     switch (size) {
