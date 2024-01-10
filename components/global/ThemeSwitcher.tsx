@@ -6,7 +6,7 @@ import { FaMoon as MoonIcon } from 'react-icons/fa';
 
 
 const ThemeSwitcher = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
