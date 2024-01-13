@@ -84,7 +84,7 @@ const Mapbox = (props: MapboxProps) => {
                 />
               )}
 
-              <Heading size='xs'>
+              <Heading size='xs' ignoreColorMode>
                 {selectedLocation.eventName ?? selectedLocation.city}
               </Heading>
               <Text size='xs' color='primary' className='-mt-1'>
