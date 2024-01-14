@@ -32,7 +32,7 @@ const RsvpPage: NextPage = () => {
 export async function getServerSideProps() {
   return {
     redirect: {
-      destination: 'https://www.meetup.com/ryanmeetup/events/296347747/',
+      destination: 'https://www.meetup.com/ryanmeetup/events/298531611/',
       permanent: true,
     }
   };
