@@ -4,7 +4,7 @@ const useColorMode = (initialValue: boolean) => {
   const [darkMode, setDarkMode] = useState(() => {
     if (typeof window !== 'undefined') {
       const storedValue = localStorage?.getItem('darkMode');
-      return storedValue ? JSON.parse(storedValue) : initialValue;
+      return storedValue ? JSON.parse(storedValue) : initialValue ?? true;
     }
   });
 
