@@ -7,12 +7,12 @@ import useColorMode from '@/hooks/useColorMode';
 
 
 const ThemeSwitcher = () => {
-  const [darkMode, toggleDarkMode] = useColorMode();
+  const [darkMode, toggleDarkMode] = useColorMode(true);
 
   const classes = 'fill-black dark:fill-white w-6 h-6';
 
   return (
-    <button onClick={toggleDarkMode}>
+    <button onClick={toggleDarkMode} suppressHydrationWarning={true}>
       {darkMode ? <SunIcon className={classes} /> : <MoonIcon className={classes} />}
     </button>
   );

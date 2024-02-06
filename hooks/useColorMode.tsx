@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
 
-const useColorMode = () => {
-  const [darkMode, setDarkMode] = useState(true);
+const useColorMode = (initialValue: boolean) => {
+  const [darkMode, setDarkMode] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const storedValue = localStorage?.getItem('darkMode');
+      return storedValue ? JSON.parse(storedValue) : initialValue ?? true;
+    }
+  });
 
   useEffect(() => {
     const isDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -14,7 +19,7 @@ const useColorMode = () => {
   }, [darkMode]);
 
   const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prevMode: boolean) => !prevMode);
   };
 
   return [darkMode, toggleDarkMode] as const;
