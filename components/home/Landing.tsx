@@ -21,7 +21,7 @@ const Landing = () => {
         <div className='my-4 text-xl text-gray-600 dark:text-gray-400 xl:mr-32'>
           <div className='space-y-4'>
             <p>
-              Welcome to the Ryan Meetup, an organization run by Ryans, for Ryans, with the ultimate goal of assembling as many Ryans as possible.
+              Welcome to the Ryan Meetup — a non-profit organization run by Ryans, for Ryans, with the ultimate goal of assembling as many Ryans as possible.
             </p>
             <p>
               One day, we aim to host RyanCon, and break the world record for the{' '}

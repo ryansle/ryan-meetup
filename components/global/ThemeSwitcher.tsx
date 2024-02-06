@@ -7,7 +7,7 @@ import useColorMode from '@/hooks/useColorMode';
 
 
 const ThemeSwitcher = () => {
-  const [darkMode, toggleDarkMode] = useColorMode(true);
+  const [darkMode, toggleDarkMode] = useColorMode();
 
   const classes = 'fill-black dark:fill-white w-6 h-6';
 

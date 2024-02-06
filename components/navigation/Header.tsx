@@ -19,15 +19,15 @@ const Header = () => {
   const socials = [
     {
       href: 'https://www.instagram.com/ryanmeetup/',
-      icon: <Instagram className='h-8 w-8 fill-black dark:fill-white' />
+      icon: <Instagram className='h-6 w-6 md:h-8 md:w-8 fill-black dark:fill-white' />
     },
     {
       href: 'https://www.meetup.com/ryanmeetup/',
-      icon: <Meetup className='h-8 w-8 fill-black dark:fill-white' />,
+      icon: <Meetup className='h-6 w-6 md:h-8 md:w-8 fill-black dark:fill-white' />,
     },
     {
       href: 'https://discord.gg/HDugzYSHKC',
-      icon: <Discord className='h-8 w-8 fill-black dark:fill-white' />,
+      icon: <Discord className='h-6 w-6 md:h-8 md:w-8 fill-black dark:fill-white' />,
     }
   ];
 
@@ -54,7 +54,10 @@ const Header = () => {
         <ThemeSwitcher />
 
         {socials.map((channel, index) => (
-          <NextLink key={index} href={channel.href}>
+          <NextLink
+            key={index}
+            href={channel.href}
+          >
             {channel.icon}
           </NextLink>
         ))}
