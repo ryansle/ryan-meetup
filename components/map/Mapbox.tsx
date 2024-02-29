@@ -21,6 +21,11 @@ const Mapbox = (props: MapboxProps) => {
   const { token, locations } = props;
 
   const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
+  const [showRyans, setShowRyans] = useState<boolean>(true);
+  const [showMeetups, setShowMeetups] = useState<boolean>(true);
+
+  const meetupLocations = locations.filter((location) => location.locationType === 'Previous Event' || location.locationType === 'Future Event');
+  const hubLocations = locations.filter((location) => location.locationType === 'Ryan Hub');
 
   const renderIcon = (type: string) => {
     switch (type) {
@@ -46,7 +51,7 @@ const Mapbox = (props: MapboxProps) => {
         }}
         mapStyle='mapbox://styles/mapbox/streets-v9'
       >
-        {locations?.map((location) => (
+        {showRyans && hubLocations?.map((location) => (
           <Marker
             key={location.locationName}
             latitude={location.coordinates.lat}
@@ -61,7 +66,26 @@ const Mapbox = (props: MapboxProps) => {
               alt={location.locationType}
               width={20}
               height={20}
-              className={location.locationType === 'Ryan Hub' ? 'rounded-full border border-black' : ''}
+              className='rounded-full border border-black'
+            />
+          </Marker>
+        ))}
+
+        {showMeetups && meetupLocations?.map((location) => (
+          <Marker
+            key={location.locationName}
+            latitude={location.coordinates.lat}
+            longitude={location.coordinates.lon}
+            onClick={(e) => {
+              e.originalEvent.stopPropagation();
+              setSelectedLocation(location);
+            }}
+          >
+            <NextImage
+              src={renderIcon(location.locationType) as string}
+              alt={location.locationType}
+              width={20}
+              height={20}
             />
           </Marker>
         ))}
@@ -100,30 +124,34 @@ const Mapbox = (props: MapboxProps) => {
         )}
 
         <div className='absolute bottom-12 right-2 bg-white p-3 rounded-md shadow-md text-black font-semibold lg:bottom-8 lg:right-8'>
-          <Heading size='xs' className='font-semibold mb-2' ignoreColorMode>
-            Legend
-          </Heading>
-          <div className='flex items-start justify-between'>
-            <NextImage
-              src='/icons/meetup-icon.webp'
-              width={20}
-              height={20}
-              alt='Ryans have met up in this city before'
-            />
-            <p>
-              Ryan Meetup
-            </p>
-          </div>
-          <div className='flex items-center w-32 justify-between mb-1'>
-            <NextImage
-              src='/icons/ryanicon.png'
-              width={20}
-              height={20}
-              alt='Ryan lives here'
-            />
-            <p>
-              Ryan lives here
-            </p>
+          <div className='col-span-1'>
+            <Heading size='xs' className='font-semibold mb-2' ignoreColorMode>
+              Legend
+            </Heading>
+            <div className='flex items-center justify-between'>
+              <input type='checkbox' checked={showMeetups} onClick={() => setShowMeetups(!showMeetups)} />
+              <NextImage
+                src='/icons/meetup-icon.webp'
+                width={20}
+                height={20}
+                alt='Ryans have met up in this city before'
+              />
+              <p>
+                Ryan Meetup
+              </p>
+            </div>
+            <div className='flex items-center w-32 justify-between mb-1'>
+              <input type='checkbox' checked={showRyans} onClick={() => setShowRyans(!showRyans)} />
+              <NextImage
+                src='/icons/ryanicon.png'
+                width={20}
+                height={20}
+                alt='Ryan lives here'
+              />
+              <p>
+                Ryan lives here
+              </p>
+            </div>
           </div>
         </div>
       </Map>

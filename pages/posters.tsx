@@ -17,6 +17,7 @@ const posters = [
 ];
 
 const eventPosters = [
+  { title: 'St. Ryan\'s Day', src: '/posters/stryans.jpg' },
   { title: 'Ryan Rodeo', src: '/posters/rodeoposter2.png' },
   { title: 'Ryan Rodeo', src: '/posters/ryanrodeo.png' },
   { title: 'Rytoberfest', src: '/posters/rytoberfest.PNG' },
