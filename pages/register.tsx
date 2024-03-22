@@ -9,7 +9,7 @@ const RegisterPage: NextPage = () => {
   return (
     <Layout>
       <Head>
-        <title>Register for the Rytoberfest Tournament</title>
+        <title>Register for the St. Ryan&apos;s Day Tournament</title>
         <meta
           name='description'
           content='Join the Ryan Meetup!'
@@ -32,7 +32,7 @@ const RegisterPage: NextPage = () => {
 export async function getServerSideProps() {
   return {
     redirect: {
-      destination: 'https://forms.gle/1mrbbx2vtdSaihCN8',
+      destination: 'https://forms.gle/yHR9FBvEu8mvKdTE9',
       permanent: true,
     }
   };
