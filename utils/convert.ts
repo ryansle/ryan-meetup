@@ -10,7 +10,7 @@ const convertDateToDateTimeString = (date: Date) => {
   const hour = dateObject.getHours();
   const minutes = dateObject.getMinutes();
 
-  return `${dateString.slice(0, 3)}, ${dateString.slice(4, 8)} ${day} ${year} @ ${hour}:${minutes === 0 ? `${minutes}0` : `${minutes}`} PM`;
+  return `${dateString.slice(0, 3)}, ${dateString.slice(4, 8)} ${day} ${year}`;
 };
 
 

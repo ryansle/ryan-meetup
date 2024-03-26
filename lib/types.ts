@@ -52,6 +52,7 @@ type RyanEvent = {
   href: string;
   title: string;
   date: Date;
+  time: string;
   city: string;
   location: string;
   venue: string;

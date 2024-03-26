@@ -24,6 +24,7 @@ const Event = (props: EventProps) => {
     href,
     city,
     date,
+    time,
     venue
   } = props.event;
 
@@ -44,7 +45,7 @@ const Event = (props: EventProps) => {
         <div className='px-5 pt-3 pb-3 space-y-2'>
           <div className='flex items-center justify-between mb-3'>
             <div>
-              <Text size='xs'>{convertDateToDateTimeString(date)}</Text>
+              <Text size='xs'>{convertDateToDateTimeString(date)} @ {time}</Text>
               <Heading size='sm'>{title}</Heading>
             </div>
             {href.includes('meetup') && (
